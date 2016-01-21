@@ -1,0 +1,51 @@
+{
+  "name": "cv",
+  "version": "0.0.1",
+  "description": "My curriculum vitæ",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "assemble": "^0.7.6",
+    "eslint": "^1.10.3",
+    "grunt": "^0.4.5",
+    "grunt-newer": "^1.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nealrame/CV.git"
+  },
+  "keywords": [
+    "CV"
+  ],
+  "author": "Julien Graziano <julien@graziano.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nealrame/CV/issues"
+  },
+  "homepage": "https://github.com/nealrame/CV#readme",
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "rules": {
+      "camelcase": 0,
+      "curly": [
+        1,
+        "multi-line"
+      ],
+      "new-cap": [
+        1,
+        {
+          "newIsCap": true,
+          "capIsNew": false
+        }
+      ],
+      "quotes": [
+        1,
+        "single"
+      ],
+      "space-infix-ops": 0
+    }
+  }
+}
