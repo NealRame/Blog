@@ -1,0 +1,11 @@
+<section id="skills">
+    <h1>Compétences</h1>
+    {{#each skills}}
+        <h2>{{@key}}</h2>
+        <ul>
+        {{#each this}}
+            <li class="skill">{{this}}</li>
+        {{/each}}
+        </ul>
+    {{/each}}
+</section>

@@ -1,0 +1,14 @@
+<section id="employments">
+    <h1>Expériences professionelles</h1>
+    <ul>
+        {{#each employments}}
+        <li>
+            <div class="period">
+                <span class="from">{{from_year}}</span> - <span class="to">{{to_year}}</span>
+            </div>
+            <div class="employer">{{employer}}</div>
+            <div class="role">{{role}}</div>
+        </li>
+        {{/each}}
+    </ul>
+</section>
