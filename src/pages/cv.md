@@ -16,7 +16,7 @@ education:
     -
         year: 2005
         school: Université des Sciences et Technologies de Lille
-        grade: Master d'informatique
+        grade: Master en informatique
 employments:
     -
         from_year: 2005
@@ -26,9 +26,9 @@ employments:
     -
         from_year: 2007
         employer: Développeur Arobas Music
-        role: Développement de l'application Guitar Pro 6 et Guitar Pro 7.
+        resume: Développement de l'application Guitar Pro 6 et Guitar Pro 7.
 skills:
-    Development:
+    Développement:
         - C++11
         - CMake
         - CSS2/3
@@ -44,7 +44,7 @@ skills:
         - Jenkins
         - NGinx
         - Virtualisation (KVM)
-    Databases:
+    Base de données:
         - MongoDB
     Frameworks:
         - Babel.js
