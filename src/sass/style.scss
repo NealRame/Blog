@@ -1,26 +1,56 @@
+$black: #2b3a42;
+$blue: #3f5765;
+$light-blue: #bdd4de;
+$white: #efefef;
+$red: #ff530d;
+
+$body-bg-color: $black;
+$body-font-color: $white;
+
+$section-border-color: $blue;
+
+$h1-font-color: $blue;
+$h1-border-color: $h1-font-color;
+
+$h2-font-color: $light-blue;
+
 html {
     font-size: 16pt;
 }
 body {
-    font-family: sans-serif;
+    background-color: $body-bg-color;
+    color: $body-font-color;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
 }
-
 section {
-    width: 80%;
-    margin: 0 auto;
+    border: solid 1px $section-border-color;
+    border-radius: 8px;
+    padding: .5em;
+    margin: 1em;
+    margin-bottom: none;
     h1 {
-        font-size: 2em;
+        color: $h1-font-color;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.75em;
+        font-weight: 700;
     }
     h2 {
-        font-size: 1.5em;
+        color: $h2-font-color;
+        font-size: 1.25em;
+        margin-left: 1em;
     }
     &:not(#personal_details) {
         h1 {
-            border-bottom: solid 2px black;
+            border-bottom: solid 2px $h1-border-color;
         }
     }
     &#personal_details {
+        border: none;
         h1 {
+            font-size: 2em;
             text-align: center;
         }
         ul {
@@ -31,9 +61,60 @@ section {
             }
         }
     }
+    &#education {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            li {
+                margin-bottom: 1em;
+                .year {
+                    float: left;
+                }
+                .school {
+                    padding: .25em;
+                    clear: both;
+                    font-size: smaller;
+                }
+                .grade {
+                    float: right;
+                }
+            }
+        }
+    }
+    &#employments {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            li {
+                margin-bottom: 1em;
+                .period {
+                    float: left;
+                }
+                .role {
+                    padding: .5em;
+                    clear: both;
+                    font-size: smaller;
+                }
+                .employer {
+                    float: right;
+                }
+            }
+        }
+    }
+    &#interests {
+        ul li {
+            &:not(:last-of-type):after {
+                content: ',';
+            }
+            &:last-of-type:after {
+                content: '.';
+            }
+        }
+    }
     &#skills {
         ul {
             list-style-type: none;
+            padding: 0;
             .skill {
                 display: inline;
                 &:not(:last-of-type):after {
@@ -44,5 +125,27 @@ section {
                 }
             }
         }
+    }
+}
+.left, .right {
+    position: absolute;
+    width: 50%;
+    section {
+        margin: 1em;
+        margin-top: 0;
+    }
+}
+.left {
+    left: 0;
+    width: 60%;
+    section {
+        margin-right: .5em;
+    }
+}
+.right {
+    left: 60%;
+    width: 40%;
+    section {
+        margin-left: .5em;
     }
 }
