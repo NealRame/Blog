@@ -5,12 +5,19 @@
   <meta charset="UTF-8">
   <meta name="description" content="{{description}}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:700,400' type='text/css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100' type='text/css'>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     {{> personal_details}}
-    {{> education}}
-    {{> employments}}
-    {{> skills}}
+    <div class="left">
+        {{> education}}
+        {{> employments}}
+        {{> interests}}
+    </div>
+    <div class="right">
+        {{> skills}}
+    </div>
 </body>
 </html>
