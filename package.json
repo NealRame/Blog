@@ -32,6 +32,9 @@
   },
   "homepage": "https://github.com/nealrame/CV#readme",
   "eslintConfig": {
+    "env": {
+      "browser": true
+    },
     "extends": "eslint:recommended",
     "rules": {
       "camelcase": 0,
