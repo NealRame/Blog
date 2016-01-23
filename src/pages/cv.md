@@ -4,7 +4,7 @@ description: Curriculum vitæ
 name: Julien Graziano
 job: Développeur Javascript
 address: 45 Rue d'Amiens - 59000 Lille
-phone: '+33675122957'
+phone: '+336.75.12.29.57'
 birth: 31 mars 1981
 email: julien@graziano.fr
 github: https://github.com/NealRame
@@ -21,19 +21,19 @@ employments:
     -
         from_year: 2005
         to_year: 2007
-        employer: CNRS
-        role: Ingénieur d'étude au sein de l'équipe POPS sous la direction du professeur David Simplot-Ryl. Développement d'algorithmes de routage pour réseaux de capteurs sans-fils.
+        employer: Ingénieur d'étude au CNRS
+        role: Développement d'algorithmes de routage pour des réseaux de capteurs sans-fils au sein de l'équipe POPS sous la direction du professeur David Simplot-Ryl.
     -
         from_year: 2007
-        employer: Arobas Music
-        role: Développeur. Développement de l'application Guitar Pro 6 et Guitar Pro 7.
+        employer: Développeur Arobas Music
+        role: Développement de l'application Guitar Pro 6 et Guitar Pro 7.
 skills:
     Development:
-        - C++
+        - C++11
         - CMake
-        - CSS3
+        - CSS2/3
         - Java
-        - Javascript
+        - Javascript (ES5, ES2016)
         - Sass
         - HTML5
         - Make
@@ -49,14 +49,20 @@ skills:
     Frameworks:
         - Babel.js
         - Backbone
+        - Boost
         - Browserify
+        - Chai
         - Foundation
+        - Grunt
+        - Gulp
         - Handlebars
         - Jade
         - JQuery
         - Marionette
+        - Mocha
         - Mongoose
         - Node.js
+        - Npm
         - Qt
         - Require.js
         - STL
