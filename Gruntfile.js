@@ -21,13 +21,16 @@ module.exports = function(grunt) {
         pages_partials_dir: '<%= pages_layouts_dir %>/partials',
         pages_sources_dir: '<%= sources_dir %>/pages',
         sass_sources_dir: '<%= sources_dir %>/sass',
+        scripts_sources_dir: '<%= sources_dir %>/scripts',
         public_dir: 'public',
         pages_dest_dir: '<%= public_dir %>/pages',
         style_dest_dir: '<%= public_dir %>/css',
+        scripts_dest_dir: '<%= public_dir %>/scripts',
         ///////////////////////////////////////////////////////////////////////
         // Configure tasks
         clean: {
             'pages': ['<%= pages_dest_dir %>'],
+            'scripts': ['<%= scripts_dest_dir %>'],
             'style': ['<%= style_dest_dir %>']
         },
         metalsmith: {
@@ -64,6 +67,18 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        uglify: {
+            options: {
+                sourceMap: is_dev()
+            },
+            app: {
+                files: {
+                    '<%= scripts_dest_dir %>/app.min.js': [
+                        '<%= scripts_sources_dir %>/main.js'
+                    ]
+                }
+            }
+        },
         watch: {
             pages: {
                 files: [
@@ -75,7 +90,16 @@ module.exports = function(grunt) {
                     spawn: true
                 }
             },
-            style: {
+            scripts: {
+                files: [
+                    '<%= scripts_sources_dir %>/**/*.js'
+                ],
+                tasks: ['uglify:app'],
+                options: {
+                    spawn: true
+                }
+            },
+            styles: {
                 files: [
                     '<%= sass_sources_dir %>/**/*.scss',
                     '<%= sass_sources_dir %>/**/*.sass'
@@ -88,11 +112,12 @@ module.exports = function(grunt) {
         }
     });
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-metalsmith');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-sass');
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
-    grunt.registerTask('default', ['clean', 'metalsmith:pages', 'sass']);
+    grunt.registerTask('default', ['clean', 'metalsmith:pages', 'sass', 'uglify']);
 };
