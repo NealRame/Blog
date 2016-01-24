@@ -21,7 +21,24 @@
             $(last_child).height(last_child_bbox.height + d);
         });
     }
+
+    function before_print() {
+        $('.left, .right').each(function(index, elt) {
+            $(elt).add($('section', elt).last()[0]).removeAttr('style');
+        });
+    }
+
     $(window)
         .load(equalize)
         .on('resize', equalize);
+
+    if (window.matchMedia) {
+        window.matchMedia('print').addListener(function(mql) {
+            if (mql.matches) {
+                before_print();
+            } else {
+                equalize();
+            }
+        });
+    }
 })(jQuery);
