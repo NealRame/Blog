@@ -1,6 +1,18 @@
 /*global jQuery:false*/
 (function($) {
-    function equalize() {
+    function equalize_picture() {
+        var section = $('#personal_details');
+        var picture = $('img', section);
+        var picture_margin = picture.outerHeight() - picture.innerHeight();
+        var details_height = $('ul', section).height() - picture_margin;
+
+        picture.removeAttr('style');
+        if (details_height > picture.height()) {
+            picture.height(details_height).width(details_height);
+        }
+    }
+
+    function equalize_columns() {
         var elements = $('.left, .right');
         var max_height = Math.max.apply(
             null,
@@ -22,10 +34,16 @@
         });
     }
 
+    function equalize() {
+        equalize_picture();
+        equalize_columns();
+    }
+
     function before_print() {
         $('.left, .right').each(function(index, elt) {
             $(elt).add($('section', elt).last()[0]).removeAttr('style');
         });
+        equalize_picture();
     }
 
     $(window)
