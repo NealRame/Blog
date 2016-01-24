@@ -26,7 +26,7 @@ section {
     border-radius: 8px;
     padding: .5em;
     margin: 1em;
-    margin-bottom: none;
+    margin-bottom: 0;
     h1 {
         color: $h1-font-color;
         font-family: 'Oswald', sans-serif;
@@ -38,24 +38,46 @@ section {
         font-size: 1.25em;
         margin-left: 1em;
     }
-    &:not(#personal_details) {
+    a {
+        color: $body-font-color;
+        text-decoration: none;
+        &:hover {
+            color: $red;
+        }
+    }
+    &:not(#personal-details) {
         h1 {
             border-bottom: solid 2px $h1-border-color;
         }
     }
-    &#personal_details {
+    &#personal-details {
         border: none;
         h1 {
             font-size: 2em;
+            margin-top: 0;
             text-align: center;
         }
+        img {
+            border: solid 4px $white;
+            display: inline-block;
+            height: 192px;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+            width: 192px;
+        }
         ul {
+            display: inline-block;
             list-style-type: none;
             padding: 0;
+            margin: 0;
             li {
-                margin-bottom: .25em;
+                margin-bottom: .5em;
                 i {
-                    margin-right: 1em;
+                    margin: 0 1em;
+                }
+                &:last-child {
+                    margin: 0;
                 }
             }
         }
@@ -131,7 +153,9 @@ section {
     width: 50%;
     section {
         margin: 1em;
-        margin-top: 0;
+        &:last_child {
+            margin-bottom: 0;
+        }
     }
 }
 .left {
@@ -146,5 +170,39 @@ section {
     width: 40%;
     section {
         margin-left: .5em;
+    }
+}
+
+@media print {
+    html {
+        font-size: 10pt;
+    }
+    body {
+        color: black;
+        font-family: sans-serif;
+    }
+    a {
+        color: black;
+        &:hover {
+            color: black;
+        }
+    }
+    section {
+        &#personal-details {
+            img {
+                border: solid 1px #ddd;
+                height: 96px;
+                padding: 3px;
+                width: 96px;
+            }
+            ul {
+                li {
+                    margin-bottom: .25em;
+                }
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
