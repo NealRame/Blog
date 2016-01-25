@@ -1,6 +1,8 @@
 <section id="personal-details">
     <h1>{{name}}<br>{{job}}</h1>
+    {{#if picture}}
     <img src="{{picture}}"></img>
+    {{/if}}
     <ul>
         {{#if birth}}
         <li><i class="fa fa-birthday-cake fa-fw"></i>{{birth}}</li>
