@@ -23,7 +23,7 @@
         elements.each(function(index, elt) {
             var last_child = $('section', elt).last()[0];
 
-            $(last_child).css({});
+            $(elt).add(last_child).removeAttr('style');
             $(elt).height(max_height);
 
             var parent_bbox = elt.getBoundingClientRect();
