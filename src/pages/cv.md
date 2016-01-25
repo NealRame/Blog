@@ -80,9 +80,9 @@ skills:
         - Photoshop
         - Xcode
 hobbies:
-    - Les longues ballades en fôrets avec Hawaï
-    - grimper
+    - Les longues ballades en fôret avec mon chien Hawaï
     - coder
+    - grimper
     - les mathématiques
     - la photographie
     - la musique
