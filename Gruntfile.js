@@ -23,9 +23,10 @@ module.exports = function(grunt) {
         sass_sources_dir: '<%= sources_dir %>/sass',
         scripts_sources_dir: '<%= sources_dir %>/scripts',
         public_dir: 'public',
+        assets_dest_dir: '<%= public_dir %>/assets',
         pages_dest_dir: '<%= public_dir %>/pages',
-        style_dest_dir: '<%= public_dir %>/css',
-        scripts_dest_dir: '<%= public_dir %>/scripts',
+        style_dest_dir: '<%= assets_dest_dir %>/css',
+        scripts_dest_dir: '<%= assets_dest_dir %>/scripts',
         ///////////////////////////////////////////////////////////////////////
         // Configure tasks
         clean: {
