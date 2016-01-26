@@ -1,8 +1,9 @@
 ---
+layout: cv.html
 title: Julien Graziano - Curriculum vitæ
 description: Curriculum vitæ
 name: Julien Graziano
-picture: '../assets/pictures/photo.jpg'
+picture: '../assets/pictures/me.jpg'
 job: Développeur
 address: 45 Rue d'Amiens - 59000 Lille
 phone: '+33 6 75 12 29 57'

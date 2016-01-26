@@ -17,40 +17,47 @@ module.exports = function(grunt) {
         ///////////////////////////////////////////////////////////////////////
         // Variables
         sources_dir: 'src',
-        pages_layouts_dir: '<%= sources_dir %>/layouts',
-        pages_partials_dir: '<%= pages_layouts_dir %>/partials',
-        pages_sources_dir: '<%= sources_dir %>/pages',
+        content_dir: '<%= sources_dir %>/content',
+        pages_dir: '<%= content_dir %>/pages',
+        layouts_dir: '<%= sources_dir %>/layouts',
+        partials_dir: '<%= layouts_dir %>/partials',
         sass_sources_dir: '<%= sources_dir %>/sass',
         scripts_sources_dir: '<%= sources_dir %>/scripts',
         public_dir: 'public',
-        assets_dest_dir: '<%= public_dir %>/assets',
-        pages_dest_dir: '<%= public_dir %>/pages',
+        dest_dir: '<%= public_dir %>',
+        assets_dest_dir: '<%= dest_dir %>/assets',
         style_dest_dir: '<%= assets_dest_dir %>/css',
         scripts_dest_dir: '<%= assets_dest_dir %>/scripts',
         ///////////////////////////////////////////////////////////////////////
         // Configure tasks
         clean: {
-            'pages': ['<%= pages_dest_dir %>'],
+            'pages': [
+                '<%= dest_dir %>/index.html',
+                '<%= dest_dir %>/pages'
+            ],
             'scripts': ['<%= scripts_dest_dir %>'],
             'style': ['<%= style_dest_dir %>']
         },
         metalsmith: {
-            pages: {
+            content: {
                 options: {
+                    clean: false,
                     metadata: {
                     },
                     plugins: [
+                        {'metalsmith-collections': {
+                            pages: '<%= pages_dir %>/*.md'
+                        }},
                         {'metalsmith-markdown': {}},
                         {'metalsmith-layouts': {
-                            directory: '<%= pages_layouts_dir %>',
+                            directory: '<%= layouts_dir %>',
                             engine: 'handlebars',
-                            partials: '<%= pages_partials_dir %>',
-                            default: 'cv.html'
+                            partials: '<%= partials_dir %>'
                         }}
                     ]
                 },
-                src: '<%= pages_sources_dir %>',
-                dest: '<%= pages_dest_dir %>'
+                dest: '<%= dest_dir %>',
+                src: '<%= content_dir %>'
             }
         },
         sass: {
@@ -65,7 +72,10 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= sass_sources_dir %>',
-                    src: ['cv/style.scss'],
+                    src: [
+                        'style.scss',
+                        'cv/style.scss'
+                    ],
                     dest: '<%= style_dest_dir %>',
                     ext: '.css'
                 }]
@@ -84,12 +94,12 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            pages: {
+            content: {
                 files: [
-                    '<%= pages_sources_dir %>/**/*',
-                    '<%= pages_layouts_dir %>/**/*'
+                    '<%= content_dir %>/**/*',
+                    '<%= layouts_dir %>/**/*'
                 ],
-                tasks: ['metalsmith:pages'],
+                tasks: ['metalsmith:content'],
                 options: {
                     spawn: true
                 }
@@ -123,5 +133,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
-    grunt.registerTask('default', ['clean', 'metalsmith:pages', 'sass', 'uglify']);
+    grunt.registerTask('default', ['clean', 'metalsmith:content', 'sass', 'uglify']);
 };
