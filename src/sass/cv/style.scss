@@ -1,21 +1,14 @@
-$black: #2b3a42;
-$blue: #3f5765;
-$light-blue: #bdd4de;
-$white: #efefef;
-$red: #ff530d;
-$body-bg-color: $black;
-$body-font-color: $white;
+@import "settings";
 
-$section-border-color: $blue;
-$section-header-border-color: $section-border-color;
-$section-header-border-thickness: 2px;
+$cv_section-border-color: $blue;
+$cv_section-header-border-color: $cv_section-border-color;
+$cv_section-header-border-thickness: 2px;
 
-$h1-font-color: $blue;
-$h1-border-color: $h1-font-color;
-$h2-font-color: $light-blue;
+$cv_personal-picture-border-color: $white;
+$cv_personal-picture-border-thickness: 4px;
 
-$personal-picture-border-color: $white;
-$personal-picture-border-thickness: 4px;
+$cv_print-body-font-color: black;
+$cv_print-personal-picture-border-color: #ddd;
 
 html {
     font-size: 16pt;
@@ -28,7 +21,7 @@ body {
     margin: 0;
 }
 section {
-    border: solid 1px $section-border-color;
+    border: solid 1px $cv_section-border-color;
     border-radius: 8px;
     padding: .5em;
     margin: 1em;
@@ -51,9 +44,12 @@ section {
             color: $red;
         }
     }
+    ul {
+        margin: 0;
+    }
     &:not(#personal-details) {
         h1 {
-            border-bottom: solid $section-header-border-thickness $section-header-border-color;
+            border-bottom: solid $cv_section-header-border-thickness $cv_section-header-border-color;
         }
     }
     &#personal-details {
@@ -65,7 +61,7 @@ section {
             text-align: center;
         }
         img {
-            border: solid $personal-picture-border-thickness $personal-picture-border-color;
+            border: solid $cv_personal-picture-border-thickness $cv_personal-picture-border-color;
             display: inline-block;
             height: 192px;
             margin: 0;
@@ -184,27 +180,27 @@ section {
     }
 }
 
-$print-body-font-color: black;
-$print-personal-picture-border-color: #ddd;
-
 @media print {
     html {
         font-size: 10pt;
     }
     body {
-        color: $print-body-font-color;
+        color: $cv_print-body-font-color;
         font-family: sans-serif;
     }
     a {
-        color: $print-body-font-color;
+        color: $cv_print-body-font-color;
         &:hover {
-            color: $print-body-font-color;
+            color: $cv_print-body-font-color;
         }
     }
     section {
+        h2 {
+            margin-bottom: 0.33em;
+        }
         &#personal-details {
             img {
-                border: solid 1pt $print-personal-picture-border-color;
+                border: solid 1pt $cv_print-personal-picture-border-color;
                 height: 96px;
                 padding: 3px;
                 width: 96px;

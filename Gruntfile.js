@@ -56,13 +56,16 @@ module.exports = function(grunt) {
         sass: {
             compile: {
                 options: {
+                    includePaths: [
+                        '<%= sass_sources_dir %>'
+                    ],
                     outputStyle: is_dev() ? 'nested' : 'compressed',
                     sourceMap: is_dev()
                 },
                 files: [{
                     expand: true,
                     cwd: '<%= sass_sources_dir %>',
-                    src: ['style.scss'],
+                    src: ['cv/style.scss'],
                     dest: '<%= style_dest_dir %>',
                     ext: '.css'
                 }]
