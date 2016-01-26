@@ -13,6 +13,7 @@
     "grunt-metalsmith": "^1.0.0",
     "grunt-notify": "^0.4.3",
     "grunt-sass": "^1.1.0",
+    "metalsmith-collections": "^0.7.0",
     "metalsmith-layouts": "^1.4.2"
   },
   "scripts": {
