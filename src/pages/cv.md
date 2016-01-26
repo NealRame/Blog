@@ -23,7 +23,7 @@ employments:
     -
         from_year: 2005
         to_year: 2007
-        employer: Ingénieur d'étude au CNRS
+        employer: Ingénieur d'études au CNRS
         resume: Développement d'algorithmes de routage pour des réseaux de capteurs sans-fils au sein de l'équipe POPS sous la direction du professeur David Simplot-Ryl.
     -
         from_year: 2007
