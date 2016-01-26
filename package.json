@@ -40,6 +40,7 @@
         1,
         "multi-line"
       ],
+      "key-spacing": 0,
       "new-cap": [
         1,
         {
@@ -47,6 +48,7 @@
           "capIsNew": false
         }
       ],
+      "no-multi-spaces": 0,
       "quotes": [
         1,
         "single"
