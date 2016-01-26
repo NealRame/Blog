@@ -79,6 +79,8 @@ skills:
         - Atom
         - Photoshop
         - Xcode
+    Langues:
+        - Anglais intermédiaire
 hobbies:
     - Les longues ballades en fôret avec mon chien Hawaï
     - coder
