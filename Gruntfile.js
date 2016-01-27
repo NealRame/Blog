@@ -16,6 +16,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         ///////////////////////////////////////////////////////////////////////
         // Variables
+        // sources variables
         sources_dir: 'src',
         content_dir: '<%= sources_dir %>/content',
         pages_dir: '<%= content_dir %>/pages',
@@ -24,6 +25,7 @@ module.exports = function(grunt) {
         partials_dir: '<%= layouts_dir %>/partials',
         sass_sources_dir: '<%= sources_dir %>/sass',
         scripts_sources_dir: '<%= sources_dir %>/scripts',
+        // destination variables
         public_dir: 'public',
         dest_dir: '<%= public_dir %>',
         assets_dest_dir: '<%= dest_dir %>/assets',
