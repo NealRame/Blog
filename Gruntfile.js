@@ -22,46 +22,45 @@ const assets_dest_dir = path.join(dest_dir, 'assets');
 const style_dest_dir = path.join(assets_dest_dir, 'css');
 const scripts_dest_dir = path.join(assets_dest_dir, 'scripts');
 
+function is_dev() {
+    switch (process.env.NODE_ENV) {
+    case 'development':
+    case 'dev':
+        return true;
+    default:
+        return false;
+    }
+}
+
+function is_prod() {
+    return !is_dev()
+}
+
+function create_target(app, apps_source_dir, apps_dest_dir) {
+    const sources_dir = path.join(apps_source_dir, app);
+    const dest_dir = path.join(apps_dest_dir, app);
+    const options = Object.assign(
+        {browserifyOptions: {debug: true}},
+        {transform: [['babelify', {}]]},
+        is_prod() ? {plugin: [['minifyify', {map: false, minify: true}]]} : {}
+    );
+    return _.object([[app, {
+        options,
+        src: [`${sources_dir}/main.js`],
+        dest: `${dest_dir}/app.js`
+    }]]);
+}
+
+function create_browserify_targets(apps_sources_dir, apps_dest_dir) {
+    return fs.readdirSync(apps_sources_dir)
+        .filter((entry) => fs.statSync(path.join(apps_sources_dir, entry)).isDirectory())
+        .reduce((targets, app) => Object.assign(
+            targets,
+            create_target(app, apps_sources_dir, apps_dest_dir)
+        ), {});
+}
+
 module.exports = function(grunt) {
-
-    function is_dev() {
-        switch (process.env.NODE_ENV) {
-        case 'development':
-        case 'dev':
-            return true;
-        default:
-            return false;
-        }
-    }
-
-    function is_prod() {
-        return !is_dev()
-    }
-
-    function create_target(app, apps_source_dir, apps_dest_dir) {
-        const sources_dir = path.join(apps_source_dir, app);
-        const dest_dir = path.join(apps_dest_dir, app);
-        const options = Object.assign(
-            {browserifyOptions: {debug: true}},
-            {transform: [['babelify', {}]]},
-            is_prod() ? {plugin: [['minifyify', {map: false, minify: true}]]} : {}
-        );
-        return _.object([[app, {
-            options,
-            src: [`${sources_dir}/main.js`],
-            dest: `${dest_dir}/app.js`
-        }]]);
-    }
-
-    function create_browserify_targets(apps_sources_dir, apps_dest_dir) {
-        return fs.readdirSync(apps_sources_dir)
-            .filter((entry) => fs.statSync(path.join(apps_sources_dir, entry)).isDirectory())
-            .reduce((targets, app) => Object.assign(
-                targets,
-                create_target(app, apps_sources_dir, apps_dest_dir)
-            ), {});
-    }
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         ///////////////////////////////////////////////////////////////////////
