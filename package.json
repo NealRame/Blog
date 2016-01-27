@@ -7,6 +7,7 @@
   "devDependencies": {
     "eslint": "^1.10.3",
     "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-contrib-watch": "^0.6.1",
@@ -15,7 +16,8 @@
     "grunt-sass": "^1.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-discover-helpers": "^0.1.0",
-    "metalsmith-layouts": "^1.4.2"
+    "metalsmith-layouts": "^1.4.2",
+    "minifyify": "^7.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
