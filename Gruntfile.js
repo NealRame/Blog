@@ -162,7 +162,7 @@ module.exports = function(grunt) {
                 files: [
                     '<%= scripts_sources_dir %>/**/*.js'
                 ],
-                tasks: ['uglify:app'],
+                tasks: ['browserify'],
                 options: {
                     spawn: true
                 }
@@ -185,7 +185,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-metalsmith');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-browserify');
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
-    grunt.registerTask('default', ['clean', 'metalsmith:content', 'sass', 'uglify']);
+    grunt.registerTask('default', ['clean', 'metalsmith:content', 'sass', 'browserify']);
 };
