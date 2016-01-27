@@ -141,7 +141,7 @@ module.exports = function(grunt) {
                     '<%= helpers_dir %>/**/*.js',
                     '<%= layouts_dir %>/**/*.html'
                 ],
-                tasks: ['metalsmith:content'],
+                tasks: ['metalsmith'],
                 options: {
                     spawn: true
                 }
@@ -176,5 +176,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
-    grunt.registerTask('default', ['clean', 'metalsmith:content', 'sass', 'browserify']);
+    grunt.registerTask('default', ['clean', 'metalsmith', 'sass', 'browserify']);
 };
