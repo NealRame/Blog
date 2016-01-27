@@ -43,6 +43,7 @@ module.exports = function(grunt) {
         const dest_dir = path.join(apps_dest_dir, app);
         const options = Object.assign(
             {browserifyOptions: {debug: true}},
+            {transform: [['babelify', {}]]},
             is_prod() ? {plugin: [['minifyify', {map: false, minify: true}]]} : {}
         );
         return _.object([[app, {
@@ -87,6 +88,7 @@ module.exports = function(grunt) {
             'scripts': ['<%= scripts_dest_dir %>'],
             'style': ['<%= style_dest_dir %>']
         },
+        browserify: create_browserify_targets(scripts_sources_dir, scripts_dest_dir),
         metalsmith: {
             content: {
                 options: {
@@ -133,7 +135,6 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        browserify: create_browserify_targets(scripts_sources_dir, scripts_dest_dir),
         watch: {
             content: {
                 files: [
