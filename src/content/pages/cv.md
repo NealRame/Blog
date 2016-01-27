@@ -1,5 +1,7 @@
 ---
 layout: cv.html
+collection: pages
+page: cv
 title: Julien Graziano - Curriculum vitæ
 description: Curriculum vitæ
 name: Julien Graziano
