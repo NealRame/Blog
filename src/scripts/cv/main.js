@@ -1,11 +1,10 @@
 global.$ = global.jQuery = require('jquery');
 
 function equalize_picture() {
-    var section = $('#personal_details');
-    var picture = $('img', section);
-    var picture_margin = picture.outerHeight() - picture.innerHeight();
-    var details_height = $('ul', section).height() - picture_margin;
-
+    const section = $('#personal_details');
+    const picture = $('img', section);
+    const picture_margin = picture.outerHeight() - picture.innerHeight();
+    const details_height = $('ul', section).height() - picture_margin;
     picture.removeAttr('style');
     if (details_height > picture.height()) {
         picture.height(details_height).width(details_height);
@@ -13,22 +12,20 @@ function equalize_picture() {
 }
 
 function equalize_columns() {
-    var elements = $('.left, .right');
-    var max_height = Math.max.apply(
+    const elements = $('.left, .right');
+    const max_height = Math.max.apply(
         null,
-        elements.map(function(index, elt) {
-            return $(elt).height();
-        })
+        elements.map((index, elt) => $(elt).height())
     );
-    elements.each(function(index, elt) {
-        var last_child = $('section', elt).last()[0];
+    elements.each((index, elt) => {
+        const last_child = $('section', elt).last()[0];
 
         $(elt).add(last_child).removeAttr('style');
         $(elt).height(max_height);
 
-        var parent_bbox = elt.getBoundingClientRect();
-        var last_child_bbox = last_child.getBoundingClientRect();
-        var d = parent_bbox.bottom - last_child_bbox.bottom;
+        const parent_bbox = elt.getBoundingClientRect();
+        const last_child_bbox = last_child.getBoundingClientRect();
+        const d = parent_bbox.bottom - last_child_bbox.bottom;
 
         $(last_child).height(last_child_bbox.height + d);
     });
@@ -40,7 +37,7 @@ function equalize() {
 }
 
 function before_print() {
-    $('.left, .right').each(function(index, elt) {
+    $('.left, .right').each((index, elt) => {
         $(elt).add($('section', elt).last()[0]).removeAttr('style');
     });
     equalize_picture();
@@ -51,7 +48,7 @@ $(window)
     .on('resize', equalize);
 
 if (window.matchMedia) {
-    window.matchMedia('print').addListener(function(mql) {
+    window.matchMedia('print').addListener((mql) => {
         if (mql.matches) {
             before_print();
         } else {
