@@ -134,18 +134,6 @@ module.exports = function(grunt) {
             }
         },
         browserify: create_browserify_targets(scripts_sources_dir, scripts_dest_dir),
-        uglify: {
-            options: {
-                sourceMap: is_dev()
-            },
-            app: {
-                files: {
-                    '<%= scripts_dest_dir %>/app.min.js': [
-                        '<%= scripts_sources_dir %>/main.js'
-                    ]
-                }
-            }
-        },
         watch: {
             content: {
                 files: [
