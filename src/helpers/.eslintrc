@@ -1,0 +1,10 @@
+{
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "rules": {
+        "key-spacing": 0,
+        "no-multi-spaces": 0
+    }
+}
