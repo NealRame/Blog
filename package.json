@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "^1.10.3",
+    "foundation-sites": "^6.1.2",
     "grunt": "^0.4.5",
     "grunt-browserify": "^4.0.1",
     "grunt-contrib-clean": "^0.7.0",
@@ -14,6 +15,7 @@
     "grunt-metalsmith": "^1.0.0",
     "grunt-notify": "^0.4.3",
     "grunt-sass": "^1.1.0",
+    "jquery": "^2.2.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-discover-helpers": "^0.1.0",
     "metalsmith-layouts": "^1.4.2",
