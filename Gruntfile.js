@@ -20,6 +20,7 @@ module.exports = function(grunt) {
         content_dir: '<%= sources_dir %>/content',
         pages_dir: '<%= content_dir %>/pages',
         layouts_dir: '<%= sources_dir %>/layouts',
+        helpers_dir: '<%= sources_dir %>/helpers',
         partials_dir: '<%= layouts_dir %>/partials',
         sass_sources_dir: '<%= sources_dir %>/sass',
         scripts_sources_dir: '<%= sources_dir %>/scripts',
@@ -45,14 +46,17 @@ module.exports = function(grunt) {
                     metadata: {
                     },
                     plugins: [
-                        {'metalsmith-collections': {
-                            pages: '<%= pages_dir %>/*.md'
+                        {'metalsmith-discover-helpers': {
+                            directory: '<%= helpers_dir %>',
+                            pattern: /\.js$/
                         }},
+                        {'metalsmith-collections': {}},
                         {'metalsmith-markdown': {}},
                         {'metalsmith-layouts': {
                             directory: '<%= layouts_dir %>',
                             engine: 'handlebars',
-                            partials: '<%= partials_dir %>'
+                            partials: '<%= partials_dir %>',
+                            default: 'layout.html'
                         }}
                     ]
                 },
@@ -96,8 +100,9 @@ module.exports = function(grunt) {
         watch: {
             content: {
                 files: [
-                    '<%= content_dir %>/**/*',
-                    '<%= layouts_dir %>/**/*'
+                    '<%= content_dir %>/**/*.md',
+                    '<%= helpers_dir %>/**/*.js',
+                    '<%= layouts_dir %>/**/*.html'
                 ],
                 tasks: ['metalsmith:content'],
                 options: {
