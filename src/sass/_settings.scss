@@ -1,3 +1,11 @@
+// Custom settings
+
+// Sass utilities
+@import 'util/util';
+
+// Global variables and styles
+@import 'global';
+
 $black: #2b3a42;
 $blue: #3f5765;
 $light-blue: #bdd4de;
