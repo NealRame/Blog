@@ -117,7 +117,8 @@ module.exports = function(grunt) {
             compile: {
                 options: {
                     includePaths: [
-                        '<%= sass_sources_dir %>'
+                        '<%= sass_sources_dir %>',
+                        'node_modules/foundation-sites/scss'
                     ],
                     outputStyle: is_dev() ? 'nested' : 'compressed',
                     sourceMap: is_dev()
