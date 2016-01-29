@@ -1,5 +1,29 @@
 @import "settings";
 
+$topbar-background: red;
+
+@import "global";
+@import 'grid/grid';
+@import 'typography/typography';
+@import 'components/button';
+@import 'components/dropdown-menu';
+@import 'components/dropdown';
+@import 'components/menu';
+@import 'components/sticky';
+@import 'components/title-bar';
+@import 'components/top-bar';
+@import 'components/visibility';
+
+@include foundation-button;
+@include foundation-dropdown-menu;
+@include foundation-dropdown;
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-menu;
+@include foundation-sticky;
+@include foundation-typography;
+@include foundation-visibility-classes;
+
 html {
     font-size: 16pt;
 }
@@ -12,4 +36,9 @@ body {
 }
 #site-content-wrapper {
     height: 100%;
+}
+#site-menu-wrapper {
+    width: 100%;
+    @include foundation-title-bar;
+    @include top-bar-container;
 }
