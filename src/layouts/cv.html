@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{title}}</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="{{description}}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:700,400' type='text/css'>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100' type='text/css'>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/cv/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="/assets/scripts/cv/app.js"></script>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{description}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:700,400' type='text/css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/cv/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/assets/scripts/cv/app.js"></script>
 </head>
 <body>
-    {{> menu}}
-    {{> cv-personal-details}}
-    <div class="left">
-        {{> cv-education}}
-        {{> cv-employments}}
-        {{> cv-interests}}
-    </div>
-    <div class="right">
-        {{> cv-skills}}
+    <div id="site-content-wrapper" data-sticky-container>
+        {{> menu}} {{> cv-personal-details}} {{> cv-education}} {{> cv-employments}} {{> cv-interests}} {{> cv-skills}}
     </div>
 </body>
 </html>

@@ -1,3 +1,18 @@
-<nav>
-    {{{menu_entry pages page}}}
-</nav>
+<div id="site-menu" data-sticky data-sticky-on="small">
+    <div class="title-bar" data-responsive-toggle="site-nav" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Neal.Rame.</div>
+    </div>
+    <nav id="site-nav" class="top-bar">
+        <div class="top-bar-left">
+            <div class="top-bar-title">
+                <span class="show-for-medium">
+                    <strong>Neal.Rame.</strong>
+                </span>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            {{{menu_entry pages page}}}
+        </div>
+    </nav>
+</div>

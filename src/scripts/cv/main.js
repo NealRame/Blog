@@ -1,4 +1,5 @@
 global.$ = global.jQuery = require('jquery');
+require('foundation-sites');
 
 function equalize_picture() {
     const section = $('#personal_details');
@@ -44,7 +45,10 @@ function before_print() {
 }
 
 $(window)
-    .load(equalize)
+    .load(() => {
+        $(document).foundation();
+        equalize();
+    })
     .on('resize', equalize);
 
 if (window.matchMedia) {
