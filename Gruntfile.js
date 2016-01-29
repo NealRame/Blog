@@ -14,13 +14,13 @@ const layouts_dir = path.join(sources_dir, 'layouts');
 const helpers_dir = path.join(sources_dir, 'helpers');
 const partials_dir = path.join(layouts_dir, 'partials');
 const sass_sources_dir = path.join(sources_dir, 'sass');
-const scripts_sources_dir = path.join(sources_dir, 'scripts');
+const applications_sources_dir = path.join(sources_dir, 'scripts', 'apps');
 
 // destinations variables
 const dest_dir = 'public';
 const assets_dest_dir = path.join(dest_dir, 'assets');
 const style_dest_dir = path.join(assets_dest_dir, 'css');
-const scripts_dest_dir = path.join(assets_dest_dir, 'scripts');
+const applications_dest_dir = path.join(assets_dest_dir, 'scripts');
 
 function is_dev() {
     switch (process.env.NODE_ENV) {
@@ -72,11 +72,11 @@ module.exports = function(grunt) {
         helpers_dir,
         partials_dir,
         sass_sources_dir,
-        scripts_sources_dir,
+        applications_sources_dir,
         dest_dir,
         assets_dest_dir,
         style_dest_dir,
-        scripts_dest_dir,
+        applications_dest_dir,
         ///////////////////////////////////////////////////////////////////////
         // Configure tasks
         clean: {
@@ -84,10 +84,13 @@ module.exports = function(grunt) {
                 '<%= dest_dir %>/index.html',
                 '<%= dest_dir %>/pages'
             ],
-            'scripts': ['<%= scripts_dest_dir %>'],
+            'scripts': ['<%= applications_dest_dir %>'],
             'style': ['<%= style_dest_dir %>']
         },
-        browserify: create_browserify_targets(scripts_sources_dir, scripts_dest_dir),
+        browserify: create_browserify_targets(
+            applications_sources_dir,
+            applications_dest_dir
+        ),
         metalsmith: {
             content: {
                 options: {
@@ -149,7 +152,7 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: [
-                    '<%= scripts_sources_dir %>/**/*.js'
+                    '<%= applications_sources_dir %>/**/*.js'
                 ],
                 tasks: ['browserify'],
                 options: {
