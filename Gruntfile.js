@@ -14,13 +14,14 @@ const layouts_dir = path.join(sources_dir, 'layouts');
 const helpers_dir = path.join(sources_dir, 'helpers');
 const partials_dir = path.join(layouts_dir, 'partials');
 const sass_sources_dir = path.join(sources_dir, 'sass');
-const applications_sources_dir = path.join(sources_dir, 'scripts', 'apps');
+const js_sources_dir = path.join(sources_dir, 'js');
+const applications_sources_dir = path.join(js_sources_dir, 'apps');
 
 // destinations variables
 const dest_dir = 'public';
 const assets_dest_dir = path.join(dest_dir, 'assets');
 const style_dest_dir = path.join(assets_dest_dir, 'css');
-const applications_dest_dir = path.join(assets_dest_dir, 'scripts');
+const applications_dest_dir = path.join(assets_dest_dir, 'js');
 
 function is_dev() {
     switch (process.env.NODE_ENV) {
