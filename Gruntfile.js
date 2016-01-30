@@ -157,7 +157,7 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: [
-                    '<%= applications_sources_dir %>/**/*.js'
+                    '<%= js_sources_dir %>/**/*.js'
                 ],
                 tasks: ['browserify'],
                 options: {
