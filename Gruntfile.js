@@ -41,7 +41,10 @@ function create_target(app, apps_source_dir, apps_dest_dir) {
     const sources_dir = path.join(apps_source_dir, app);
     const dest_dir = path.join(apps_dest_dir, app);
     const options = Object.assign(
-        {browserifyOptions: {debug: true}},
+        {browserifyOptions: {
+            debug: true,
+            paths: ['node_modules', js_sources_dir]
+        }},
         {transform: [['babelify', {}]]},
         is_prod() ? {plugin: [['minifyify', {map: false, minify: true}]]} : {}
     );
@@ -73,6 +76,7 @@ module.exports = function(grunt) {
         helpers_dir,
         partials_dir,
         sass_sources_dir,
+        js_sources_dir,
         applications_sources_dir,
         dest_dir,
         assets_dest_dir,
