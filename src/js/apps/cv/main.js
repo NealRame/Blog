@@ -1,5 +1,5 @@
-global.$ = global.jQuery = require('jquery');
-require('foundation-sites');
+const $ = require('jquery');
+const foundation = require('foundation');
 
 function equalize_picture() {
     const section = $('#personal_details');
@@ -46,7 +46,7 @@ function before_print() {
 
 $(window)
     .load(() => {
-        $(document).foundation();
+        foundation();
         equalize();
     })
     .on('resize', equalize);
