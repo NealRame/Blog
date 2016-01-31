@@ -1,6 +1,5 @@
 @import "settings";
 
-$topbar-background: red;
 @mixin shadow(
     $horizontal: 0px,
     $vertical: 0px,
@@ -20,6 +19,14 @@ $header-sizes: (
     'medium': ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem),
     'large':  ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem)
 );
+
+$topbar-background: $blue;
+$topbar-shadow-vertical: 2px;
+$topbar-shadow-blur-radius: 4px;
+$topbar-shadow-color: darken($topbar-background, 15);
+$topbar-shadow-geometry: 0px 2px 4px 0px;
+$topbar-item-color: $body-font-color;
+$topbar-item-active-color: $red;
 
 @import "global";
 @import 'grid/grid';
@@ -62,7 +69,41 @@ h2 {
     height: 100%;
 }
 #site-menu-wrapper {
+    font-weight: 700;
+    font-family: $header-font-family;
+    margin: 0;
     width: 100%;
     @include foundation-title-bar;
     @include top-bar-container;
+    padding: 0;
+    .top-bar {
+        @include shadow();
+        transition: box-shadow .25s ease-in-out;
+        .menu {
+            text-align: center;
+            li {
+                display: inline-block;
+                float: none;
+                a {
+                    color: $topbar-item-color;
+                }
+                &.active {
+                    a {
+                        color: $topbar-item-active-color;
+                    }
+                }
+            }
+        }
+    }
+    &.is-stuck {
+        .top-bar {
+            @include shadow(
+                $vertical: $topbar-shadow-vertical,
+                $blur-radius: $topbar-shadow-blur-radius,
+                $color: $topbar-shadow-color
+            );
+            transition: box-shadow .25s ease-in-out;
+        }
+    }
+}
 }
