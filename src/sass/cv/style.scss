@@ -14,19 +14,7 @@ section {
     border: solid 1px $cv_section-border-color;
     border-radius: 8px;
     padding: .5em;
-    margin: 1em;
-    margin-bottom: 0;
-    h1 {
-        color: $h1-font-color;
-        font-family: 'Oswald', sans-serif;
-        font-size: 1.75em;
-        font-weight: 700;
-    }
-    h2 {
-        color: $h2-font-color;
-        font-size: 1.25em;
-        margin-left: 1em;
-    }
+    margin-bottom: 1em;
     a {
         color: $body-font-color;
         text-decoration: none;

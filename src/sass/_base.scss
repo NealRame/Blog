@@ -1,6 +1,12 @@
 @import "settings";
 
 $topbar-background: red;
+$header-font-family: 'Oswald', sans-serif;
+$header-sizes: (
+    'small':  ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem),
+    'medium': ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem),
+    'large':  ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem)
+);
 
 @import "global";
 @import 'grid/grid';
@@ -33,6 +39,14 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     margin: 0;
+}
+h1 {
+    color: $h1-font-color;
+    font-weight: 700;
+}
+h2 {
+    color: $h2-font-color;
+    margin-left: 1em;
 }
 #site-content-wrapper {
     height: 100%;
