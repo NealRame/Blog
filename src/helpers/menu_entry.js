@@ -14,5 +14,5 @@ module.exports = function(entries, current_page) {
             ? templates.active(context)
             : templates.unactive(context);
     }).join('');
-    return `<ul class="dropdown menu" data-dropdown-menu>${items}</ul>`;
+    return `<ul class="menu">${items}</ul>`;
 }
