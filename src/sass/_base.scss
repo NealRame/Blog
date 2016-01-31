@@ -69,8 +69,8 @@ h2 {
     height: 100%;
 }
 #site-menu-wrapper {
-    font-weight: 700;
     font-family: $header-font-family;
+    font-weight: 700;
     margin: 0;
     width: 100%;
     @include foundation-title-bar;
