@@ -1,7 +1,7 @@
 const Handlebars = require('handlebars');
 
 const templates = {
-    active: Handlebars.compile('<li class="active">{{{content}}}</li>'),
+    active: Handlebars.compile('<li class="active"><a>{{{content}}}</a></li>'),
     unactive: Handlebars.compile('<li><a href="{{link}}">{{{content}}}</a></li>')
 };
 
