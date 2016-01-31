@@ -45,7 +45,9 @@ function create_target(app, apps_source_dir, apps_dest_dir) {
             debug: true,
             paths: ['node_modules', js_sources_dir]
         }},
-        {transform: [['babelify', {}]]},
+        {transform: [['babelify', {
+            presets: ['es2015']
+        }]]},
         is_prod() ? {plugin: [['minifyify', {map: false, minify: true}]]} : {}
     );
     return _.object([[app, {
