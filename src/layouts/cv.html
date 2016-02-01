@@ -15,11 +15,21 @@
 <body>
     <div id="site-content-wrapper" data-sticky-container>
         {{> menu}}
-        {{> cv-personal-details}}
-        {{> cv-education}}
-        {{> cv-employments}}
-        {{> cv-interests}}
-        {{> cv-skills}}
+        <div class="row">
+            <div class="columns small-12">
+                {{> cv-personal-details}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns small-12 medium-6">
+                {{> cv-education}}
+                {{> cv-employments}}
+                {{> cv-interests}}
+            </div>
+            <div class="columns small-12 medium-6">
+                {{> cv-skills}}
+            </div>
+        </div>
     </div>
 </body>
 </html>
