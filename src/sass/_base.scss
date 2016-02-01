@@ -106,4 +106,17 @@ h2 {
         }
     }
 }
+#splash {
+    background-color: $topbar-background-color;
+    margin-bottom: 1em;
+    height: 16rem;
+    &::after {
+        content: 'Neal.Rame.';
+        font-family: 'Oswald';
+        font-weight: 700;
+        line-height: 16rem;
+        font-size: 8rem;
+        margin-left: .25em;
+        text-shadow: 0px 0px 8px transparentize($topbar-item-color, .05);
+    }
 }
