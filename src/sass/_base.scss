@@ -20,10 +20,11 @@ $header-sizes: (
     'large':  ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem)
 );
 
-$topbar-background: $blue;
+$topbar-background: $transparent;
+$topbar-background-color: $blue;
 $topbar-shadow-vertical: 2px;
 $topbar-shadow-blur-radius: 4px;
-$topbar-shadow-color: darken($topbar-background, 15);
+$topbar-shadow-color: darken($topbar-background-color, 15);
 $topbar-shadow-geometry: 0px 2px 4px 0px;
 $topbar-item-color: $body-font-color;
 $topbar-item-active-color: $red;
@@ -78,7 +79,8 @@ h2 {
     padding: 0;
     .top-bar {
         @include shadow();
-        transition: box-shadow .25s ease-in-out;
+        background-color: $topbar-background-color;
+        transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
         .menu {
             text-align: center;
             li {
@@ -102,7 +104,8 @@ h2 {
                 $blur-radius: $topbar-shadow-blur-radius,
                 $color: $topbar-shadow-color
             );
-            transition: box-shadow .25s ease-in-out;
+            background-color: transparentize($topbar-background-color, .05);
+            transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
         }
     }
 }
