@@ -1,0 +1,12 @@
+@mixin shadow(
+    $horizontal: 0px,
+    $vertical: 0px,
+    $blur-radius: 0px,
+    $spread-radius: 0px,
+    $color: black) {
+    $shadow-values: $horizontal $vertical $blur-radius $spread-radius $color;
+    -moz-box-shadow: $shadow-values;
+    -o-box-shadow: $shadow-values;
+    -webkit-box-shadow: $shadow-values;
+    box-shadow: $shadow-values;
+}

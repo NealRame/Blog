@@ -7,15 +7,44 @@
 @import 'global';
 
 $transparent: rgba(0, 0, 0, 0);
-$black: #2b3a42;
-$blue: #3f5765;
-$light-blue: #bdd4de;
-$white: #efefef;
-$red: #ff530d;
+$red: #DC3522;
+$white: #D9CB9E;
+$blue: #374140;
+$gray: #2A2C2B;
+$black: #1E1E20;
 
 $body-bg-color: $black;
 $body-font-color: $white;
 
+$header-font-family: 'Oswald', sans-serif;
+$header-sizes: (
+    'small':  ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem),
+    'medium': ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem),
+    'large':  ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem)
+);
+
 $h1-font-color: $blue;
 $h1-border-color: $h1-font-color;
-$h2-font-color: $light-blue;
+
+$h2-font-color: $blue;
+
+///////////////////////////////////////////////////////////////////////////////
+// Top bar variables
+$topbar-background: $transparent;
+$topbar-background-color: $red;
+$topbar-shadow-vertical: 2px;
+$topbar-shadow-blur-radius: 4px;
+$topbar-shadow-color: darken($topbar-background-color, 40);
+$topbar-shadow-geometry: 0px 2px 4px 0px;
+$topbar-item-color: $body-font-color;
+$topbar-item-active-color: $black;
+
+///////////////////////////////////////////////////////////////////////////////
+// CV variables
+$cv_section-border-color: $black;
+$cv_section-header-border-color: $red;
+$cv_section-header-border-thickness: 2px;
+$cv_personal-picture-border-color: $black;
+$cv_personal-picture-border-thickness: 4px;
+$cv_print-body-font-color: black;
+$cv_print-personal-picture-border-color: #ddd;
