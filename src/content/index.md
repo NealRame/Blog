@@ -1,6 +1,7 @@
 ---
 collection: pages
 page: /
+show-splash: true
 title: NealRame
 description: NealRame's site
 ---
