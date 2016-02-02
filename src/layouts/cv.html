@@ -1,35 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{title}}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{description}}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:700,400' type='text/css'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/cv/style.css">
-    <script src="/assets/js/cv/app.js"></script>
-</head>
-<body>
-    <div id="site-content-wrapper" data-sticky-container>
-        {{> menu}}
-        <div class="row">
-            <div class="columns small-12">
-                {{> cv-personal-details}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="columns small-12 medium-6">
-                {{> cv-education}}
-                {{> cv-employments}}
-                {{> cv-interests}}
-            </div>
-            <div class="columns small-12 medium-6">
-                {{> cv-skills}}
-            </div>
+{{> begin-page}}
+    <div class="row">
+        <div class="columns small-12">
+            {{> cv-personal-details}}
         </div>
     </div>
-</body>
-</html>
+    <div class="row">
+        <div class="columns small-12 medium-6">
+            {{> cv-education}}
+            {{> cv-employments}}
+            {{> cv-interests}}
+        </div>
+        <div class="columns small-12 medium-6">
+            {{> cv-skills}}
+        </div>
+    </div>
+{{> end-page}}
