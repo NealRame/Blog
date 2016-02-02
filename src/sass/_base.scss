@@ -50,6 +50,9 @@ h2 {
                 float: none;
                 a {
                     color: $topbar-item-color;
+                    &:hover {
+                        color: $topbar-item-hover-color;
+                    }
                 }
                 &.active {
                     a {
