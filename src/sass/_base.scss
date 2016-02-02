@@ -23,6 +23,9 @@
 html {
     font-size: 16pt;
 }
+body {
+    font-weight: $body-font-weight;
+}
 h1 {
     font-weight: 700;
 }
