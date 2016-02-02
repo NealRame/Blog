@@ -23,23 +23,13 @@
 html {
     font-size: 16pt;
 }
-body {
-    background-color: $body-bg-color;
-    color: $body-font-color;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
-    margin: 0;
-}
 h1 {
-    color: $h1-font-color;
     font-weight: 700;
 }
 h2 {
-    color: $h2-font-color;
     margin-left: 1em;
 }
 #site-content-wrapper {
-    height: 100%;
 }
 #site-menu-wrapper {
     font-family: $header-font-family;

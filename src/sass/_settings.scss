@@ -1,32 +1,37 @@
-// Custom settings
-
-// Sass utilities
 @import 'util/util';
-
-// Global variables and styles
 @import 'global';
 
+///////////////////////////////////////////////////////////////////////////////
+// Colors variables
 $transparent: rgba(0, 0, 0, 0);
-$red: #DC3522;
-$white: #D9CB9E;
-$blue: #374140;
-$gray: #2A2C2B;
-$black: #1E1E20;
+$black: #1e1e20;
+// $blue: #374140;
+// $blue: #637473;
+$blue: #819493;
+$gray: #2a2c2b;
+$red: #dc3522;
+$white: #d9cb9e;
 
-$body-bg-color: $black;
+///////////////////////////////////////////////////////////////////////////////
+// Grid variables
+$grid-row-width: 1024px;
+
+///////////////////////////////////////////////////////////////////////////////
+// Body variables
+$body-background: $black;
+$body-font-family: 'Roboto', sans-serif;
+$body-font-weight: 100;
 $body-font-color: $white;
 
+///////////////////////////////////////////////////////////////////////////////
+// Headers variables
 $header-font-family: 'Oswald', sans-serif;
+$header-color: $blue;
 $header-sizes: (
     'small':  ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem),
     'medium': ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem),
     'large':  ('h1': 1.75rem, 'h2': 1.25rem, 'h3': 1rem)
 );
-
-$h1-font-color: $blue;
-$h1-border-color: $h1-font-color;
-
-$h2-font-color: $blue;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Top bar variables
@@ -38,6 +43,7 @@ $topbar-shadow-color: darken($topbar-background-color, 40);
 $topbar-shadow-geometry: 0px 2px 4px 0px;
 $topbar-item-color: $body-font-color;
 $topbar-item-active-color: $black;
+$topbar-item-hover-color: $blue;
 
 ///////////////////////////////////////////////////////////////////////////////
 // CV variables
