@@ -42,6 +42,11 @@ h2 {
     @include foundation-title-bar;
     @include top-bar-container;
     padding: 0;
+    .title-bar {
+        a[data-toggle] {
+            color: $titlebar-toggle-menu-button-color;
+        }
+    }
     .top-bar {
         @include shadow();
         background-color: $topbar-background-color;
