@@ -55,8 +55,10 @@ h2 {
         .menu {
             text-align: center;
             li {
-                display: inline-block;
-                float: none;
+                display: block;
+                @include breakpoint(medium) {
+                    display: inline-block;
+                }
                 a {
                     color: $topbar-item-color;
                     &:hover {
