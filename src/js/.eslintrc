@@ -6,6 +6,7 @@
     },
     "globals": {
         "global": false,
-        "$": false
+        "$": false,
+        "Foundation": false
     }
 }
