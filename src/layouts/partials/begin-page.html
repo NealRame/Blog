@@ -4,8 +4,4 @@
 <body>
     <div id="site-content-wrapper" data-sticky-container>
         {{> menu}}
-        {{#if show-splash}}
-        <div id="splash"></div>
-        {{else}}
-        <div id="content-spacer"></div>
-        {{/if}}
+        <div id="content-spacer" {{#if show-splash}}class="splash"{{/if}}></div>
