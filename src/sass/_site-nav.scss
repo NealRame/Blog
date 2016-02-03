@@ -1,0 +1,63 @@
+@import 'settings';
+@import 'mixins';
+@import 'components/menu';
+@import 'components/sticky';
+@import 'components/title-bar';
+@import 'components/top-bar';
+
+@include foundation-menu;
+@include foundation-sticky;
+
+#site-menu-wrapper {
+    font-family: $header-font-family;
+    font-weight: 700;
+    margin: 0;
+    width: 100%;
+    @include foundation-title-bar;
+    @include top-bar-container;
+    padding: 0;
+    .title-bar {
+        a[data-toggle] {
+            color: $titlebar-toggle-menu-button-color;
+            margin-right: .5rem;
+        }
+    }
+    .top-bar {
+        @include shadow();
+        background-color: $topbar-background-color;
+        transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
+        min-height: $topbar-height;
+        .menu {
+            text-align: center;
+            line-height: 1.25rem;
+            li {
+                display: block;
+                @include breakpoint(medium) {
+                    display: inline-block;
+                }
+                a {
+                    color: $topbar-item-color;
+                    &:hover {
+                        color: $topbar-item-hover-color;
+                    }
+                }
+                &.active {
+                    a {
+                        color: $topbar-item-active-color;
+                    }
+                }
+            }
+        }
+    }
+    &.is-stuck {
+        .top-bar {
+            @include shadow(
+                $vertical: $topbar-shadow-vertical,
+                $blur-radius: $topbar-shadow-blur-radius,
+                $color: $topbar-shadow-color
+            );
+            background-color: transparentize($topbar-background-color, .05);
+            transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
+        }
+    }
+}

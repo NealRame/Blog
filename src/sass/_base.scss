@@ -1,24 +1,13 @@
-@import "settings";
-@import "mixins";
+@import 'settings';
 
-@import "global";
+@import 'global';
 @import 'grid/grid';
 @import 'typography/typography';
-@import 'components/button';
-@import 'components/dropdown-menu';
-@import 'components/dropdown';
-@import 'components/menu';
-@import 'components/sticky';
-@import 'components/title-bar';
-@import 'components/top-bar';
 @import 'components/visibility';
 
 @include foundation-grid;
 @include foundation-global-styles;
 @include foundation-typography;
-@include foundation-button;
-@include foundation-menu;
-@include foundation-sticky;
 
 html {
     font-size: 16pt;
@@ -33,78 +22,6 @@ h2 {
     margin-left: 1em;
 }
 #site-content-wrapper {
-}
-#site-menu-wrapper {
-    font-family: $header-font-family;
-    font-weight: 700;
-    margin: 0;
-    width: 100%;
-    @include foundation-title-bar;
-    @include top-bar-container;
-    padding: 0;
-    .title-bar {
-        a[data-toggle] {
-            color: $titlebar-toggle-menu-button-color;
-            margin-right: .5rem;
-        }
-    }
-    .top-bar {
-        @include shadow();
-        background-color: $topbar-background-color;
-        transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
-        min-height: $topbar-height;
-        .menu {
-            text-align: center;
-            line-height: 1.25rem;
-            li {
-                display: block;
-                @include breakpoint(medium) {
-                    display: inline-block;
-                }
-                a {
-                    color: $topbar-item-color;
-                    &:hover {
-                        color: $topbar-item-hover-color;
-                    }
-                }
-                &.active {
-                    a {
-                        color: $topbar-item-active-color;
-                    }
-                }
-            }
-        }
-    }
-    &.is-stuck {
-        .top-bar {
-            @include shadow(
-                $vertical: $topbar-shadow-vertical,
-                $blur-radius: $topbar-shadow-blur-radius,
-                $color: $topbar-shadow-color
-            );
-            background-color: transparentize($topbar-background-color, .05);
-            transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
-        }
-    }
-}
-#content-spacer {
-    height: $topbar-height;
-    margin-bottom: 1em;
-    &.splash {
-        @include breakpoint(medium) {
-            background-color: $topbar-background-color;
-            height: 16rem;
-            margin-bottom: 1em;
-            text-align: center;
-            &::after {
-                content: 'Neal.Rame.';
-                font-family: 'Oswald';
-                font-weight: 700;
-                line-height: 16rem;
-                font-size: 8rem;
-                margin-left: .25em;
-                text-shadow: 0px 0px 8px transparentize($topbar-item-color, .05);
-            }
-        }
-    }
+    @import 'site-nav';
+    @import 'content-spacer';
 }

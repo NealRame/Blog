@@ -1,0 +1,22 @@
+@import "settings";
+#content-spacer {
+    height: $topbar-height;
+    margin-bottom: 1em;
+    &.splash {
+        @include breakpoint(medium) {
+            background-color: $topbar-background-color;
+            height: 16rem;
+            margin-bottom: 1em;
+            text-align: center;
+            &::after {
+                content: 'Neal.Rame.';
+                font-family: 'Oswald';
+                font-weight: 700;
+                line-height: 16rem;
+                font-size: 8rem;
+                margin-left: .25em;
+                text-shadow: 0px 0px 8px transparentize($topbar-item-color, .05);
+            }
+        }
+    }
+}
