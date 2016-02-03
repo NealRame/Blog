@@ -45,6 +45,7 @@ h2 {
     .title-bar {
         a[data-toggle] {
             color: $titlebar-toggle-menu-button-color;
+            margin-right: .5rem;
         }
     }
     .top-bar {
