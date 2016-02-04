@@ -10,7 +10,10 @@
 @include foundation-typography;
 
 html {
-    font-size: 16pt;
+    font-size: 12pt;
+    @include breakpoint(medium) {
+        font-size: 16pt;
+    };
 }
 body {
     font-weight: $body-font-weight;
