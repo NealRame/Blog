@@ -138,6 +138,7 @@ module.exports = function(grunt) {
                     cwd: '<%= sass_sources_dir %>',
                     src: [
                         'style.scss',
+                        'contact/style.scss',
                         'cv/style.scss'
                     ],
                     dest: '<%= style_dest_dir %>',

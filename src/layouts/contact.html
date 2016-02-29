@@ -1,0 +1,29 @@
+{{> begin-page}}
+<div class="row columns">
+    <form action="https://getsimpleform.com/messages?form_api_token={{token}}" method="post">
+        <input type="hidden" name="redirect_to" value="http://nealrame.com"/>
+        <div class="row columns">
+            <div class="input focus">
+                <label for="name"><i class="fa fa-user"></i></label>
+                <input id="name" type="text" name="name" placeholder="your name..."/>
+            </div>
+        </div>
+        <div class="row columns">
+            <div class="input">
+                <label for="email"><i class="fa fa-envelope"></i></label>
+                <input type="email" name="email" placeholder="your email..."/>
+            </div>
+        </div>
+        <div class="row columns">
+            <div class="input">
+                <textarea name="message" placeholder="your message..." rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-6 medium-4 small-centered columns">
+                <input type="submit" value="Send"/>
+            </div>
+        </div>
+    </form>
+</div>
+{{> end-page}}
