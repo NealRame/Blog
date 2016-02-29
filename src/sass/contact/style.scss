@@ -1,0 +1,113 @@
+@import "settings";
+
+$form-input-fg-color: $white;
+$form-input-bg-color: lighten($black, 5);
+$form-input-bg-color-focus: lighten($form-input-bg-color, 5);
+$form-input-fg-color-focus: $white;
+$form-input-focus-transition-speed: .2s;
+$form-input-border-thickness: 4px;
+$form-input-border-color: darken($light-gray, 25);
+$form-input-place-holder-color: lighten($form-input-bg-color, 25);
+$form-input-font-size: 1rem;
+$form-input-label-font-size: $form-input-font-size;
+$form-input-error-bg-color: lighten($red, 15);
+$form-input-error-border-color: $red;
+$form-input-error-border-thickness: 4px;
+$form-input-invalid-color: $red;
+$form-input-line-height: 1.8rem;
+
+@mixin input-placeholder-color($color) {
+    &::-webkit-input-placeholder {
+        // WebKit, Blink, Edge
+        color: $color;
+        font-style: italic;
+    }
+    &:-moz-placeholder {
+        // Mozilla Firefox 4 to 18
+        color: $color;
+        font-style: italic;
+    }
+    &::-moz-placeholder {
+        // Mozilla Firefox 19+
+        color: $color;
+        font-style: italic;
+    }
+    &:-ms-input-placeholder {
+        // Internet Explorer 10-11
+        color: $color;
+        font-style: italic;
+    }
+}
+
+.input {
+    background-color: $form-input-bg-color;
+    border-radius: 3px;
+    font-size: $form-input-font-size;
+    margin: 0 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    label {
+        color: $form-input-place-holder-color;
+        display: block;
+        margin: .125rem 0;
+        margin-bottom: 0;
+        position: absolute;
+        width: 2rem;
+        text-align: center;
+    }
+    input, textarea {
+        all: initial;
+        background-color: $form-input-bg-color;
+        border: none;
+        border-bottom: solid 4px $form-input-bg-color-focus;
+        border-radius: 3px;
+        box-shadow: none;
+        box-sizing: border-box;
+        color: $form-input-fg-color;
+        display: block;
+        font-family: $body-font-family;
+        font-size: inherit;
+        margin: 0;
+        outline: none;
+        padding: .25rem;
+        padding-left: 2rem;
+        transition: background-color $form-input-focus-transition-speed ease-out;
+        width: 100%;
+        @include input-placeholder-color($form-input-place-holder-color);
+        &:focus {
+            background-color: $form-input-bg-color-focus;
+            color: $form-input-fg-color-focus;
+            transition: background-color $form-input-focus-transition-speed ease-out;
+        }
+    }
+    textarea {
+        resize: vertical;
+    }
+    &::after {
+        content: '';
+        display: block;
+        border-bottom: solid $form-input-border-thickness $form-input-border-color;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        transform: scaleX(0);
+        transition: transform $form-input-focus-transition-speed ease-out;
+        margin-top: -$form-input-border-thickness;
+    }
+    &.focus {
+        &::after {
+            transform: scaleX(1);
+            transition: transform $form-input-focus-transition-speed ease-out;
+        }
+    }
+}
+
+input[type="submit"] {
+    all: initial;
+    background-color: $blue;
+    color: $white;
+    font-family: $body-font-family;
+    font-size: $form-input-font-size;
+    padding: .25rem;
+    text-align: center;
+    width: 100%;
+}
