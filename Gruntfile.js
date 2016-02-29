@@ -154,6 +154,7 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['metalsmith'],
                 options: {
+                    livereload: true,
                     spawn: true
                 }
             },
@@ -163,6 +164,7 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['browserify'],
                 options: {
+                    livereload: true,
                     spawn: true
                 }
             },
@@ -173,6 +175,7 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['sass'],
                 options: {
+                    livereload: true,
                     spawn: true
                 }
             }
