@@ -3,7 +3,7 @@
     <form action="https://getsimpleform.com/messages?form_api_token={{token}}" method="post">
         <input type="hidden" name="redirect_to" value="http://nealrame.com"/>
         <div class="row columns">
-            <div class="input focus">
+            <div class="input">
                 <label for="name"><i class="fa fa-user"></i></label>
                 <input id="name" type="text" name="name" placeholder="your name..."/>
             </div>
@@ -21,7 +21,7 @@
         </div>
         <div class="row">
             <div class="small-6 medium-4 small-centered columns">
-                <input type="submit" value="Send"/>
+                <button id="submit" type="button" class="button">Send</button>
             </div>
         </div>
     </form>
