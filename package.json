@@ -41,6 +41,9 @@
   "homepage": "https://github.com/nealrame/CV#readme",
   "eslintConfig": {
     "extends": "eslint:recommended",
+    "ecmaFeatures": {
+        "modules": true
+    },
     "rules": {
       "camelcase": 0,
       "curly": [
