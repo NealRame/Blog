@@ -39,75 +39,77 @@ $form-input-line-height: 1.8rem;
     }
 }
 
-.input {
-    background-color: $form-input-bg-color;
-    border-radius: 3px;
-    font-size: $form-input-font-size;
-    margin: 0 1rem;
-    margin-bottom: 2rem;
-    position: relative;
-    label {
-        color: $form-input-place-holder-color;
-        display: block;
-        margin: .125rem 0;
-        margin-bottom: 0;
-        position: absolute;
-        width: 2rem;
-        text-align: center;
-    }
-    input, textarea {
-        all: initial;
+form {
+    .input {
         background-color: $form-input-bg-color;
-        border: none;
-        border-bottom: solid 4px $form-input-bg-color-focus;
         border-radius: 3px;
-        box-shadow: none;
-        box-sizing: border-box;
-        color: $form-input-fg-color;
-        display: block;
-        font-family: $body-font-family;
-        font-size: inherit;
-        margin: 0;
-        outline: none;
-        padding: .25rem;
-        padding-left: 2rem;
-        transition: background-color $form-input-focus-transition-speed ease-out;
-        width: 100%;
-        @include input-placeholder-color($form-input-place-holder-color);
-        &:focus {
-            background-color: $form-input-bg-color-focus;
-            color: $form-input-fg-color-focus;
+        font-size: $form-input-font-size;
+        margin: 0 1rem;
+        margin-bottom: 2rem;
+        position: relative;
+        label {
+            color: $form-input-place-holder-color;
+            display: block;
+            margin: .125rem 0;
+            margin-bottom: 0;
+            position: absolute;
+            width: 2rem;
+            text-align: center;
+        }
+        input, textarea {
+            all: initial;
+            background-color: $form-input-bg-color;
+            border: none;
+            border-bottom: solid 4px $form-input-bg-color-focus;
+            border-radius: 3px;
+            box-shadow: none;
+            box-sizing: border-box;
+            color: $form-input-fg-color;
+            display: block;
+            font-family: $body-font-family;
+            font-size: inherit;
+            margin: 0;
+            outline: none;
+            padding: .25rem;
+            padding-left: 2rem;
             transition: background-color $form-input-focus-transition-speed ease-out;
+            width: 100%;
+            @include input-placeholder-color($form-input-place-holder-color);
+            &:focus {
+                background-color: $form-input-bg-color-focus;
+                color: $form-input-fg-color-focus;
+                transition: background-color $form-input-focus-transition-speed ease-out;
+            }
         }
-    }
-    textarea {
-        resize: vertical;
-    }
-    &::after {
-        content: '';
-        display: block;
-        border-bottom: solid $form-input-border-thickness $form-input-border-color;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
-        transform: scaleX(0);
-        transition: transform $form-input-focus-transition-speed ease-out;
-        margin-top: -$form-input-border-thickness;
-    }
-    &.focus {
+        textarea {
+            resize: vertical;
+        }
         &::after {
-            transform: scaleX(1);
+            content: '';
+            display: block;
+            border-bottom: solid $form-input-border-thickness $form-input-border-color;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            transform: scaleX(0);
             transition: transform $form-input-focus-transition-speed ease-out;
+            margin-top: -$form-input-border-thickness;
+        }
+        &.focus {
+            &::after {
+                transform: scaleX(1);
+                transition: transform $form-input-focus-transition-speed ease-out;
+            }
         }
     }
-}
-
-input[type="submit"] {
-    all: initial;
-    background-color: $blue;
-    color: $white;
-    font-family: $body-font-family;
-    font-size: $form-input-font-size;
-    padding: .25rem;
-    text-align: center;
-    width: 100%;
+    .button {
+        all: initial;
+        background-color: $blue;
+        color: $white;
+        cursor: pointer;
+        font-family: $body-font-family;
+        font-size: $form-input-font-size;
+        padding: .25rem;
+        text-align: center;
+        width: 100%;
+    }
 }
