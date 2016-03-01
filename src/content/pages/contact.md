@@ -2,6 +2,7 @@
 collection: pages
 description: NealRame's site
 has-custom-page-style: true
+has-custom-page-application: true
 layout: contact.html
 page: contact
 title: NealRame - Contact Me
