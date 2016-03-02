@@ -20,3 +20,13 @@ export function dispatch(...funs) {
 		}
 	};
 }
+
+export function nodify(resolve, reject) {
+    return function(err, ...args) {
+        if (err) {
+            reject(err);
+        } else {
+            resolve(...args);
+        }
+    };
+}
