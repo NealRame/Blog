@@ -30,3 +30,11 @@ export function nodify(resolve, reject) {
         }
     };
 }
+
+export default {
+	cat,
+	construct,
+	dispatch,
+	existy,
+	nodify
+};
