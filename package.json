@@ -42,7 +42,7 @@
   "eslintConfig": {
     "extends": "eslint:recommended",
     "ecmaFeatures": {
-        "modules": true
+      "modules": true
     },
     "rules": {
       "camelcase": 0,
