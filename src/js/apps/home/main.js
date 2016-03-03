@@ -1,4 +1,2 @@
-const $ = require('jquery');
-const foundation = require('foundation');
-
-$(window).load(foundation);
+import app from 'common/app'
+app(() => {});

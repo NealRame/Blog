@@ -1,5 +1,5 @@
-const $ = require('jquery');
-const foundation = require('foundation');
+import $ from 'jquery';
+import app from 'common/app';
 
 function equalize_picture() {
     const section = $('#personal-details');
@@ -20,19 +20,16 @@ function before_print() {
     equalize_picture();
 }
 
-$(window)
-    .load(() => {
-        foundation();
-        equalize();
-    })
-    .on('resize', equalize);
-
-if (window.matchMedia) {
-    window.matchMedia('print').addListener((mql) => {
-        if (mql.matches) {
-            before_print();
-        } else {
-            equalize();
-        }
-    });
-}
+app(() => {
+    equalize();
+    $(window).on('resize', equalize);
+    if (window.matchMedia) {
+        window.matchMedia('print').addListener((mql) => {
+            if (mql.matches) {
+                before_print();
+            } else {
+                equalize();
+            }
+        });
+    }
+});

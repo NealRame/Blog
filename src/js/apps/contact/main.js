@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import _ from 'underscore';
-import foundation from 'foundation';
+import app from 'common/app';
 import {dispatch, existy} from 'common/functional';
 import {check_mail_address} from 'common/utils';
 
@@ -137,8 +137,7 @@ function submit_form() {
         .catch(handle_form_data_errors.bind(this));
 }
 
-$(window).load(() => {
-    foundation();
+app(() => {
     const $form = $('form');
     $('.input', $form)
         .find('input, textarea')
