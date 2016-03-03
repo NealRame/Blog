@@ -103,10 +103,12 @@ module.exports = function(grunt) {
                 options: {
                     clean: false,
                     metadata: {
-                        year: (new Date()).getFullYear(),
-                        github: 'https://github.com/NealRame',
-                        facebook: 'https://www.facebook.com/NealRame',
-                        twitter: 'https://twitter.com/NealRame'
+                        'year': (new Date()).getFullYear(),
+                        'email': 'julien@graziano.fr',
+                        '500px': 'https://500px.com/nealrame',
+                        'github': 'https://github.com/NealRame',
+                        'facebook': 'https://www.facebook.com/NealRame',
+                        'twitter': 'https://twitter.com/NealRame'
                     },
                     plugins: [
                         {'metalsmith-discover-helpers': {
