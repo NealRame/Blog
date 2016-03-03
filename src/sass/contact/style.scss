@@ -1,27 +1,29 @@
 @import "settings";
 @import 'components/callout';
 
-$form-input-fg-color: $white;
-$form-input-bg-color: lighten($black, 5);
-$form-input-bg-color-focus: lighten($form-input-bg-color, 5);
-$form-input-fg-color-focus: $white;
-$form-input-focus-transition-speed: .2s;
-$form-input-border-thickness: 4px;
-$form-input-border-radius: 3px;
-$form-input-border-color: $blue;
+$contact-form-input-fg-color: $white;
+$contact-form-input-bg-color: lighten($black, 5);
+$contact-form-input-bg-color-focus: lighten($contact-form-input-bg-color, 5);
+$contact-form-input-fg-color-focus: $white;
+$contact-form-input-focus-transition-speed: .2s;
+$contact-form-input-border-thickness: 4px;
+$contact-form-input-border-radius: 3px;
+$contact-form-input-border-color: $blue;
 
-$form-submit-bg-color: $blue;
-$form-submit-border-color: $form-submit-bg-color;
-$form-submit-border-color-hover: lighten($form-submit-bg-color, 10);
+$contact-form-submit-bg-color: $blue;
+$contact-form-submit-fg-color: $black;
 
-$form-input-placeholder-color: lighten($form-input-bg-color, 25);
-$form-input-font-size: 1rem;
-$form-input-label-font-size: $form-input-font-size;
-$form-input-error-bg-color: lighten($red, 15);
-$form-input-error-border-color: $red;
-$form-input-error-border-thickness: 4px;
-$form-input-invalid-color: $red;
-$form-input-line-height: 1.8rem;
+$contact-form-input-placeholder-color: lighten($contact-form-input-bg-color, 25);
+$contact-form-input-font-size: 1rem;
+$contact-form-input-label-color: lighten($contact-form-input-bg-color, 25);
+$contact-form-input-label-font-size: $contact-form-input-font-size;
+$contact-form-input-invalid-color: $red;
+$contact-form-input-line-height: 1.8rem;
+
+$contact-social-link-color: $blue;
+$contact-social-link-font-size: 4rem;
+$contact-social-link-font-size-hover: 5rem;
+$contact-social-link-width: 6rem;
 
 @mixin input-placeholder-color($color) {
     &::-webkit-input-placeholder {
@@ -50,7 +52,7 @@ form {
     #form-message-wrapper {
         .callout {
             @include callout-base;
-            border-radius: $form-input-border-radius;
+            border-radius: $contact-form-input-border-radius;
             margin: 1rem;
             padding: .5rem;
             text-align: center;
@@ -64,14 +66,14 @@ form {
         }
     }
     .input {
-        background-color: $form-input-bg-color;
-        border-radius: 3px;
-        font-size: $form-input-font-size;
+        background-color: $contact-form-input-bg-color;
+        border-radius: $contact-form-input-border-radius;
+        font-size: $contact-form-input-font-size;
         margin: 0 1rem;
         margin-bottom: 2rem;
         position: relative;
         label {
-            color: $form-input-placeholder-color;
+            color: $contact-form-input-label-color;
             display: block;
             margin: .125rem 0;
             margin-bottom: 0;
@@ -81,26 +83,26 @@ form {
         }
         input, textarea {
             all: initial;
-            background-color: $form-input-bg-color;
+            background-color: $contact-form-input-bg-color;
             border: none;
-            border-bottom: solid 4px $form-input-bg-color-focus;
-            border-radius: $form-input-border-radius;
+            border-bottom: solid $contact-form-input-border-thickness $contact-form-input-bg-color-focus;
+            border-radius: $contact-form-input-border-radius;
             box-shadow: none;
             box-sizing: border-box;
-            color: $form-input-fg-color;
+            color: $contact-form-input-fg-color;
             display: block;
             font-family: $body-font-family;
             font-size: inherit;
             margin: 0;
             outline: none;
             padding: .25rem;
-            transition: background-color $form-input-focus-transition-speed ease-out;
+            transition: background-color $contact-form-input-focus-transition-speed ease-out;
             width: 100%;
-            @include input-placeholder-color($form-input-placeholder-color);
+            @include input-placeholder-color($contact-form-input-placeholder-color);
             &:focus {
-                background-color: $form-input-bg-color-focus;
-                color: $form-input-fg-color-focus;
-                transition: background-color $form-input-focus-transition-speed ease-out;
+                background-color: $contact-form-input-bg-color-focus;
+                color: $contact-form-input-fg-color-focus;
+                transition: background-color $contact-form-input-focus-transition-speed ease-out;
             }
         }
         input {
@@ -112,21 +114,21 @@ form {
         &::after {
             content: '';
             display: block;
-            border-bottom: solid $form-input-border-thickness $form-input-border-color;
-            border-bottom-left-radius: $form-input-border-radius;
-            border-bottom-right-radius: $form-input-border-radius;
+            border-bottom: solid $contact-form-input-border-thickness $contact-form-input-border-color;
+            border-bottom-left-radius: $contact-form-input-border-radius;
+            border-bottom-right-radius: $contact-form-input-border-radius;
             transform: scaleX(0);
-            transition: transform $form-input-focus-transition-speed ease-out;
-            margin-top: -$form-input-border-thickness;
+            transition: transform $contact-form-input-focus-transition-speed ease-out;
+            margin-top: -$contact-form-input-border-thickness;
         }
         &.focus {
             &::after {
                 transform: scaleX(1);
-                transition: transform $form-input-focus-transition-speed ease-out;
+                transition: transform $contact-form-input-focus-transition-speed ease-out;
             }
         }
         &.error > span {
-            color: $form-input-invalid-color;
+            color: $contact-form-input-invalid-color;
             position: absolute;
             font-size: .75rem;
             &::before {
@@ -140,18 +142,17 @@ form {
     }
     .button {
         all: initial;
-        background-color: $form-submit-bg-color;
-        border: 2px solid $form-submit-border-color;
-        border-radius: $form-input-border-radius;
-        color: $black;
+        background-color: $contact-form-submit-bg-color;
+        border-radius: $contact-form-input-border-radius;
+        color: $contact-form-submit-fg-color;
         cursor: pointer;
         font-family: $body-font-family;
-        font-size: $form-input-font-size;
+        font-size: $contact-form-input-font-size;
         padding: .25rem;
         text-align: center;
         width: 100%;
         &:hover {
-            border-color: $form-submit-border-color-hover;
+            box-shadow: 0px 0px 6px 0px $contact-form-submit-bg-color;
         }
     }
 }
