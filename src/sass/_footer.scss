@@ -7,6 +7,7 @@ $footer-social-link-color: $blue;
 $footer-social-link-font-size: 3rem;
 $footer-social-link-font-size-hover: 4rem;
 $footer-social-link-width: 5rem;
+$footer-social-link-transition-speed: .2s;
 
 footer {
 	border-top: 1px solid darken($blue, 25);
@@ -52,11 +53,11 @@ footer {
 	            vertical-align: bottom;
 	            color: inherit;
 	            text-shadow: 0px 0px 0px transparentize($white, .5);
-	            transition: font-size .4s ease-in;
+	            transition: font-size $footer-social-link-transition-speed ease-in;
 	            &:hover {
 	                font-size: $footer-social-link-font-size-hover;
 	                text-shadow: 0px 0px 8px transparentize($white, .5);
-	                transition: font-size .4s ease-out;
+	                transition: font-size $footer-social-link-transition-speed ease-out;
 	            }
 	        }
 	    }
