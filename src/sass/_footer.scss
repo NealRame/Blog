@@ -1,14 +1,20 @@
 @import 'settings';
 @import 'mixins';
 
+$footer-bg-color: darken($black, 4);
+$footer-social-link-bg-color: darken($black, 2);
+$footer-social-link-color: $blue;
+$footer-social-link-font-size: 3rem;
+$footer-social-link-font-size-hover: 4rem;
+$footer-social-link-width: 5rem;
+
 footer {
 	// border-top: 4px solid darken($blue, 25);
-	background-color: darken($black, 4);
+	background-color: $footer-bg-color;
 	font-size: .75rem;
 	text-align: center;
 	min-height: 5rem;
 	#terms {
-		background-color: darken($black, 2);
 		list-style-type: none;
 		margin: 0;
 		margin-bottom: .5rem;
@@ -27,6 +33,32 @@ footer {
 			color: $white;
 			text-decoration: underline;
 		}
+	}
+	#social-networks {
+		background-color: $footer-social-link-bg-color;
+	    color: $footer-social-link-color;
+	    font-size: $footer-social-link-font-size;
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    text-align: center;
+	    li {
+	        display: inline-block;
+	        width: $footer-social-link-width;
+	        line-height: $footer-social-link-font-size-hover;
+	        a {
+	            display: inline-block;;
+	            vertical-align: bottom;
+	            color: inherit;
+	            text-shadow: 0px 0px 0px transparentize($white, .5);
+	            transition: font-size .4s ease-in;
+	            &:hover {
+	                font-size: $footer-social-link-font-size-hover;
+	                text-shadow: 0px 0px 8px transparentize($white, .5);
+	                transition: font-size .4s ease-out;
+	            }
+	        }
+	    }
 	}
 	a {
 		color: $red;
