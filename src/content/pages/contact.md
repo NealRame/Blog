@@ -7,4 +7,7 @@ layout: contact.html
 page: contact
 title: NealRame - Contact Me
 token: 7489a07ba6b67c76099174e8b28a2d55
+github: https://github.com/NealRame
+facebook: https://www.facebook.com/NealRame
+twitter: https://twitter.com/NealRame
 ---

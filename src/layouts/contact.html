@@ -1,30 +1,11 @@
 {{> begin-page}}
-<div class="row columns">
-    <form>
-        <div id="form-message-wrapper" class="row columns"></div>
-        <input type="hidden" name="redirect_to" value="http://nealrame.com"/>
-        <div class="row columns">
-            <div id="name" class="input">
-                <label for="input-name"><i class="fa fa-user"></i></label>
-                <input id="input-name" type="text" placeholder="your name..."/>
-            </div>
-        </div>
-        <div class="row columns">
-            <div id="email" class="input">
-                <label for="input-email"><i class="fa fa-envelope"></i></label>
-                <input id="input-email" type="email" placeholder="your email..."/>
-            </div>
-        </div>
-        <div class="row columns">
-            <div id="message" class="input">
-                <textarea placeholder="your message..." rows="5"></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-4 medium-2 small-centered columns">
-                <button id="submit" type="button" class="button"><i class="fa fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </form>
+<div class="row column">
+	{{> contact/form}}
+</div>
+<div class="row column">
+	{{> contact/social-networks}}
+</div>
+<div class="row column">
+{{{contents}}}
 </div>
 {{> end-page}}
