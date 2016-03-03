@@ -12,9 +12,6 @@ job: Développeur
 address: 45 Rue d'Amiens - 59000 Lille
 phone: '+33 6 75 12 29 57'
 birth: 31 mars 1981
-email: julien@graziano.fr
-github: https://github.com/NealRame
-500px: https://500px.com/nealrame
 education:
     -
         year: 2002
