@@ -145,7 +145,7 @@ module.exports = function(grunt) {
                     src: [
                         'style.scss',
                         'contact/style.scss',
-                        'cv/style.scss'
+                        'about/style.scss'
                     ],
                     dest: '<%= style_dest_dir %>',
                     ext: '.css'
