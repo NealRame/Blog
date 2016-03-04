@@ -2,7 +2,7 @@
 @import 'mixins';
 
 $footer-bg-color: darken($black, 4);
-$footer-social-link-bg-color: darken($black, 2);
+$footer-social-link-bg-color: lighten($black, 4);
 $footer-social-link-color: $blue;
 $footer-social-link-font-size: 3rem;
 $footer-social-link-font-size-hover: 4rem;
@@ -37,20 +37,23 @@ footer {
 	}
 	#social-networks {
 		background-color: $footer-social-link-bg-color;
-	    color: $footer-social-link-color;
-	    font-size: $footer-social-link-font-size;
-	    list-style-type: none;
-	    margin: 0;
+		border-top: 2px solid $footer-social-link-bg-color;
+		color: $footer-social-link-color;
+		font-size: $footer-social-link-font-size;
+		height: $footer-social-link-font-size-hover;
+		line-height: $footer-social-link-font-size-hover;
+		list-style-type: none;
 		margin-bottom: .5rem;
-	    padding: 0;
-	    text-align: center;
+		margin: 0;
+		padding: 0;
+		text-align: center;
 	    li {
 	        display: inline-block;
 	        width: $footer-social-link-width;
-	        line-height: $footer-social-link-font-size-hover;
+			height: $footer-social-link-font-size-hover;
 	        a {
-	            display: inline-block;;
-	            vertical-align: bottom;
+	            display: inline-block;
+	            vertical-align:top;
 	            color: inherit;
 	            text-shadow: 0px 0px 0px transparentize($white, .5);
 	            transition: font-size $footer-social-link-transition-speed ease-in;
