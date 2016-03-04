@@ -42,6 +42,7 @@ $contact-form-input-line-height: 1.8rem;
 }
 
 form {
+    margin-bottom: 1rem;
     #form-message-wrapper {
         .callout {
             @include callout-base;
