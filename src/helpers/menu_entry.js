@@ -6,13 +6,16 @@ const templates = {
 };
 
 module.exports = function(entries, current_page) {
-    const items = entries.map((entry) => {
-        const context = entry.page === '/'
-            ? {content: '<i class="fa fa-home"></i>', link: '/'}
-            : {content: entry.page, link: `/pages/${entry.page}.html`};
-        return entry.page === current_page
-            ? templates.active(context)
-            : templates.unactive(context);
-    }).join('');
+    const items = entries
+        .filter((entry) => !!entry.menu)
+        .map((entry) => {
+            const context = entry.page === '/'
+                ? {content: '<i class="fa fa-home"></i>', link: '/'}
+                : {content: entry.page, link: `/pages/${entry.page}.html`};
+            return entry.page === current_page
+                ? templates.active(context)
+                : templates.unactive(context);
+        })
+        .join('');
     return `<ul class="menu">${items}</ul>`;
 }
