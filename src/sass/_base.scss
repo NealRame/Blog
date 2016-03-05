@@ -18,6 +18,10 @@ html {
 body {
     font-weight: $body-font-weight;
 }
+.centered {
+    display: block;
+    margin: 0 auto;
+}
 section {
     padding-top: 1em;
 }
