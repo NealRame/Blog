@@ -2,11 +2,13 @@
 
 @import 'global';
 @import 'grid/grid';
-@import 'typography/typography';
+@import "components/media-object";
 @import 'components/visibility';
+@import 'typography/typography';
 
 @include foundation-grid;
 @include foundation-global-styles;
+@include foundation-media-object;
 @include foundation-typography;
 
 html {
