@@ -134,19 +134,4 @@ form {
             }
         }
     }
-    .button {
-        all: initial;
-        background-color: $contact-form-submit-bg-color;
-        border-radius: $contact-form-input-border-radius;
-        color: $contact-form-submit-fg-color;
-        cursor: pointer;
-        font-family: $body-font-family;
-        font-size: $contact-form-input-font-size;
-        padding: .25rem;
-        text-align: center;
-        width: 100%;
-        &:hover {
-            box-shadow: 0px 0px 6px 0px $contact-form-submit-bg-color;
-        }
-    }
 }
