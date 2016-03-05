@@ -18,11 +18,20 @@ html {
 body {
     font-weight: $body-font-weight;
 }
+section {
+    padding-top: 1em;
+}
+section.white {
+    background-color: $gray;
+    color: $blue;
+}
 h1 {
     font-weight: $header-h1-font-weight;
 }
 h2 {
     margin-left: 1em;
+}
+img {
 }
 
 @import 'button';
