@@ -1,5 +1,4 @@
 @import "settings";
-@import 'components/callout';
 
 $contact-form-input-fg-color: $white;
 $contact-form-input-bg-color: lighten($black, 5);
@@ -43,18 +42,10 @@ form {
     margin-bottom: 1rem;
     #form-message-wrapper {
         .callout {
-            @include callout-base;
             border-radius: $contact-form-input-border-radius;
             margin: 1rem;
-            padding: .5rem;
+            padding: .25rem;
             text-align: center;
-            &.alert {
-                background-color: lighten($red, 10);
-            }
-            &.success {
-                background-color: $blue;
-                color: $black;
-            }
         }
     }
     .input {
