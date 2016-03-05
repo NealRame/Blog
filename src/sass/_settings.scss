@@ -42,6 +42,12 @@ $button-background-hover: lighten($blue, 5);
 $button-color: $black;
 
 ///////////////////////////////////////////////////////////////////////////////
+// Callout variables
+$callout-background-fade: 0%;
+$callout-border: none;
+$callout-font-color: $black;
+
+///////////////////////////////////////////////////////////////////////////////
 // Headers variables
 $header-font-family: 'Oswald', sans-serif;
 $header-color: $blue;
