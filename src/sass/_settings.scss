@@ -4,11 +4,24 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Colors variables
 $transparent: rgba(0, 0, 0, 0);
-$black: #1e1e20;
-$blue: #819493;
-$gray: #2a2c2b;
-$red: #dc3522;
+
 $white: #d9cb9e;
+$black: #1e1e20;
+$gray: #2a2c2b;
+$dark-gray: $gray;
+$medium-gray: lighten($gray, 33);
+$light-gray: lighten($gray, 50);
+
+$blue: #819493;
+$green: #5cbf75;
+$red: #dc3522;
+$orange: #eecb7b;
+
+$primary-color: $blue;
+$secondary-color: $light-gray;
+$success-color: $green;
+$warning-color: $orange;
+$alert-color: $red;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Grid variables
@@ -20,6 +33,13 @@ $body-background: $black;
 $body-font-family: 'Roboto', sans-serif;
 $body-font-weight: 300;
 $body-font-color: $white;
+
+///////////////////////////////////////////////////////////////////////////////
+// Button variables
+$button-padding: .75em;
+$button-radius: 3px;
+$button-background-hover: lighten($blue, 5);
+$button-color: $black;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Headers variables

@@ -1,0 +1,24 @@
+@import "mixins";
+@import 'components/button';
+
+@include foundation-button;
+.button {
+	font-weight: bolder;
+	transition: box-shadow 0.25s ease-out;
+	&:hover {
+		@include glow($primary-color, 6px);
+	}
+	@each $name, $color in $foundation-colors {
+    	@if $button-fill != hollow {
+			&.#{$name}:hover {
+				@include glow($color, 6px);
+				background-color: lighten($color, 5);
+			}
+		}
+		@else {
+			&.#{$name}:hover {
+				@include glow($color, 6px);
+			}
+		}
+    }
+}

@@ -25,6 +25,7 @@ h2 {
     margin-left: 1em;
 }
 #site-content-wrapper {
+    @import 'buttons';
     @import 'site-nav';
     @import 'content-spacer';
     @import 'footer';
