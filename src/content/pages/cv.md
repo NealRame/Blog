@@ -5,7 +5,7 @@ menu: false
 page: cv
 has-custom-page-style: true
 has-custom-page-application: true
-title: Julien Graziano - Curriculum vitæ
+title: Curriculum vitæ
 description: Curriculum vitæ
 job: Développeur
 education:

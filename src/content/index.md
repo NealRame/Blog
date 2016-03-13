@@ -3,7 +3,6 @@ collection: pages
 page: /
 menu: true
 show-splash: true
-title: NealRame
 description: NealRame's site
 ---
 # Lorem Ipsum
