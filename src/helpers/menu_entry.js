@@ -8,6 +8,7 @@ const templates = {
 module.exports = function(entries, current_page) {
     const items = entries
         .filter((entry) => !!entry.menu)
+        .sort((a, b) => a['menu-rank'] - b['menu-rank'])
         .map((entry) => {
             const context = entry.page === '/'
                 ? {content: '<i class="fa fa-home"></i>', link: '/'}

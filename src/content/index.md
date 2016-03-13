@@ -2,6 +2,7 @@
 collection: pages
 page: /
 menu: true
+menu-rank: 0
 show-splash: true
 description: NealRame's site
 ---

@@ -1,6 +1,7 @@
 ---
 collection: pages
 menu: true
+menu-rank: 2
 page: contact
 description: NealRame's site
 has-custom-page-style: true
