@@ -103,12 +103,18 @@ module.exports = function(grunt) {
                 options: {
                     clean: false,
                     metadata: {
-                        'year': (new Date()).getFullYear(),
-                        'email': 'julien@graziano.fr',
+                        'site-name': 'Neal.Rame.',
+                        name: 'Julien Graziano',
+                        address: '45 Rue d\'Amiens - 59000 Lille',
+                        phone: '+33 6 75 12 29 57',
+                        birth: '31 mars 1981',
+                        year: (new Date()).getFullYear(),
+                        email: 'julien@graziano.fr',
                         '500px': 'https://500px.com/nealrame',
-                        'github': 'https://github.com/NealRame',
-                        'facebook': 'https://www.facebook.com/NealRame',
-                        'twitter': 'https://twitter.com/NealRame'
+                        github: 'https://github.com/NealRame',
+                        facebook: 'https://www.facebook.com/NealRame',
+                        twitter: 'https://twitter.com/NealRame',
+                        picture: '/assets/pictures/me.jpg'
                     },
                     plugins: [
                         {'metalsmith-discover-helpers': {
