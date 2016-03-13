@@ -50,14 +50,12 @@
         }
     }
     &.is-stuck {
-        .top-bar {
-            @include shadow(
-                $vertical: $topbar-shadow-vertical,
-                $blur-radius: $topbar-shadow-blur-radius,
-                $color: $topbar-shadow-color
-            );
-            background-color: transparentize($topbar-background-color, .05);
-            transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
-        }
+        @include shadow(
+            $vertical: $topbar-shadow-vertical,
+            $blur-radius: $topbar-shadow-blur-radius,
+            $color: $topbar-shadow-color
+        );
+        background-color: transparentize($topbar-background-color, .05);
+        transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
     }
 }
