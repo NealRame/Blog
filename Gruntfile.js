@@ -5,6 +5,7 @@
 const _ = require('underscore');
 const fs = require('fs');
 const path = require('path');
+const initialize = require('./src/js/common/initialize');
 
 // sources variables
 const sources_dir = 'src';
@@ -102,20 +103,10 @@ module.exports = function(grunt) {
             content: {
                 options: {
                     clean: false,
-                    metadata: {
-                        'site-name': 'Neal.Rame.',
-                        name: 'Julien Graziano',
-                        address: '45 Rue d\'Amiens - 59000 Lille',
-                        phone: '+33 6 75 12 29 57',
-                        birth: '31 mars 1981',
-                        year: (new Date()).getFullYear(),
-                        email: 'julien@graziano.fr',
-                        '500px': 'https://500px.com/nealrame',
-                        github: 'https://github.com/NealRame',
-                        facebook: 'https://www.facebook.com/NealRame',
-                        twitter: 'https://twitter.com/NealRame',
-                        picture: '/assets/pictures/me.jpg'
-                    },
+                    metadata: Object.assign(
+                        grunt.file.readJSON('config.json'),
+                        {year: (new Date()).getFullYear()}
+                    ),
                     plugins: [
                         {'metalsmith-discover-helpers': {
                             directory: '<%= helpers_dir %>',
@@ -193,6 +184,9 @@ module.exports = function(grunt) {
                     spawn: true
                 }
             }
+        },
+        prompt: {
+            init: initialize
         }
     });
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -201,6 +195,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-prompt');
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
     grunt.registerTask('default', ['clean', 'metalsmith', 'sass', 'browserify']);
