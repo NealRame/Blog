@@ -23,9 +23,8 @@
         }
     }
     .top-bar {
-        @include shadow();
         background-color: $topbar-background-color;
-        transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
+        transition: background-color .25s ease-in-out;
         min-height: $topbar-height;
         .menu {
             text-align: center;
@@ -55,7 +54,10 @@
             $blur-radius: $topbar-shadow-blur-radius,
             $color: $topbar-shadow-color
         );
-        background-color: transparentize($topbar-background-color, .05);
-        transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
+        transition: box-shadow .25s ease-in-out;
+        .top-bar {
+            background-color: transparentize($topbar-background-color, .05);
+            transition: background-color .25s ease-in-out;
+        }
     }
 }
