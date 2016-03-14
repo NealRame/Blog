@@ -7,7 +7,7 @@
             height: 16rem;
             text-align: center;
             &::after {
-                content: 'Neal.Rame.';
+                content: attr(data-content);
                 font-family: 'Oswald';
                 font-weight: 700;
                 line-height: 16rem;
