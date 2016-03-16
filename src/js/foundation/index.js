@@ -1,6 +1,4 @@
-const $ = global.$ = global.jQuery = require('jquery');
+global.$ = global.jQuery = require('jquery');
 require('foundation-sites');
 
-module.exports = function() {
-    $(document).foundation();
-};
+export default global.Foundation;

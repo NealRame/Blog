@@ -1,9 +1,9 @@
 import $ from 'jquery';
-import foundation from 'foundation';
+import 'foundation';
 
 export default function(run) {
 	$(window).load(() => {
-		foundation();
+		$(document).foundation();
 		run();
 	});
 }
