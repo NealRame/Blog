@@ -113,7 +113,9 @@ module.exports = function(grunt) {
                             pattern: /\.js$/
                         }},
                         {'metalsmith-collections': {}},
-                        {'metalsmith-markdown': {}},
+                        {'metalsmith-markdown': {
+                            highlight: (code) => require('highlight.js').highlightAuto(code).value
+                        }},
                         {'metalsmith-layouts': {
                             directory: '<%= layouts_dir %>',
                             engine: 'handlebars',
@@ -131,7 +133,8 @@ module.exports = function(grunt) {
                 options: {
                     includePaths: [
                         '<%= sass_sources_dir %>',
-                        'node_modules/foundation-sites/scss'
+                        'node_modules/foundation-sites/scss',
+                        'node_modules/highlight.js/styles'
                     ],
                     outputStyle: is_dev() ? 'nested' : 'compressed',
                     sourceMap: is_dev()
@@ -141,6 +144,7 @@ module.exports = function(grunt) {
                     cwd: '<%= sass_sources_dir %>',
                     src: [
                         'about/style.scss',
+                        'articles/style.scss',
                         'contact/style.scss',
                         'cv/style.scss',
                         'style.scss'
