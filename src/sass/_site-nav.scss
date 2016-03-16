@@ -35,6 +35,7 @@
                     display: inline-block;
                 }
                 a {
+                    background-color: $transparent;
                     color: $topbar-item-color;
                     &:hover {
                         color: $topbar-item-hover-color;

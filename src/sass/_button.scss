@@ -9,7 +9,7 @@
 	&:hover {
 		@include glow($primary-color, 6px);
 	}
-	@each $name, $color in $foundation-palette {
+	@each $name, $color in $foundation-colors {
     	@if $button-fill != hollow {
 			&.#{$name}:hover {
 				@include glow($color, 6px);
