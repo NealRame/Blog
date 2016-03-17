@@ -1,5 +1,4 @@
 ---
-collection: pages
 menu: true
 menu-rank: 3
 page: contact

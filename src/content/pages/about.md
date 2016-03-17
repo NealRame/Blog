@@ -1,6 +1,5 @@
 ---
 layout: about.html
-collection: pages
 menu: true
 menu-rank: 2
 page: about

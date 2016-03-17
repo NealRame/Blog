@@ -1,6 +1,5 @@
 ---
 layout: cv.html
-collection: pages
 menu: false
 page: cv
 has-custom-page-style: true

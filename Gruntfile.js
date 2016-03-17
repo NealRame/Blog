@@ -112,7 +112,11 @@ module.exports = function(grunt) {
                             directory: '<%= helpers_dir %>',
                             pattern: /\.js$/
                         }},
-                        {'metalsmith-collections': {}},
+                        {'metalsmith-collections': {
+                            pages: {
+                                pattern: 'pages/*.md'
+                            },
+                        }},
                         {'metalsmith-markdown': {
                             highlight: (code) => require('highlight.js').highlightAuto(code).value
                         }},
