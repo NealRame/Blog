@@ -3,26 +3,23 @@
 
 pre {
 	background-color: $gray;
-	border: solid 1px $blue;
 	border-radius: 3px;
 	margin: 1rem;
 	padding: .5rem;
 	code {
-		background-color: $transparent;
-		border: none;
-		color: $body-font-color;
-		font-size: .75rem;
-		padding: 0;
-		&:after {
-			border-top: solid 1px $medium-gray;
-			color: $medium-gray;
-			content: attr(class);
-			display: block;
-			font-size: .6rem;
-			font-style: oblique;
-			margin-bottom: -.5rem;
-			margin-top: 1rem;
-			width: 100%;
+		font-size: $code-font-size;
+		@if $code-show-language {
+			&:after {
+				border-top: solid 1px $medium-gray;
+				color: $medium-gray;
+				content: attr(class);
+				display: block;
+				font-size: .6rem;
+				font-style: oblique;
+				margin-bottom: -.5rem;
+				margin-top: 1rem;
+				width: 100%;
+			}
 		}
 	}
 }

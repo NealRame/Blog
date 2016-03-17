@@ -35,6 +35,15 @@ $body-font-weight: 300;
 $body-font-color: $white;
 
 ///////////////////////////////////////////////////////////////////////////////
+// Code variables
+$code-color: $body-font-color;
+$code-font-size: .75rem;
+$code-background: $transparent;
+$code-border: none;
+$code-padding: 0;
+$code-show-language: true;
+
+///////////////////////////////////////////////////////////////////////////////
 // MediaObject variables
 $mediaobject-margin-bottom: 0;
 
