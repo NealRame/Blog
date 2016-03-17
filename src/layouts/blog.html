@@ -1,3 +1,13 @@
 {{> begin-page}}
-	<section></section>
+	<div class="row columns">
+		{{#each collections.articles}}
+		<article>
+			<header>
+				{{> blog/header}}
+				{{> blog/meta-author}}
+			</header>
+			<p>{{resume}}</p>
+		</article>
+		{{/each}}
+	</div>
 {{> end-page}}
