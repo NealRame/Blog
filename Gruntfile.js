@@ -112,6 +112,9 @@ module.exports = function(grunt) {
                             directory: '<%= helpers_dir %>',
                             pattern: /\.js$/
                         }},
+                        {'metalsmith-paths': {
+                            property: 'path'
+                        }},
                         {'metalsmith-collections': {
                             pages: {
                                 pattern: 'pages/*.md'
