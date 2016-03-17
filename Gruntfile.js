@@ -152,6 +152,7 @@ module.exports = function(grunt) {
                     src: [
                         'about/style.scss',
                         'articles/style.scss',
+                        'blog/style.scss',
                         'contact/style.scss',
                         'cv/style.scss',
                         'style.scss'
