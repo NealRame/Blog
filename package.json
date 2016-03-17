@@ -23,6 +23,7 @@
     "metalsmith-collections": "^0.7.0",
     "metalsmith-discover-helpers": "^0.1.0",
     "metalsmith-layouts": "^1.4.2",
+    "metalsmith-paths": "^2.1.1",
     "minifyify": "^7.2.1",
     "underscore": "^1.8.3"
   },
