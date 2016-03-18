@@ -1,5 +1,31 @@
 {{> begin-page}}
-    <div class="row columns">
-        {{{contents}}}
-    </div>
+    <section class="white">
+        <div class="row columns">
+            <div class="media-object stack-for-small">
+                <div class="media-object-section middle">
+                    My name is Julien Graziano, a.k.a NealRame or simply Jux
+                    for my my friends. I live in Lille in the north of France
+                    with my wonderful girlfriend.
+                </div>
+                <div class="media-object-section">
+                    <div id="about-portrait">
+                        <img class="circle centered" src="/assets/pictures/me.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row columns">
+            {{#each collections.articles}}
+            <article>
+                <header>
+                    {{> blog/header}}
+                    {{> blog/meta-author}}
+                </header>
+                <p>{{resume}}</p>
+            </article>
+            {{/each}}
+        </div>
+    </section>
 {{> end-page}}
