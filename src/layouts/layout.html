@@ -17,7 +17,7 @@
     </section>
     <section>
         <div class="row columns">
-            {{#each collections.articles}}
+            {{#each (limit collections.articles 5)}}
             <article>
                 <header>
                     {{> blog/header}}
