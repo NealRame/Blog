@@ -49,11 +49,9 @@ $topbar-shadow-spread-radius: 4px;
             background-color: transparentize($topbar-background-color, .125);
             font-size: 1.25rem;
             transition: box-shadow $topbar-avatar-transition-duration ease-out;
-            ul > li {
-                a {
-                    color: $white;
-                }
-                &.active > a {
+            ul > li > a {
+                color: $white;
+                &.active {
                     color: $black;
                 }
             }
