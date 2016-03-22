@@ -22,12 +22,8 @@ section {
     padding-top: 1em;
 }
 section.about-author {
-    background-color: $gray;
-    color: $blue;
-    padding: 1rem;
-    @include breakpoint(medium) {
-        padding: 4rem;
-    };
+    // background-color: $gray;
+    // color: $blue;
 }
 h1 {
     margin: 1.25rem 0;
@@ -45,6 +41,3 @@ h2 {
 
 @import 'button';
 @import 'callout';
-@import 'site-nav';
-@import 'splash';
-@import 'footer';

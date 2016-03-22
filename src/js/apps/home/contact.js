@@ -1,5 +1,4 @@
 import _ from 'underscore';
-import app from 'common/app';
 import {dispatch, existy} from 'common/functional';
 import {check_mail_address} from 'common/utils';
 
@@ -136,7 +135,7 @@ function submit_form() {
         .catch(handle_form_data_errors.bind(this));
 }
 
-app(() => {
+export default () => {
     const $form = $('form');
     $('.input', $form)
         .find('input, textarea')
@@ -144,4 +143,4 @@ app(() => {
         .on('blur', input_focus_out);
     $('#submit', $form)
         .on('click', () => submit_form.call($form));
-});
+}

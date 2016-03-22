@@ -1,13 +1,52 @@
 {{> begin-page}}
-    <section class="about-author">
+    <section id="about">
         <div class="row columns">
-        	My name is Julien Graziano, a.k.a NealRame or simply Jux for my
-			friends. I live in Lille in the north of France with my wonderful
-			girlfriend.
+            <h1>About</h1>
+            <p>
+            	My name is Julien Graziano, a.k.a NealRame or simply Jux for my
+    			friends. I live in Lille in the north of France with my
+                wonderful girlfriend.
+            </p>
+            <h2>Passionate developer</h2>
+            <p>
+                I am developer and enthusiast for technologies of information,
+                particularly web applications and internet of things.
+            </p>
+            <p>
+                I've been working as a developper since 2005. My areas of
+                expertise are C++ and Javascript.
+            </p>
+            <p>
+                I think I'm good at:
+                <ul>
+                    <li>developping applications in C/C++ or Javascript,</li>
+                    <li>build and test this using Jenkins CI,</li>
+                </ul>
+            </p>
+            <p>
+                I work hard to become almost as good at putting it all into
+                production using Docker containers and cloud technologies.
+            </p>
+            <p>
+                I am very interested by functional programming techniques and
+                software architecture.
+            </p>
+            <div class="small-centered small-6 columns">
+                <p>
+                    <a href="/pages/cv.html" class="expanded button">Check out my CV</a>
+                </p>
+            </div>
+            <h2>When I do not code</h2>
+            <p>
+                When I do not code, I really enjoy climbing, play and take long
+                walks with my dog. I also like taking pictures of my trips and
+                rambles.
+            </p>
         </div>
     </section>
-    <section>
+    <section id="blog">
         <div class="row columns">
+            <h1>Blog</h1>
             {{#each (limit collections.articles 5)}}
             <article>
                 <header>
@@ -17,6 +56,16 @@
                 <p>{{resume}}</p>
             </article>
             {{/each}}
+        </div>
+    </section>
+    <section id="contact">
+        <div class="row column">
+            <h1>Contact</h1>
+        	{{> contact/form}}
+            <p>
+                You can also contact me on social networks using the links
+                below.
+            </p>
         </div>
     </section>
 {{> end-page}}
