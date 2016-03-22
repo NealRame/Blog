@@ -5,60 +5,82 @@
 @import 'components/title-bar';
 @import 'components/top-bar';
 
-@include foundation-menu;
 @include foundation-sticky;
+
+$topbar-shadow-blur-radius: 4px;
+$topbar-shadow-spread-radius: 4px;
 
 #site-menu-wrapper {
     font-family: $header-font-family;
-    font-weight: 700;
+    font-weight: $topbar-font-weight;
     margin: 0;
-    width: 100%;
+    @include foundation-menu;
     @include foundation-title-bar;
     @include top-bar-container;
-    padding: 0;
-    .title-bar {
-        a[data-toggle] {
-            color: $titlebar-toggle-menu-button-color;
-            margin-right: .5rem;
+    #portrait-shadow {
+        border: $topbar-avatar-border-thickness solid $topbar-background-color;
+        border-radius: 50%;
+        margin-left: $topbar-avatar-left-margin;
+        height: $topbar-avatar-size;
+        width: $topbar-avatar-size;
+        transition: box-shadow $topbar-avatar-transition-duration ease-out;
+        &.is-stuck {
+            @include shadow(
+                $blur-radius: $topbar-shadow-blur-radius,
+                $spread-radius: $topbar-shadow-spread-radius,
+                $color: $topbar-shadow-color
+            );
+            transition: box-shadow $topbar-avatar-transition-duration ease-in;
         }
     }
     .top-bar {
-        background-color: $topbar-background-color;
-        transition: background-color .25s ease-in-out;
-        min-height: $topbar-height;
-        .menu {
-            text-align: center;
-            line-height: 1.25rem;
-            li {
-                display: block;
-                @include breakpoint(medium) {
-                    display: inline-block;
-                }
+        width: 100%;
+        line-height: 1rem;
+        #avatar {
+            border: $topbar-avatar-border-thickness solid $topbar-background-color;
+            border-radius: 50%;
+            display: inline;
+            margin-left: $topbar-avatar-left-margin;
+            position: absolute;
+            height: $topbar-avatar-size;
+            width: $topbar-avatar-size;
+        }
+        #site-nav {
+            background-color: transparentize($topbar-background-color, .125);
+            font-size: 1.25rem;
+            transition: box-shadow $topbar-avatar-transition-duration ease-out;
+            ul > li {
                 a {
-                    background-color: $transparent;
-                    color: $topbar-item-color;
-                    &:hover {
-                        color: $topbar-item-hover-color;
-                    }
+                    color: $white;
                 }
-                &.active {
-                    a {
-                        color: $topbar-item-active-color;
-                    }
+                &.active > a {
+                    color: $black;
                 }
             }
+            @include breakpoint(medium) {
+                border-top: 4px solid $blue;
+                background-color: $topbar-background-color;
+            };
         }
-    }
-    &.is-stuck {
-        @include shadow(
-            $vertical: $topbar-shadow-vertical,
-            $blur-radius: $topbar-shadow-blur-radius,
-            $color: $topbar-shadow-color
-        );
-        transition: box-shadow .25s ease-in-out;
-        .top-bar {
-            background-color: transparentize($topbar-background-color, .05);
-            transition: background-color .25s ease-in-out;
+        .title-bar {
+            text-align: right;
+            transition: box-shadow $topbar-avatar-transition-duration ease-in;
+            a[data-toggle] {
+                color: $titlebar-toggle-menu-button-color;
+                margin-left: .5rem;
+                font-size: 1.25rem;
+                line-height: 1rem;
+            }
+        }
+        &.is-stuck {
+            #site-nav, .title-bar {
+                @include shadow(
+                    $blur-radius: $topbar-shadow-blur-radius,
+                    $spread-radius: $topbar-shadow-spread-radius,
+                    $color: $topbar-shadow-color
+                );
+                transition: box-shadow $topbar-avatar-transition-duration ease-in;
+            }
         }
     }
 }

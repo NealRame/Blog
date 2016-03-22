@@ -2,56 +2,32 @@
 @import "mixins";
 @import "global";
 @import "grid/grid";
-@import "components/media-object";
 @import "components/visibility";
 @import "typography/typography";
 
 @include foundation-grid;
 @include foundation-global-styles;
-@include foundation-media-object;
 @include foundation-typography;
 
 html {
-    font-size: 12pt;
+    font-size: 16px;
     @include breakpoint(medium) {
-        font-size: 16pt;
+        font-size: 24px;
     };
 }
 body {
     font-weight: $body-font-weight;
 }
-.centered {
-    display: block;
-    margin: 0 auto;
-}
 section {
     padding-top: 1em;
 }
-section.white {
+section.about-author {
     background-color: $gray;
     color: $blue;
-	@include breakpoint(small only) {
-		margin-bottom: 80px;
-	}
-	.media-object {
-		.media-object-section:last-child {
-			padding-bottom: 0;
-		}
-		#about-portrait {
-			margin-bottom: -80px;
-			@include breakpoint(medium) {
-				margin-bottom: 1rem;
-			}
-			& > img {
-				border: 4px solid $blue;
-				width: 192px;
-				@include breakpoint(small only) {
-					width: 160px;
-					@include shadow($blur-radius: 2px, $spread-radius: 1px, $color: hsla(0, 0, 0, .5));
-				}
-			}
-		}
-	}
+    padding: 1rem;
+    @include breakpoint(medium) {
+        padding: 4rem;
+    };
 }
 h1 {
     margin: 1.25rem 0;
@@ -59,17 +35,16 @@ h1 {
 h2 {
     margin-left: 1em;
 }
-img {
-    &.circle {
-        border-radius: 50%;
-    }
+.centered {
+    display: block;
+    margin: 0 auto;
+}
+.circle {
+    border-radius: 50%;
 }
 
 @import 'button';
 @import 'callout';
-
-#site-content-wrapper {
-    @import 'site-nav';
-    @import 'content-spacer';
-    @import 'footer';
-}
+@import 'site-nav';
+@import 'splash';
+@import 'footer';

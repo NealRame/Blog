@@ -17,6 +17,14 @@ $green: #5cbf75;
 $red: #dc3522;
 $orange: #eecb7b;
 
+$foundation-palette: (
+    primary: $blue,
+    secondary: $light-gray,
+    success: $green,
+    warning: $orange,
+    alert: $red,
+);
+
 $primary-color: $blue;
 $secondary-color: $light-gray;
 $success-color: $green;
@@ -42,6 +50,8 @@ $code-background: $transparent;
 $code-border: none;
 $code-padding: 0;
 $code-show-language: true;
+
+$menu-item-background-active: $transparent;
 
 ///////////////////////////////////////////////////////////////////////////////
 // MediaObject variables
@@ -75,19 +85,25 @@ $header-font-weight: 700;
 // Top bar variables
 $topbar-height: 2.5rem;
 $topbar-background: $transparent;
+$topbar-padding: 0;
+
+$topbar-font-weight: 700;
+$topbar-avatar-size: 1.5*$topbar-height;
+$topbar-avatar-border-thickness: 4px;
+$topbar-avatar-left-margin: 1rem;
+$topbar-avatar-transition-duration: .25s;
+
 $topbar-background-color: $red;
-$topbar-shadow-vertical: 2px;
 $topbar-shadow-blur-radius: 4px;
-$topbar-shadow-color: hsla(0, 0, 0, .75);
-$topbar-shadow-geometry: 0px 2px 4px 0px;
-$topbar-item-color: $body-font-color;
+$topbar-shadow-spread-radius: 4px;
+$topbar-shadow-color: hsla(0, 0, 0, .33);
 $topbar-item-active-color: $black;
 $topbar-item-hover-color: $black;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Title bar variables
 $titlebar-background: $red;
-$titlebar-toggle-menu-button-color: $blue;
+$titlebar-toggle-menu-button-color: $white;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Title bar variables

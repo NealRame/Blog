@@ -2,12 +2,9 @@
 <html>
 {{> head}}
 <body>
-    <div id="site-content-wrapper" data-sticky-container>
+    <div id="site-menu-wrapper" data-sticky-container>
         {{> menu}}
-        <div
-			id="content-spacer"
-			{{#if show-splash}}
-				class="splash"
-				data-content="{{site-name}}"
-			{{/if}}>
-		</div>
+    </div>
+    {{#if show-splash}}
+    <div id="splash"></div>
+    {{/if}}
