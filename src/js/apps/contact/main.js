@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import _ from 'underscore';
 import app from 'common/app';
 import {dispatch, existy} from 'common/functional';

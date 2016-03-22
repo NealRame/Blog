@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import app from 'common/app';
 
 function equalize_picture() {
