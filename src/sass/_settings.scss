@@ -83,12 +83,11 @@ $header-font-weight: 700;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Top bar variables
-$topbar-height: 2.5rem;
 $topbar-background: $transparent;
 $topbar-padding: 0;
 
 $topbar-font-weight: 700;
-$topbar-avatar-size: 1.5*$topbar-height;
+$topbar-avatar-size: 4rem;
 $topbar-avatar-border-thickness: 4px;
 $topbar-avatar-left-margin: 1rem;
 $topbar-avatar-transition-duration: .25s;
@@ -104,11 +103,6 @@ $topbar-item-hover-color: $black;
 // Title bar variables
 $titlebar-background: $red;
 $titlebar-toggle-menu-button-color: $white;
-
-///////////////////////////////////////////////////////////////////////////////
-// Title bar variables
-$about-portrait-shadow-blur-radius: 4px;
-$about-portrait-shadow-color: hsla(0, 0, 0, .75);
 
 ///////////////////////////////////////////////////////////////////////////////
 // Blog page variables
