@@ -1,5 +1,5 @@
 {{> begin-page}}
-    <section id="about">
+    <section id="about" data-magellan-target="about">
         <div class="row columns">
             <h1>About</h1>
             <p>
@@ -44,7 +44,7 @@
             </p>
         </div>
     </section>
-    <section id="blog">
+    <section id="blog" data-magellan-target="blog">
         <div class="row columns">
             <h1>Blog</h1>
             {{#each (limit collections.articles 5)}}
@@ -58,7 +58,7 @@
             {{/each}}
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" data-magellan-target="contact">
         <div class="row column">
             <h1>Contact</h1>
         	{{> contact/form}}
