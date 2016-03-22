@@ -1,0 +1,10 @@
+@import "settings";
+#splash {
+    background-image: url('/assets/pictures/ecvb.jpg');
+    background-position: center;
+    background-color: transparentize($blue, .5);
+    background-blend-mode: overlay;
+    overflow: hidden;
+    height: 18rem;
+    width: 100%;
+}
