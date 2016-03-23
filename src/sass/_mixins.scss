@@ -5,16 +5,9 @@
     $spread-radius: 0px,
     $color: $black) {
     $shadow-values: $horizontal $vertical $blur-radius $spread-radius $color;
-    -moz-box-shadow: $shadow-values;
-    -o-box-shadow: $shadow-values;
-    -webkit-box-shadow: $shadow-values;
     box-shadow: $shadow-values;
 }
 
 @mixin glow($color, $blur: 6px) {
-    -moz-box-shadow: 0px 0px $blur 0px $color;
-    -webkit-box-shadow: 0px 0px $blur 0px $color;
-    -o-box-shadow: 0px 0px $blur 0px $color;
     box-shadow: 0px 0px $blur 0px $color;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=NaN, Strength=$blur);
 }
