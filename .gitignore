@@ -1,8 +1,8 @@
 node_modules
 public/articles
-public/pages
 public/assets/scripts
 public/assets/css
-index.html
 public/assets/js
+public/pages
+public/index.html
 config.json
