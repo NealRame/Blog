@@ -149,14 +149,18 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= sass_sources_dir %>',
-                    src: [
-                        'about/style.scss',
-                        'articles/style.scss',
-                        'blog/style.scss',
-                        'contact/style.scss',
-                        'cv/style.scss',
-                        'style.scss'
-                    ],
+                    src: ['**/style.scss'],
+                    dest: '<%= style_dest_dir %>',
+                    ext: '.css'
+                }]
+            }
+        },
+        autoprefixer: {
+            compile: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= style_dest_dir %>',
+                    src: ['**/style.css'],
                     dest: '<%= style_dest_dir %>',
                     ext: '.css'
                 }]
@@ -190,7 +194,7 @@ module.exports = function(grunt) {
                     '<%= sass_sources_dir %>/**/*.scss',
                     '<%= sass_sources_dir %>/**/*.sass'
                 ],
-                tasks: ['sass'],
+                tasks: ['sass', 'autoprefixer'],
                 options: {
                     livereload: true,
                     spawn: true
@@ -201,6 +205,7 @@ module.exports = function(grunt) {
             init: initialize
         }
     });
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-metalsmith');
@@ -210,5 +215,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-prompt');
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
-    grunt.registerTask('default', ['clean', 'metalsmith', 'sass', 'browserify']);
+    grunt.registerTask('default', ['clean', 'metalsmith', 'sass', 'autoprefixer', 'browserify']);
 };
