@@ -1,11 +1,10 @@
 @import "settings";
 
 #blog {
-	background-color: $gray;
+	background-color: $section-blog-bg-color;
 	color: $blue;
 	article {
 		border-bottom: $blog_entry_bottom_border_thickness solid $blog_entry_bottom_border_color;
-		margin-bottom: $blog_entry_bottom_margin;
 		header {
 			& > h1 {
 				margin-bottom: 0;
@@ -17,6 +16,9 @@
 				font-weight: normal;
 				margin: 0 0 1rem 1rem;
 			}
+		}
+		&:not(:last-child) {
+			margin-bottom: $blog_entry_bottom_margin;
 		}
 	}
 }
