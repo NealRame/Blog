@@ -127,7 +127,7 @@ module.exports = function(grunt) {
                             directory: '<%= layouts_dir %>',
                             engine: 'handlebars',
                             partials: '<%= partials_dir %>',
-                            default: 'layout.html'
+                            default: 'index.html'
                         }}
                     ]
                 },
