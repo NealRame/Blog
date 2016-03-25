@@ -2,6 +2,7 @@ const _ = require('underscore');
 
 const template = _.template('<i class="<%= icon %>"></i>');
 const category_icon_map = {
+	'atom':       'devicon-atom-original',
 	'c':          'devicon-c-plain',
 	'c++':        'devicon-cplusplus-plain',
 	'docker':     'devicon-docker-plain',
