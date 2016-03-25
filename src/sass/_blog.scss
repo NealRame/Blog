@@ -1,24 +1,50 @@
 @import "settings";
 
 #blog {
-	background-color: $section-blog-bg-color;
-	color: $blue;
+	background-color: $blog-section-bg-color;
+	color: $blog-section-fg-color;
+	a:not(.button) {
+		color: !important $light-gray;
+	}
+	h2 > a {
+		color: $blue;
+	}
 	article {
-		border-bottom: $blog_entry_bottom_border_thickness solid $blog_entry_bottom_border_color;
+		position: relative;
+		border-bottom: $blog-entry-bottom-border-thickness solid $blog-entry-bottom-border-color;
+		margin-bottom: $blog-entry-bottom-margin;
 		header {
-			& > h1 {
-				margin-bottom: 0;
+			margin-bottom: 1rem;
+			h2 {
+				margin: 0 0 0 ($blog-entry-icon-size + .75rem);
+			}
+			.meta-icon {
+				font-size: $blog-entry-icon-size;
+				line-height: inherit;
+				position: absolute;
+				top: 0;
+				height: $blog-entry-icon-size;
+				width: $blog-entry-icon-size;
+				& > i.fallback-icon {
+					display: block;
+					color: inherit;
+					font-size: inherit;
+					font-style: inherit;
+					line-height: $blog-entry-icon-size;
+					&::after {
+						content: '\f075';
+						font-family: FontAwesome;
+						line-height: inherit;
+					}
+				}
 			}
 			.meta-author {
-				color: $blog_meta_color;
+				color: $blog-entry-meta-color;
 				font-family: $body-font-family;
-				font-size: $blog_meta_font_size;
+				font-size: $blog-entry-meta-font-size;
 				font-weight: normal;
-				margin: 0 0 1rem 1rem;
+				margin: 0 0 1rem ($blog-entry-icon-size + .75rem);
 			}
-		}
-		&:not(:last-child) {
-			margin-bottom: $blog_entry_bottom_margin;
 		}
 	}
 }

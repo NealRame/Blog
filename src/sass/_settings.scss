@@ -112,11 +112,14 @@ $titlebar-toggle-menu-button-color: $white;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Blog page variables
-$blog_entry_bottom_border_thickness: 4px;
-$blog_entry_bottom_border_color: $gray;
-$blog_entry_bottom_margin: 2rem;
-$blog_meta_color: $medium-gray;
-$blog_meta_font_size: .75rem;
+$blog-section-bg-color: $gray;
+$blog-section-fg-color: $blue;
+$blog-entry-bottom-border-thickness: 1px;
+$blog-entry-bottom-border-color: $blue;
+$blog-entry-bottom-margin: 2rem;
+$blog-entry-icon-size: 2.6rem;
+$blog-entry-meta-color: $medium-gray;
+$blog-entry-meta-font-size: .75rem;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Contact form variables
