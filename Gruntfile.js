@@ -92,12 +92,7 @@ module.exports = function(grunt) {
         ///////////////////////////////////////////////////////////////////////
         // Configure tasks
         clean: {
-            'pages': [
-                '<%= dest_dir %>/index.html',
-                '<%= dest_dir %>/pages'
-            ],
-            'scripts': ['<%= applications_dest_dir %>'],
-            'style': ['<%= style_dest_dir %>']
+            'all': ['<%= dest_dir %>']
         },
         browserify: create_browserify_targets(
             applications_sources_dir,
