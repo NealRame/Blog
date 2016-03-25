@@ -1,8 +1,3 @@
 node_modules
-public/articles
-public/assets/scripts
-public/assets/css
-public/assets/js
-public/pages
-public/index.html
+public
 config.json
