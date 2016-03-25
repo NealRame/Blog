@@ -218,6 +218,14 @@ module.exports = function(grunt) {
                     livereload: true,
                     spawn: true
                 }
+            },
+            imagemin: {
+                files: ['<%= pictures_sources_dir %>/**/*.{png,jpg,gif}'],
+                tasks: ['imagemin'],
+                options: {
+                    livereload: true,
+                    spawn: true
+                }
             }
         },
         prompt: {
