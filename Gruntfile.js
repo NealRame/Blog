@@ -15,6 +15,7 @@ const layouts_dir = path.join(sources_dir, 'layouts');
 const helpers_dir = path.join(sources_dir, 'helpers');
 const partials_dir = path.join(layouts_dir, 'partials');
 const sass_sources_dir = path.join(sources_dir, 'sass');
+const pictures_sources_dir = path.join(sources_dir, 'pictures');
 const js_sources_dir = path.join(sources_dir, 'js');
 const applications_sources_dir = path.join(js_sources_dir, 'apps');
 
@@ -22,6 +23,7 @@ const applications_sources_dir = path.join(js_sources_dir, 'apps');
 const dest_dir = 'public';
 const assets_dest_dir = path.join(dest_dir, 'assets');
 const style_dest_dir = path.join(assets_dest_dir, 'css');
+const pictures_dest_dir = path.join(assets_dest_dir, 'pictures');
 const applications_dest_dir = path.join(assets_dest_dir, 'js');
 
 function is_dev() {
@@ -79,11 +81,13 @@ module.exports = function(grunt) {
         helpers_dir,
         partials_dir,
         sass_sources_dir,
+        pictures_sources_dir,
         js_sources_dir,
         applications_sources_dir,
         dest_dir,
         assets_dest_dir,
         style_dest_dir,
+        pictures_dest_dir,
         applications_dest_dir,
         ///////////////////////////////////////////////////////////////////////
         // Configure tasks
@@ -119,6 +123,11 @@ module.exports = function(grunt) {
                             pages: {
                                 pattern: 'pages/*.md'
                             },
+                            articles: {
+                                pattern: 'articles/*.md',
+                                sortBy: 'date',
+                                reverse: false
+                            }
                         }},
                         {'metalsmith-markdown': {
                             highlight: (code) => require('highlight.js').highlightAuto(code).value
@@ -166,6 +175,16 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        imagemin: {
+            compile: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= pictures_sources_dir %>',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: '<%= pictures_dest_dir %>'
+                }]
+            }
+        },
         watch: {
             content: {
                 files: [
@@ -207,6 +226,7 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-metalsmith');
     grunt.loadNpmTasks('grunt-notify');
@@ -215,5 +235,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-prompt');
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
-    grunt.registerTask('default', ['clean', 'metalsmith', 'sass', 'autoprefixer', 'browserify']);
+    grunt.registerTask('default', ['clean', 'metalsmith', 'sass', 'autoprefixer', 'browserify', 'imagemin']);
 };
