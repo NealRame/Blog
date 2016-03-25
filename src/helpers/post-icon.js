@@ -1,7 +1,6 @@
 const _ = require('underscore');
 
 const template = _.template('<i class="<%= icon %>"></i>');
-
 const category_icon_map = {
 	'c':          'devicon-c-plain',
 	'c++':        'devicon-cplusplus-plain',
