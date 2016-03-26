@@ -33,7 +33,7 @@
             </p>
             <div class="small-centered small-6 columns">
                 <p>
-                    <a href="/pages/cv.html" class="expanded button">Check out my CV</a>
+                    <a href="/pages/cv" class="expanded button">Check out my CV</a>
                 </p>
             </div>
             <h2>When I do not code</h2>
@@ -50,7 +50,7 @@
             {{#each (limit collections.articles 5)}}
             <article>
                 <header>
-                    {{> blog/header}}
+                    {{> blog/meta-title}}
                     {{> blog/meta-icon}}
                     {{> blog/meta-author}}
                 </header>

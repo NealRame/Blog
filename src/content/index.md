@@ -1,6 +1,6 @@
 ---
 collection: pages
-page: /
+page: home
 menu: true
 menu-rank: 0
 show-splash: true

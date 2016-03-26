@@ -18,13 +18,13 @@
     <div id="site-nav" class="menu-centered">
         <ul
             class="vertical medium-horizontal menu"
-            {{#if (eq this.path.name 'index')}}
+            {{#if (eq page 'home')}}
                 data-magellan
                 data-bar-offset="40"
             {{/if}}>
-            <li><a {{{menu-href this.path.name 'about'}}}>About</a></li>
-            <li><a {{{menu-href this.path.name 'blog'}}}>Blog</a></li>
-            <li><a {{{menu-href this.path.name 'contact'}}}>Contact</a></li>
+            <li><a {{{menu-href page 'about'}}}>About</a></li>
+            <li><a {{{menu-href page 'blog'}}}>Blog</a></li>
+            <li><a {{{menu-href page 'contact'}}}>Contact</a></li>
         </ul>
     </div>
 </div>

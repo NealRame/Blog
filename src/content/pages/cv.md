@@ -4,7 +4,7 @@ menu: false
 page: cv
 has-custom-page-style: true
 has-custom-page-application: true
-title: Curriculum vitæ
+title: CV
 description: Curriculum vitæ
 job: Développeur
 education:
