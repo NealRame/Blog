@@ -47,15 +47,8 @@
     <section id="blog" data-magellan-target="blog">
         <header><h1>Blog</h1></header>
         <div class="row columns">
-            {{#each (limit collections.articles 5)}}
-            <article>
-                <header>
-                    {{> blog/meta-title}}
-                    {{> blog/meta-icon}}
-                    {{> blog/meta-author}}
-                </header>
-                <p>{{resume}}</p>
-            </article>
+            {{#each (limit collections.posts 5)}}
+                {{> blog/post}}
             {{/each}}
             <p class="text-center">
                 You can find all the blog posts <a class="button circle" href="#">here</a>
