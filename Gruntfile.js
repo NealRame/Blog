@@ -111,9 +111,6 @@ module.exports = function(grunt) {
                             directory: '<%= helpers_dir %>',
                             pattern: /\.js$/
                         }},
-                        {'metalsmith-paths': {
-                            property: 'path'
-                        }},
                         {'metalsmith-collections': {
                             pages: {
                                 pattern: 'pages/*.md'
@@ -126,6 +123,9 @@ module.exports = function(grunt) {
                         }},
                         {'metalsmith-markdown': {
                             highlight: (code) => require('highlight.js').highlightAuto(code).value
+                        }},
+                        {'metalsmith-permalinks': {
+                            pattern: ':collection/:title'
                         }},
                         {'metalsmith-layouts': {
                             directory: '<%= layouts_dir %>',
