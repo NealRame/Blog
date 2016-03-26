@@ -7,7 +7,7 @@ const stylesheets = [
 ];
 
 module.exports = (collection) => {
-    return (collection.indexOf('articles') < 0
+    return ((collection || []).indexOf('posts') < 0
         ? stylesheets
         : stylesheets.concat('/assets/css/articles/style.css')
     )
