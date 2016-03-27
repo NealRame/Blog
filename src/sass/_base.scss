@@ -2,12 +2,14 @@
 @import "mixins";
 @import "global";
 @import "grid/grid";
+@import "components/pagination";
 @import "components/visibility";
 @import "typography/typography";
 
 @include foundation-grid;
 @include foundation-global-styles;
 @include foundation-typography;
+@include foundation-pagination;
 
 html {
     font-size: 16px;
