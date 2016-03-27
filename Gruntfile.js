@@ -125,7 +125,7 @@ module.exports = function(grunt) {
                                 pattern: 'pages/*.md'
                             },
                             posts: {
-                                pattern: 'articles/*.md',
+                                pattern: 'posts/*.md',
                                 sortBy: 'date',
                                 reverse: false
                             }
