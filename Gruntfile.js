@@ -115,6 +115,11 @@ module.exports = function(grunt) {
                             directory: '<%= helpers_dir %>',
                             pattern: /\.js$/
                         }},
+                        {'metalsmith-each': (file) => {
+                            if (file.date == null) {
+                                file.date = file.stats.mtime;
+                            }
+                        }},
                         {'metalsmith-collections': {
                             pages: {
                                 pattern: 'pages/*.md'
