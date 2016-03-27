@@ -47,6 +47,20 @@ section {
 .circle {
     border-radius: 50%;
 }
-
+.pagination {
+	li {
+		border: 1px solid $transparent;
+		border-radius: $pagination-radius;
+		&:hover, &.current {
+			border-color: $red;
+		}
+		&.current {
+			padding: 0;
+		}
+	},
+	li.disabled, li.ellipsis {
+		border: none;
+	}
+}
 @import 'button';
 @import 'callout';
