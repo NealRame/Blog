@@ -1,12 +1,12 @@
 'use strict';
 
 const _ = require('underscore');
-const page_link = require('./page-link');
+const pagination_link = require('./pagination-link');
 
 function paginate(page) {
 	return {
 		label: page.pagination.num,
-		link: page_link(page)
+		link: pagination_link(page)
 	};
 }
 
