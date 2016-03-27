@@ -47,7 +47,7 @@
     <section id="blog" data-magellan-target="blog">
         <header><h1>Blog</h1></header>
         <div class="row columns">
-            {{#each (limit collections.posts 5)}}
+            {{#each (limit collections.posts 3)}}
                 {{> blog/post}}
             {{/each}}
             <p class="text-center">
