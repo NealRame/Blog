@@ -69,6 +69,10 @@ function create_browserify_targets(apps_sources_dir, apps_dest_dir) {
         ), {});
 }
 
+function post_description(file) {
+    return `<h1>${file.title}</h1><p>${file.resume}</p>`;
+}
+
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -139,6 +143,10 @@ module.exports = function(grunt) {
                             engine: 'handlebars',
                             partials: '<%= partials_dir %>',
                             default: 'index.html'
+                        }},
+                        {'metalsmith-feed': {
+                            collection: 'posts',
+                            postDescription: post_description
                         }}
                     ]
                 },
