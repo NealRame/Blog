@@ -119,6 +119,16 @@ $blog-entry-bottom-margin: 2rem;
 $blog-entry-icon-size: 2.6rem;
 $blog-entry-meta-color: $medium-gray;
 $blog-entry-meta-font-size: .75rem;
+///////////////////////////////////////////////////////////////////////////////
+// Pagination variables
+$pagination-font-size: .75rem;
+$pagination-radius: 3px;
+$pagination-item-background-hover: $black;
+$pagination-item-background-current: $black;
+$pagination-item-color: $blue;
+$pagination-item-color-current: $red;
+$pagination-item-spacing: .25rem;
+$pagination-ellipsis-color: $blue;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Contact form variables
