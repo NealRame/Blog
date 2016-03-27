@@ -127,6 +127,13 @@ module.exports = function(grunt) {
                         {'metalsmith-permalinks': {
                             pattern: ':collection/:title'
                         }},
+                        {'metalsmith-pagination': {
+                            'collections.posts': {
+                                perPage: 5,
+                                layout: 'blog.html',
+                                path: 'blog/:num/index.html'
+                            }
+                        }},
                         {'metalsmith-layouts': {
                             directory: '<%= layouts_dir %>',
                             engine: 'handlebars',
