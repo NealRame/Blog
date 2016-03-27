@@ -3,48 +3,50 @@
 #blog {
 	background-color: $blog-section-bg-color;
 	color: $blog-section-fg-color;
+}
+
+article {
+	position: relative;
+	// border-bottom: $blog-entry-bottom-border-thickness solid $blog-entry-bottom-border-color;
+	margin-bottom: $blog-entry-bottom-margin;
 	a:not(.button) {
 		color: !important $light-gray;
 	}
 	h2 > a {
 		color: $blue;
 	}
-	article {
-		position: relative;
-		border-bottom: $blog-entry-bottom-border-thickness solid $blog-entry-bottom-border-color;
-		margin-bottom: $blog-entry-bottom-margin;
-		header {
-			margin-bottom: 1rem;
-			h2 {
-				margin: 0 0 0 ($blog-entry-icon-size + .75rem);
-			}
-			.meta-icon {
-				font-size: $blog-entry-icon-size;
-				line-height: inherit;
-				position: absolute;
-				top: 0;
-				height: $blog-entry-icon-size;
-				width: $blog-entry-icon-size;
-				& > i.fallback-icon {
-					display: block;
-					color: inherit;
-					font-size: inherit;
-					font-style: inherit;
-					line-height: $blog-entry-icon-size;
-					&::after {
-						content: '\f075';
-						font-family: FontAwesome;
-						line-height: inherit;
-					}
+	header {
+		margin-bottom: 1rem;
+		h2 {
+			margin: 0 0 0 ($blog-entry-meta-icon-size + .75rem);
+		}
+		.meta-icon {
+			color: $blog-entry-meta-icon-color;
+			font-size: $blog-entry-meta-icon-size;
+			line-height: inherit;
+			position: absolute;
+			top: 0;
+			height: $blog-entry-meta-icon-size;
+			width: $blog-entry-meta-icon-size;
+			& > i.fallback-icon {
+				display: block;
+				color: inherit;
+				font-size: inherit;
+				font-style: inherit;
+				line-height: $blog-entry-meta-icon-size;
+				&::after {
+					content: '\f075';
+					font-family: FontAwesome;
+					line-height: inherit;
 				}
 			}
-			.meta-author {
-				color: $blog-entry-meta-color;
-				font-family: $body-font-family;
-				font-size: $blog-entry-meta-font-size;
-				font-weight: normal;
-				margin: 0 0 1rem ($blog-entry-icon-size + .75rem);
-			}
+		}
+		.meta-author {
+			color: $blog-entry-meta-author-color;
+			font-family: $body-font-family;
+			font-size: $blog-entry-meta-author-font-size;
+			font-weight: normal;
+			margin: 0 0 1rem ($blog-entry-meta-icon-size + .75rem);
 		}
 	}
 }
