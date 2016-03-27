@@ -2,14 +2,12 @@
 @import "mixins";
 @import "global";
 @import "grid/grid";
-@import "components/pagination";
 @import "components/visibility";
 @import "typography/typography";
 
 @include foundation-grid;
 @include foundation-global-styles;
 @include foundation-typography;
-@include foundation-pagination;
 
 html {
     font-size: 16px;
@@ -46,20 +44,6 @@ section {
 .circle {
     border-radius: 50%;
 }
-.pagination {
-	li {
-		border: 1px solid $transparent;
-		border-radius: $pagination-radius;
-		&:hover, &.current {
-			border-color: $red;
-		}
-		&.current {
-			padding: 0;
-		}
-	},
-	li.disabled, li.ellipsis {
-		border: none;
-	}
-}
 @import 'button';
 @import 'callout';
+@import "pagination";
