@@ -113,12 +113,17 @@ $titlebar-toggle-menu-button-color: $white;
 // Blog page variables
 $blog-section-bg-color: $gray;
 $blog-section-fg-color: $blue;
+
 $blog-entry-bottom-border-thickness: 1px;
 $blog-entry-bottom-border-color: $blue;
-$blog-entry-bottom-margin: 2rem;
-$blog-entry-icon-size: 2.6rem;
-$blog-entry-meta-color: $medium-gray;
-$blog-entry-meta-font-size: .75rem;
+$blog-entry-bottom-margin: 5rem;
+
+$blog-entry-meta-icon-size: 2.6rem;
+$blog-entry-meta-icon-color: $blue;
+
+$blog-entry-meta-author-color: $medium-gray;
+$blog-entry-meta-author-font-size: .75rem;
+
 ///////////////////////////////////////////////////////////////////////////////
 // Pagination variables
 $pagination-font-size: .75rem;
