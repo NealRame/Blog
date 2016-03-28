@@ -19,13 +19,9 @@
 	<br>
 	Source code available on <a href="https://github.com/NealRame/CV">GitHub</a>.
 </footer>
-{{#if has-custom-page-application}}
-<script src="/assets/js/{{page}}/app.js"></script>
-{{else}}
-<script src="/assets/js/home/app.js"></script>
-{{/if}}
-{{#if (contains collection 'posts')}}
-<script src="/assets/js/posts/app.js"></script>
-{{/if}}
+{{#each applets}}
+<script src="/assets/js/applets/{{this}}.js"></script>
+{{/each}}
+<script src="/assets/js/app.js"></script>
 </body>
 </html>

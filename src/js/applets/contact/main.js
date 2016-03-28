@@ -135,12 +135,14 @@ function submit_form() {
         .catch(handle_form_data_errors.bind(this));
 }
 
-export default () => {
-    const $form = $('form');
-    $('.input', $form)
-        .find('input, textarea')
-        .on('focus', input_focus_in)
-        .on('blur', input_focus_out);
-    $('#submit', $form)
-        .on('click', () => submit_form.call($form));
-}
+global.applets = (global.applets || []).concat({
+    start: () => {
+        const $form = $('form');
+        $('.input', $form)
+            .find('input, textarea')
+            .on('focus', input_focus_in)
+            .on('blur', input_focus_out);
+        $('#submit', $form)
+            .on('click', () => submit_form.call($form));
+    }
+});

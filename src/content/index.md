@@ -1,4 +1,5 @@
 ---
+applets: [contact]
 collection: pages
 page: home
 menu: true

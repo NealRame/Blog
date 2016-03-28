@@ -14,11 +14,11 @@ global.disqus_config = function () {
 	this.page.identifier = post_id;
 };
 
-function disqus() {
-	const script = document.createElement('script');
-	script.src = '//nealrame.disqus.com/embed.js';
-	script.setAttribute('data-timestamp', +new Date());
-	(document.head || document.body).appendChild(script);
-}
-
-disqus();
+global.applets = (global.applets || []).concat({
+	start: () => {
+		const script = document.createElement('script');
+		script.src = '//nealrame.disqus.com/embed.js';
+		script.setAttribute('data-timestamp', +new Date());
+		(document.head || document.body).appendChild(script);
+	}
+});

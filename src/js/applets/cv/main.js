@@ -1,5 +1,3 @@
-import app from 'common/app';
-
 function equalize_picture() {
     const section = $('#personal-details');
     const picture = $('img', section);
@@ -19,16 +17,18 @@ function before_print() {
     equalize_picture();
 }
 
-app(() => {
-    equalize();
-    $(window).on('resize', equalize);
-    if (window.matchMedia) {
-        window.matchMedia('print').addListener((mql) => {
-            if (mql.matches) {
-                before_print();
-            } else {
-                equalize();
-            }
-        });
+global.applets = (global.applets || []).concat({
+    start: () => {
+        equalize();
+        $(window).on('resize', equalize);
+        if (window.matchMedia) {
+            window.matchMedia('print').addListener((mql) => {
+                if (mql.matches) {
+                    before_print();
+                } else {
+                    equalize();
+                }
+            });
+        }
     }
 });

@@ -18,14 +18,14 @@ const partials_dir = path.join(layouts_dir, 'partials');
 const sass_sources_dir = path.join(sources_dir, 'sass');
 const pictures_sources_dir = path.join(sources_dir, 'pictures');
 const js_sources_dir = path.join(sources_dir, 'js');
-const applications_sources_dir = path.join(js_sources_dir, 'apps');
+const applets_sources_dir = path.join(js_sources_dir, 'applets');
 
 // destinations variables
 const dest_dir = 'public';
 const assets_dest_dir = path.join(dest_dir, 'assets');
 const style_dest_dir = path.join(assets_dest_dir, 'css');
 const pictures_dest_dir = path.join(assets_dest_dir, 'pictures');
-const applications_dest_dir = path.join(assets_dest_dir, 'js');
+const js_dest_dir = path.join(assets_dest_dir, 'js');
 
 function is_dev() {
     switch (process.env.NODE_ENV) {
@@ -41,10 +41,8 @@ function is_prod() {
     return !is_dev()
 }
 
-function create_target(app, apps_source_dir, apps_dest_dir) {
-    const sources_dir = path.join(apps_source_dir, app);
-    const dest_dir = path.join(apps_dest_dir, app);
-    const options = Object.assign(
+function create_browserify_options() {
+    return Object.assign(
         {browserifyOptions: {
             debug: true,
             paths: ['node_modules', js_sources_dir]
@@ -54,20 +52,29 @@ function create_target(app, apps_source_dir, apps_dest_dir) {
         }]]},
         is_prod() ? {plugin: [['minifyify', {map: false, minify: true}]]} : {}
     );
-    return _.object([[app, {
-        options,
-        src: [`${sources_dir}/main.js`],
-        dest: `${dest_dir}/app.js`
+}
+
+function create_browserify_applet_target(applet) {
+    return _.object([[applet, {
+        options: create_browserify_options(),
+        src: [`${applets_sources_dir}/${applet}/main.js`],
+        dest: `${js_dest_dir}/applets/${applet}.js`
     }]]);
 }
 
-function create_browserify_targets(apps_sources_dir, apps_dest_dir) {
-    return fs.readdirSync(apps_sources_dir)
-        .filter((entry) => fs.statSync(path.join(apps_sources_dir, entry)).isDirectory())
-        .reduce((targets, app) => Object.assign(
+function create_browserify_targets() {
+    return fs.readdirSync(applets_sources_dir)
+        .filter(entry => fs.statSync(path.join(applets_sources_dir, entry)).isDirectory())
+        .reduce((targets, applet) => Object.assign(
             targets,
-            create_target(app, apps_sources_dir, apps_dest_dir)
-        ), {});
+            create_browserify_applet_target(applet)
+        ), {
+            app: {
+                options: create_browserify_options(),
+                src: '<%= js_sources_dir %>/app.js',
+                dest: '<%= js_dest_dir %>/app.js'
+            }
+        });
 }
 
 function post_description(file) {
@@ -88,21 +95,18 @@ module.exports = function(grunt) {
         sass_sources_dir,
         pictures_sources_dir,
         js_sources_dir,
-        applications_sources_dir,
+        applets_sources_dir,
         dest_dir,
         assets_dest_dir,
         style_dest_dir,
         pictures_dest_dir,
-        applications_dest_dir,
+        js_dest_dir,
         ///////////////////////////////////////////////////////////////////////
         // Configure tasks
         clean: {
             'all': ['<%= dest_dir %>']
         },
-        browserify: create_browserify_targets(
-            applications_sources_dir,
-            applications_dest_dir
-        ),
+        browserify: create_browserify_targets(),
         metalsmith: {
             content: {
                 options: {
