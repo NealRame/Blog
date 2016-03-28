@@ -1,10 +1,16 @@
-import {site} from '../../../../config.json';
+const post_id = $('meta[itemprop^="post_id:"]').attr('itemprop').split(':')[1];
 
-const post_id = $('meta[itemprop^="post_identifier"]').attr('itemprop').split(':')[1];
-const page_url = `${site.url}/${post_id}`;
+function trim_trailing_slash(s) {
+	return s.endsWith('/') ? s.substr(0, s.length - 1) : s;
+}
+
+function post_url() {
+	const location = window.location;
+	return `http://${location.host}${trim_trailing_slash(location.pathname)}`;
+}
 
 global.disqus_config = function () {
-	this.page.url = page_url;
+	this.page.url = post_url();
 	this.page.identifier = post_id;
 };
 
