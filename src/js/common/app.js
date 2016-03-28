@@ -12,7 +12,6 @@ export default function(run) {
 	$(window).load(() => {
 		$(window)
 			.on('resize', debounce(() => {
-				// const footer = $('#site-content-wrapper > footer').get(0);
 				const footer = $('body > footer').get(0);
 				footer.style.marginTop = 0;
 				stick_footer(footer);
