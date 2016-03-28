@@ -1,10 +1,16 @@
 {{> begin-page}}
     <section>
         <div class="row columns">
+            <header><h1>{{title}}</h1></header>
+            {{#if resume}}
+            <p><em>{{resume}}</em></p>
+            {{/if}}
 			{{{contents}}}
         </div>
     </section>
+    {{#if disqus}}
 	<section>
 		<div id="disqus_thread" class="row columns"></div>
 	</section>
+    {{/if}}
 {{> end-page}}
