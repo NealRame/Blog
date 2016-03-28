@@ -120,11 +120,6 @@ module.exports = function(grunt) {
                             directory: '<%= helpers_dir %>',
                             pattern: /\.js$/
                         }},
-                        {'metalsmith-each': (file) => {
-                            if (file.date == null) {
-                                file.date = file.stats.mtime;
-                            }
-                        }},
                         {'metalsmith-collections': {
                             pages: {
                                 pattern: 'pages/*.md'
@@ -133,6 +128,16 @@ module.exports = function(grunt) {
                                 pattern: 'posts/*.md',
                                 sortBy: 'date',
                                 reverse: false
+                            }
+                        }},
+                        {'metalsmith-each': (file) => {
+                            if (file.date == null) {
+                                file.date = file.stats.mtime;
+                            }
+                            if (file.collection.indexOf('posts') !== -1) {
+                                if (file.disqus) {
+                                    file.applets = (file.applets || []).concat('disqus');
+                                }
                             }
                         }},
                         {'metalsmith-markdown': {
