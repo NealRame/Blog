@@ -6,6 +6,7 @@ const _ = require('underscore');
 const fs = require('fs');
 const path = require('path');
 const initialize = require('./src/js/common/initialize');
+const create_post = require('./src/js/common/create-post');
 
 // sources variables
 const sources_dir = 'src';
@@ -244,7 +245,8 @@ module.exports = function(grunt) {
             }
         },
         prompt: {
-            init: initialize
+            init: initialize,
+            post: create_post
         }
     });
     grunt.loadNpmTasks('grunt-autoprefixer');
