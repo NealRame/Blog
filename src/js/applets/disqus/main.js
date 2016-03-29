@@ -1,3 +1,5 @@
+import {disqus} from '../../../../config.json'
+
 const post_id = $('meta[itemprop^="post_id:"]').attr('itemprop').split(':')[1];
 
 function trim_trailing_slash(s) {
@@ -17,7 +19,7 @@ global.disqus_config = function () {
 global.applets = (global.applets || []).concat({
 	start: () => {
 		const script = document.createElement('script');
-		script.src = '//nealrame.disqus.com/embed.js';
+		script.src = `//${disqus.shortname}.disqus.com/embed.js`;
 		script.setAttribute('data-timestamp', +new Date());
 		(document.head || document.body).appendChild(script);
 	}
