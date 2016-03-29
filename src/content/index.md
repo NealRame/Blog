@@ -1,5 +1,5 @@
 ---
-applets: [contact]
+applets: [contact,splash]
 collection: pages
 page: home
 menu: true
