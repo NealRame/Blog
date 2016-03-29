@@ -1,3 +1,5 @@
+import {analytics} from '../../../../config.json'
+
 function push_command(...args) {
 	(global.ga.q = global.ga.q || []).push(args);
 }
@@ -15,7 +17,7 @@ global.applets = (global.applets || []).concat({
 
 		(document.head || document.body).appendChild(script);
 
-		global.ga('create', 'UA-75717439-1', 'auto');
+		global.ga('create', `${analytics.api_key}`, 'auto');
 		global.ga('send', 'pageview');
 	}
 });
