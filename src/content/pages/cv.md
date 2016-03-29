@@ -2,8 +2,8 @@
 layout: cv.html
 menu: false
 page: cv
+applets: [cv]
 has-custom-page-style: true
-has-custom-page-application: true
 title: CV
 description: Curriculum vitæ
 job: Développeur
