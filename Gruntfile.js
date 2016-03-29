@@ -125,7 +125,7 @@ module.exports = function(grunt) {
                             posts: {
                                 pattern: 'posts/*.md',
                                 sortBy: 'date',
-                                reverse: false
+                                reverse: true
                             }
                         }},
                         {'metalsmith-each': (file) => {
