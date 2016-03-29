@@ -6,6 +6,6 @@
     background-color: transparentize($blue, .7);
     background-blend-mode: overlay;
     overflow: hidden;
-    height: 18rem;
+    min-height: 18rem;
     width: 100%;
 }
