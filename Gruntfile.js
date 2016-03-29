@@ -118,6 +118,9 @@ module.exports = function(grunt) {
                             directory: '<%= helpers_dir %>',
                             pattern: /\.js$/
                         }},
+                        {'metalsmith-publish': {
+                            draft: is_dev()
+                        }},
                         {'metalsmith-collections': {
                             pages: {
                                 pattern: 'pages/*.md'
