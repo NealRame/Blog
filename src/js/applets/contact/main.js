@@ -88,7 +88,20 @@ function send_form_data(values) {
     });
 }
 
+function begin_form_animation($form) {
+    $('button > i', $form)
+        .removeClass('fa-paper-plane')
+        .addClass('fa-spinner fa-pulse');
+}
+
+function stop_form_animation($form) {
+    $('button > i', $form)
+        .removeClass('fa-spinner fa-pulse')
+        .addClass('fa-paper-plane');
+}
+
 function handle_form_data_success() {
+    stop_form_animation(this);
     $('.input', this).find('input, textarea').val('');
     $('#form-message-wrapper', this)
         .html(callout_template({
@@ -107,6 +120,7 @@ function handle_form_data_errors(err) {
                 .append(`<span>${err.reason[attr]}</span>`);
         }
     }
+    stop_form_animation(this);
     $('#form-message-wrapper', this).html(callout_template({
         level: 'alert',
         message: err.message
@@ -130,6 +144,7 @@ function clear_form($form) {
 
 function submit_form() {
     clear_form(this)
+        .then(begin_form_animation)
         .then(get_form_data)
         .then(validate_form_data)
         .then(send_form_data)
