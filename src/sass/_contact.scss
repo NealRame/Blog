@@ -26,15 +26,6 @@
 #contact {
     background-color: $section-contact-bg-color;
     form {
-        #form-message-wrapper {
-            .callout {
-                border-radius: $contact-form-input-border-radius;
-                margin: 1rem;
-                margin-bottom: 2rem;
-                padding: .25rem;
-                text-align: center;
-            }
-        }
         .input {
             background-color: $contact-form-input-bg-color;
             border-radius: $contact-form-input-border-radius;
