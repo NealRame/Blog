@@ -5,8 +5,10 @@ import {check_mail_address} from 'common/utils';
 const get_simple_form_API_token = '7489a07ba6b67c76099174e8b28a2d55';
 const callout_template = _.template(
 `
-<div class="callout <%= level %>">
+<div class="callout <%= level %>" data-closable>
     <p><%= message %></p>
+    <button class="close-button" aria-label="Dismiss <%= level %>" type="button" data-close>
+    </button>
 </div>
 `
 );
