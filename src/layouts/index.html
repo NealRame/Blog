@@ -1,6 +1,5 @@
 {{> begin-page}}
     <section id="about" data-magellan-target="about">
-        <header><h1>About</h1></header>
         <div class="row columns">
             <div id="portrait">
                 <img src="{{personal.picture}}">
@@ -35,7 +34,6 @@
         </div>
     </section>
     <section id="blog" data-magellan-target="blog">
-        <header><h1>Blog</h1></header>
         <div class="row columns">
             {{#each (limit collections.posts 3)}}
                 {{> blog/post}}
@@ -46,7 +44,6 @@
         </div>
     </section>
     <section id="contact" data-magellan-target="contact">
-        <header><h1>Contact</h1></header>
         <div class="row column">
         	{{> contact/form}}
             <p>
