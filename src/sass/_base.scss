@@ -35,6 +35,9 @@ section {
     }
     p {
         text-indent: 1rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 .centered {
