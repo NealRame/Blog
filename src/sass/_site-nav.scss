@@ -17,38 +17,15 @@ $topbar-shadow-spread-radius: 4px;
     @include foundation-menu;
     @include foundation-title-bar;
     @include top-bar-container;
-    #portrait-shadow {
-        border: $topbar-avatar-border-thickness solid $topbar-background-color;
-        border-radius: 50%;
-        margin-left: $topbar-avatar-left-margin;
-        height: $topbar-avatar-size;
-        width: $topbar-avatar-size;
-        transition: box-shadow $topbar-avatar-transition-duration ease-out;
-        &.is-stuck {
-            @include shadow(
-                $blur-radius: $topbar-shadow-blur-radius,
-                $spread-radius: $topbar-shadow-spread-radius,
-                $color: $topbar-shadow-color
-            );
-            transition: box-shadow $topbar-avatar-transition-duration ease-in;
-        }
-    }
     .top-bar {
         width: 100%;
         line-height: 1rem;
-        #avatar {
-            border: $topbar-avatar-border-thickness solid $topbar-background-color;
-            border-radius: 50%;
-            display: inline;
-            margin-left: $topbar-avatar-left-margin;
-            position: absolute;
-            height: $topbar-avatar-size;
-            width: $topbar-avatar-size;
-        }
         #site-nav {
-            background-color: transparentize($topbar-background-color, .125);
+            background-color: $topbar-background-color;
             font-size: 1.25rem;
-            transition: box-shadow $topbar-avatar-transition-duration ease-out;
+            transition:
+                box-shadow $topbar-transition-duration ease-out,
+                background-color $topbar-transition-duration ease-out;
             ul > li > a {
                 color: $white;
                 &.active {
@@ -57,12 +34,11 @@ $topbar-shadow-spread-radius: 4px;
             }
             @include breakpoint(medium) {
                 border-top: 4px solid $blue;
-                background-color: $topbar-background-color;
             };
         }
         .title-bar {
             text-align: right;
-            transition: box-shadow $topbar-avatar-transition-duration ease-in;
+            transition: box-shadow $topbar-transition-duration ease-in;
             a[data-toggle] {
                 color: $titlebar-toggle-menu-button-color;
                 margin-left: .5rem;
@@ -71,13 +47,26 @@ $topbar-shadow-spread-radius: 4px;
             }
         }
         &.is-stuck {
-            #site-nav, .title-bar {
+            #site-nav {
+                @include shadow(
+                    $vertical: $topbar-shadow-spread-radius,
+                    $blur-radius: $topbar-shadow-blur-radius,
+                    $spread-radius: $topbar-shadow-spread-radius/8,
+                    $color: $topbar-shadow-color
+                );
+            }
+            .title-bar {
                 @include shadow(
                     $blur-radius: $topbar-shadow-blur-radius,
                     $spread-radius: $topbar-shadow-spread-radius,
                     $color: $topbar-shadow-color
                 );
-                transition: box-shadow $topbar-avatar-transition-duration ease-in;
+            }
+            #site-nav, .title-bar {
+                background-color: transparentize($topbar-background-color, .05);
+                transition:
+                    box-shadow $topbar-transition-duration ease-in,
+                    background-color $topbar-transition-duration ease-in;
             }
         }
     }
