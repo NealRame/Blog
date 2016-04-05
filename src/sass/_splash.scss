@@ -22,6 +22,10 @@
         }
     }
     #page-scroll {
+        position: absolute;
+        bottom: 1rem;
+        text-align: center;
+        width: 100%;
         a {
             color: $white;
             i {
