@@ -2,11 +2,6 @@
 @import "mixins";
 #splash {
     color: $white;
-    background-image: url('/assets/pictures/splashes/3.jpg');
-	background-size: cover;
-	background-position: center;
-    background-color: transparentize($blue, .75);
-    background-blend-mode: overlay;
     overflow: hidden;
     min-height: 18rem;
     text-align: center;
@@ -18,9 +13,12 @@
         h1 {
             color: inherit;
             font-family: inherit;
-            font-size: 6rem;
+            font-size: 3rem;
             font-weight: 900;
-            margin: 3rem;
+            margin: 3rem 0;
+            @include breakpoint(medium) {
+                font-size: 6rem;
+            }
         }
     }
     #page-scroll {
