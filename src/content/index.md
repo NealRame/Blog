@@ -1,5 +1,6 @@
 ---
 applets: [contact,splash]
+styles: [background]
 collection: pages
 page: home
 menu: true
