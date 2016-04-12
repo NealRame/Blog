@@ -40,12 +40,25 @@ article {
 				}
 			}
 		}
-		.meta-author {
+		.meta-comments {
 			color: $blog-entry-meta-author-color;
+			display: inline;
+			font-family: $body-font-family;
+			font-size: $blog-entry-meta-author-font-size;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		.meta-date {
+			color: $blog-entry-meta-author-color;
+			display: inline;
 			font-family: $body-font-family;
 			font-size: $blog-entry-meta-author-font-size;
 			font-weight: normal;
 			margin: 0 0 1rem ($blog-entry-meta-icon-size + .75rem);
+			text-transform: uppercase;
 		}
+	}
+	.resume > p {
+		text-indent: 0;
 	}
 }
