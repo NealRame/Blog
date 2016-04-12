@@ -13,11 +13,8 @@ function custom_page_style(page) {
 }
 
 module.exports = (page) => {
-    return ((page.collection || []).indexOf('posts') < 0
-        ? stylesheets
-        : stylesheets.concat('/assets/css/articles/style.css')
-    )
-    .concat(custom_page_style(page))
-    .map((url) => `<link rel="stylesheet" href="${url}" type="text/css">`)
-    .join('\n');
+    return (stylesheets
+        .concat(custom_page_style(page))
+        .map((url) => `<link rel="stylesheet" href="${url}" type="text/css">`)
+        .join('\n'));
 };
