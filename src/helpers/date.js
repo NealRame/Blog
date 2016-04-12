@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = function(page) {
-	return (new Date(page.date)).toDateString();
+	return moment((new Date(page.date)).getTime()).format('ll');
 }
