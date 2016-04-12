@@ -136,6 +136,8 @@ module.exports = function(grunt) {
                                 file.date = file.stats.mtime;
                             }
                             if (file.collection.indexOf('posts') !== -1) {
+                                file.styles = (file.styles || [])
+                                    .concat('/assets/css/articles/style.css');
                                 if (file.disqus) {
                                     file.applets = (file.applets || []).concat('disqus');
                                 }
