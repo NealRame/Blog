@@ -44,7 +44,10 @@
     "url": "git+https://github.com/nealrame/CV.git"
   },
   "keywords": [
-    "Blog", "Browserify", "Neal.Rame.", "Metalsmith"
+    "Blog",
+    "Browserify",
+    "Neal.Rame.",
+    "Metalsmith"
   ],
   "author": "Julien Graziano <julien@graziano.fr>",
   "license": "MIT",
