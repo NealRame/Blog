@@ -1,7 +1,7 @@
 {
   "name": "cv",
   "version": "0.0.1",
-  "description": "My curriculum vitæ",
+  "description": "My blog",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -44,7 +44,7 @@
     "url": "git+https://github.com/nealrame/CV.git"
   },
   "keywords": [
-    "CV"
+    "Blog", "Browserify", "Neal.Rame.", "Metalsmith"
   ],
   "author": "Julien Graziano <julien@graziano.fr>",
   "license": "MIT",
