@@ -19,7 +19,7 @@ const js_sources_dir = path.join(sources_dir, 'js');
 const applets_sources_dir = path.join(js_sources_dir, 'applets');
 
 // destinations variables
-const dest_dir = 'public';
+const dest_dir = process.env.DEST_DIR || 'public';
 const assets_dest_dir = path.join(dest_dir, 'assets');
 const style_dest_dir = path.join(assets_dest_dir, 'css');
 const pictures_dest_dir = path.join(assets_dest_dir, 'pictures');
