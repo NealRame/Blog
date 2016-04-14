@@ -1,30 +1,30 @@
 <section id="personal-details">
-    <h1>{{name}}<br>{{job}}</h1>
+    <h1>{{personal.name}}<br>{{job}}</h1>
     <div class="row">
-        {{#if picture}}
+        {{#if personal.picture}}
         <div class="columns small-12 medium-6">
-            <img src="{{picture}}"></img>
+            <img src="{{personal.picture}}"></img>
         </div>
         {{/if}}
         <div class="columns small-12 medium-6">
             <ul>
-                {{#if birth}}
-                <li><i class="fa fa-birthday-cake fa-fw"></i>{{birth}}</li>
+                {{#if personal.birth}}
+                <li><i class="fa fa-birthday-cake fa-fw"></i>{{personal.birth}}</li>
                 {{/if}}
-                {{#if address}}
-                <li><i class="fa fa-map-marker fa-fw"></i>{{address}}</li>
+                {{#if personal.address}}
+                <li><i class="fa fa-map-marker fa-fw"></i>{{personal.address}}</li>
                 {{/if}}
-                {{#if phone}}
-                <li><i class="fa fa-mobile fa-fw"></i>{{phone}}</li>
+                {{#if personal.phone}}
+                <li><i class="fa fa-mobile fa-fw"></i>{{personal.phone}}</li>
                 {{/if}}
-                {{#if email}}
-                <li><i class="fa fa-envelope-o fa-fw"></i>{{email}}</li>
+                {{#if personal.email}}
+                <li><i class="fa fa-envelope-o fa-fw"></i>{{personal.email}}</li>
                 {{/if}}
-                {{#if github}}
-                <li><i class="fa fa-github fa-fw"></i><a href="{{github}}">{{github}}</a></li>
-                {{/if}}
-                {{#if 500px}}
-                <li><i class="fa fa-500px fa-fw"></i><a href="{{500px}}">{{500px}}</a></li>
+                {{#if personal.social-networks.github}}
+                <li>
+					<i class="fa fa-github fa-fw"></i>
+					<a href="{{personal.social-networks.github}}">{{personal.social-networks.github}}</a>
+				</li>
                 {{/if}}
             </ul>
         </div>
