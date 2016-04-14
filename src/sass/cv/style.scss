@@ -44,13 +44,13 @@ section {
             margin: 0;
             li {
                 margin-bottom: .5em;
+				@include breakpoint(medium) {
+					font-size: smaller;
+				}
                 i {
                     color: $red;
                     margin: 0;
                     margin-right: 1em;
-                }
-                &:last-child {
-                    // margin: 0;
                 }
             }
         }
