@@ -33,8 +33,14 @@ $alert-color: $red;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Section variables
-$section-about-bg-color: $black;
-$section-contact-bg-color: $black;
+$section-about-background-color: $gray;
+$section-about-foreground-color: inherit;
+
+$section-contact-background-color: $black;
+$section-contact-foreground-color: inherit;
+
+$section-blog-background-color: $black;
+$section-blog-foreground-color: inherit;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Grid variables
@@ -138,9 +144,6 @@ $titlebar-toggle-menu-button-color: $white;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Blog page variables
-$blog-section-bg-color: $gray;
-$blog-section-fg-color: $blue;
-
 $blog-entry-bottom-border-thickness: 1px;
 $blog-entry-bottom-border-color: $blue;
 $blog-entry-bottom-margin: 5rem;

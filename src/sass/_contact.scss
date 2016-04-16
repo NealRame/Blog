@@ -24,7 +24,8 @@
 }
 
 #contact {
-    background-color: $section-contact-bg-color;
+    background-color: $section-contact-background-color;
+	color: $section-contact-foreground-color;
     form {
         .input {
             background-color: $contact-form-input-bg-color;

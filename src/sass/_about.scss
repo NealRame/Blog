@@ -1,6 +1,7 @@
 @import "settings";
 #about {
-	background-color: $section-about-bg-color;
+	background-color: $section-about-background-color;
+	color: $section-about-foreground-color;
 	#portrait {
 		text-align: center;
 		img {
