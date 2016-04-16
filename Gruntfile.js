@@ -137,7 +137,7 @@ module.exports = function(grunt) {
                             }
                             if (file.collection.indexOf('posts') !== -1) {
                                 file.styles = (file.styles || [])
-                                    .concat('/assets/css/articles/style.css');
+                                    .concat('articles');
                                 if (file.disqus) {
                                     file.applets = (file.applets || []).concat('disqus');
                                 }
