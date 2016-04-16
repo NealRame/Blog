@@ -1,37 +1,27 @@
 @import 'settings';
 @import 'mixins';
 
-$footer-bg-color: darken($black, 4);
-$footer-social-link-bg-color: lighten($black, 4);
-$footer-social-link-color: $blue;
-$footer-social-link-font-size: 3rem;
-$footer-social-link-font-size-hover: 4rem;
-$footer-social-link-width: 5rem;
-$footer-social-link-transition-speed: .2s;
-
 footer {
 	border-top: 1px solid darken($blue, 25);
-	background-color: $footer-bg-color;
-	font-size: .75rem;
+	background-color: $footer-background-color;
+	color: $footer-color;
+	font-family: sans-serif;
+	font-size: $footer-font-size;
 	text-align: center;
-	min-height: 5rem;
 	#terms {
 		list-style-type: none;
-		margin: 0;
-		margin-bottom: .5rem;
+		margin: .5rem 0;
 		padding: 0;
 		text-align: center;
 		li {
 			display: inline-block;
-			height: 1.75rem;
-			line-height: 1.75rem;
 			&:not(:last-child)::after {
 				content: '-';
 				margin: 0 .5rem;
 			}
 		}
 		a {
-			color: $white;
+			color: inherit;;
 			text-decoration: underline;
 		}
 	}
