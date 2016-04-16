@@ -1,4 +1,14 @@
 {{> begin-page}}
+	<section id="blog" data-magellan-target="blog">
+		<div class="row columns">
+			{{#each (limit collections.posts 3)}}
+				{{> blog/post}}
+			{{/each}}
+			<p class="text-center">
+				You can find all the blog posts<br><a href="/blog/1" class="button circle" href="#">here</a>
+			</p>
+		</div>
+	</section>
     <section id="about" data-magellan-target="about">
         <div class="row columns">
             <div id="portrait">
@@ -28,16 +38,6 @@
             </p>
             <p>
                 You can check out my cv here <a href="/pages/cv">here</a>.
-            </p>
-        </div>
-    </section>
-    <section id="blog" data-magellan-target="blog">
-        <div class="row columns">
-            {{#each (limit collections.posts 3)}}
-                {{> blog/post}}
-            {{/each}}
-            <p class="text-center">
-                You can find all the blog posts<br><a href="/blog/1" class="button circle" href="#">here</a>
             </p>
         </div>
     </section>
