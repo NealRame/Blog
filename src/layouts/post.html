@@ -6,11 +6,12 @@
             <p><em>{{resume}}</em></p>
             {{/if}}
 			{{{contents}}}
+			<footer class="">
+				Posted on {{date this}}, by {{this.author}}
+			</footer>
         </div>
-    </section>
-    {{#if disqus}}
-	<section>
+		{{#if disqus}}
 		<div id="disqus_thread" class="row columns"></div>
-	</section>
-    {{/if}}
+	    {{/if}}
+    </section>
 {{> end-page}}
