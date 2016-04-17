@@ -66,3 +66,12 @@ article {
 		font-size: smaller;
 	}
 }
+
+footer {
+	border-top: $blog-article-footer-border-top;
+	color: $blog-article-footer-font-color;
+	font-size: $blog-article-footer-font-size;
+	font-style: italic;
+	margin: $blog-article-footer-margin-top 0 $blog-article-footer-margin-bottom;
+	text-align: right;
+}
