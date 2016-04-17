@@ -1,7 +1,7 @@
 @import 'settings';
 @import 'mixins';
 
-footer {
+body > footer {
 	border-top: 1px solid darken($blue, 25);
 	background-color: $footer-background-color;
 	color: $footer-color;
