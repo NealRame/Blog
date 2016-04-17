@@ -2,6 +2,15 @@
 .not-found {
 	color: $medium-gray;
     font-family: 'Raleway', sans-serif;
-	font-size: 4rem;
+	font-size: 3.5rem;
 	text-align: center;
+	& .fa {
+		font-size: 12rem;
+	}
+	@include breakpoint(medium) {
+		font-size: 4rem;
+		& .fa {
+			font-size: 8rem;
+		}
+	};
 }
