@@ -9,7 +9,7 @@ export NODE_ENV="production"
 USER_NAME="Travis CI"
 USER_EMAIL="julien@graziano.fr"
 
-GH_REF="${GH_REF:-github.com/NealRame/NealRame.github.io.git}"
+GH_REF="${GH_REF:-NealRame/NealRame.github.io.git}"
 DATE=$(date +"%m.%d.%y")
 SHA=$(git rev-parse HEAD)
 
@@ -25,5 +25,5 @@ pushd "$DEST_DIR"
 		Deploy $DATE
 		commit: NealRame/Blog@$SHA
 	EOF
-	git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master > /dev/null 2>&1
+	git push --force --quiet "https://${GH_TOKEN}@github.com/${GH_REF}" master:master > /dev/null 2>&1
 popd
