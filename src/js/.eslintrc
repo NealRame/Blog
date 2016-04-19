@@ -1,12 +1,15 @@
 {
-    "env": {
-        "browser": true,
-      "commonjs": true,
-      "es6": true
-    },
-    "globals": {
-        "global": false,
-        "$": false,
-        "Foundation": false
-    }
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "globals": {
+    "global": false,
+    "$": false,
+    "Foundation": false
+  }
 }
