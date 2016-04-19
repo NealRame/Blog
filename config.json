@@ -1,0 +1,26 @@
+{
+  "site": {
+    "author": "Neal.Rame.",
+    "title": "Neal.Rame.",
+    "url": "http://nealrame.com"
+  },
+  "analytics": {
+    "api_key": "UA-75717439-1"
+  },
+  "disqus": {
+    "shortname": "nealrame"
+  },
+  "personal": {
+    "address": "45 rue d'Amiens 59000 Lille",
+    "birth": "31 mars 1981",
+    "email": "julien@graziano.fr",
+    "name": "Julien Graziano",
+    "phone": "+33 6 75 12 29 57",
+    "picture": "/assets/pictures/me.jpg",
+  	"social-networks": {
+      "github": "https://github.com/NealRame",
+      "facebook": "https://www.facebook.com/NealRame",
+      "twitter": "https://twitter.com/NealRame"
+  	}
+  }
+}
