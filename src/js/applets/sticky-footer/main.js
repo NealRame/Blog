@@ -1,26 +1,4 @@
 import {debounce} from 'underscore';
-import {existy} from 'common/functional';
-
-const MutationObserver = global.MutationObserver || global.WebKitMutationObserver;
-
-const observeDOM = (() => {
-	return (obj, cb) => {
-		if (existy(MutationObserver)) {
-			const observer = new MutationObserver((mutations) => {
-				if (mutations.some((mutation) => mutation.type === 'childList')) {
-					cb();
-				}
-			});
-			observer.observe(obj, {
-				childList: true,
-				subtree: true
-			});
-		} else if (existy(global.addEventListener)) {
-			obj.addEventListener('DOMNodeInserted', cb, false);
-			obj.addEventListener('DOMNodeRemoved', cb, false);
-		}
-	}
-})();
 
 function stick_footer(footer) {
 	footer.style.marginTop = 0;
@@ -34,9 +12,10 @@ global.applets = (global.applets || []).concat({
 	name: 'sticky-footer',
 	start() {
 		const footer = $('body > footer').get(0);
-		observeDOM(document, () => $(window).trigger('resize'));
+		const sticky_footer_debounced = debounce(() => stick_footer(footer), 250);
 		$(window)
-			.on('resize', debounce(() => stick_footer(footer), 250))
+			.on('stick-footer.nr.trigger', sticky_footer_debounced)
+			.on('resize', sticky_footer_debounced)
 			.trigger('resize');
 	}
 });
