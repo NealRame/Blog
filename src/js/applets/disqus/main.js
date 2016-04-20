@@ -14,6 +14,9 @@ function post_url() {
 global.disqus_config = function () {
 	this.page.url = post_url();
 	this.page.identifier = post_id;
+	this.callbacks.onReady = [
+		() => $(window).trigger('stick-footer.nr.trigger')
+	];
 };
 
 global.applets = (global.applets || []).concat({
