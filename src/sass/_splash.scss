@@ -1,6 +1,11 @@
 @import "settings";
 @import "mixins";
 #splash {
+	background-attachment: fixed;
+    background-image: $body-background-image;
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
     color: $white;
     overflow: hidden;
     min-height: 18rem;
@@ -17,8 +22,11 @@
             font-weight: 900;
             margin: 3rem 0;
             @include breakpoint(medium) {
-                font-size: 6rem;
+                font-size: 4rem;
             }
+			@include breakpoint(large) {
+				font-size: 6rem;
+			}
         }
     }
     #page-scroll {
