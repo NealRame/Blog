@@ -1,7 +1,7 @@
 import {debounce} from 'underscore';
 
 function resize_splash(splash, menu_bar) {
-	splash.height(window.innerHeight - menu_bar.height());
+	splash.css({minHeight: window.innerHeight - menu_bar.height()});
 }
 
 global.applets = (global.applets || []).concat({
