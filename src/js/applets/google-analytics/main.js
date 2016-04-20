@@ -5,7 +5,8 @@ function push_command(...args) {
 }
 
 global.applets = (global.applets || []).concat({
-	start: () => {
+	name: 'analytics',
+	start() {
 		global.GoogleAnalyticsObject = 'ga';
 		global.ga = global.ga || push_command;
 		global.ga.l = Date.now();

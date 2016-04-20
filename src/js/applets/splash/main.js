@@ -5,6 +5,7 @@ function resize_splash(splash, menu_bar) {
 }
 
 global.applets = (global.applets || []).concat({
+	name: 'splash',
 	start() {
 		const menu_bar = $('#site-menu-wrapper');
 		const splash = $('#splash');

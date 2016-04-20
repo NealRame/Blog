@@ -153,7 +153,8 @@ function submit_form() {
 }
 
 global.applets = (global.applets || []).concat({
-    start: () => {
+    name: 'contact',
+    start() {
         const $form = $('form');
         $('.input', $form)
             .find('input, textarea')

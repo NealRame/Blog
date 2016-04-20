@@ -18,7 +18,8 @@ function before_print() {
 }
 
 global.applets = (global.applets || []).concat({
-    start: () => {
+	name: 'cv',
+    start() {
         equalize();
         $(window).on('resize', equalize);
         if (window.matchMedia) {

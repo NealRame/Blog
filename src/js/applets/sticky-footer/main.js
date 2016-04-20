@@ -31,7 +31,8 @@ function stick_footer(footer) {
 }
 
 global.applets = (global.applets || []).concat({
-	start: () => {
+	name: 'sticky-footer',
+	start() {
 		const footer = $('body > footer').get(0);
 		observeDOM(document, () => $(window).trigger('resize'));
 		$(window)

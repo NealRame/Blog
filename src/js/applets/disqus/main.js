@@ -17,6 +17,7 @@ global.disqus_config = function () {
 };
 
 global.applets = (global.applets || []).concat({
+	name: 'disqus',
 	start: () => {
 		const script = document.createElement('script');
 		script.src = `//${disqus.shortname}.disqus.com/embed.js`;
