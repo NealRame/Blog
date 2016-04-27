@@ -1,7 +1,6 @@
 @import "settings";
 @import "mixins";
 #splash {
-	background-attachment: fixed;
     background-image: $body-background-image;
     background-size: cover;
     background-position: center 0;
@@ -11,6 +10,9 @@
     min-height: 18rem;
     text-align: center;
     width: 100%;
+	@include breakpoint(medium) {
+		background-attachment: fixed;
+	}
     #intro-text {
         font-family: 'Raleway', sans-serif;
         font-size: 1.25rem;
