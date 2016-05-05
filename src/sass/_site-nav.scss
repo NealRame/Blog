@@ -11,63 +11,63 @@ $topbar-shadow-blur-radius: 4px;
 $topbar-shadow-spread-radius: 4px;
 
 #site-menu-wrapper {
-    font-family: $header-font-family;
-    font-weight: $topbar-font-weight;
-    margin: 0;
-    @include foundation-menu;
-    @include foundation-title-bar;
-    @include top-bar-container;
-    .top-bar {
-        width: 100%;
-        line-height: 1rem;
-        #site-nav {
-            background-color: $topbar-background-color;
-            font-size: 1.25rem;
-            transition:
-                box-shadow $topbar-transition-duration ease-out,
-                background-color $topbar-transition-duration ease-out;
-            ul > li > a {
-                color: $white;
-                &.active {
-                    color: $black;
-                }
-            }
-            @include breakpoint(medium) {
-                border-top: 4px solid $blue;
-            };
-        }
-        .title-bar {
-            text-align: right;
-            transition: box-shadow $topbar-transition-duration ease-in;
-            a[data-toggle] {
-                color: $titlebar-toggle-menu-button-color;
-                margin-left: .5rem;
-                font-size: 1.25rem;
-                line-height: 1rem;
-            }
-        }
-        &.is-stuck {
-            #site-nav {
-                @include shadow(
-                    $vertical: $topbar-shadow-spread-radius,
-                    $blur-radius: $topbar-shadow-blur-radius,
-                    $spread-radius: $topbar-shadow-spread-radius/8,
-                    $color: $topbar-shadow-color
-                );
-            }
-            .title-bar {
-                @include shadow(
-                    $blur-radius: $topbar-shadow-blur-radius,
-                    $spread-radius: $topbar-shadow-spread-radius,
-                    $color: $topbar-shadow-color
-                );
-            }
-            #site-nav, .title-bar {
-                background-color: transparentize($topbar-background-color, .05);
-                transition:
-                    box-shadow $topbar-transition-duration ease-in,
-                    background-color $topbar-transition-duration ease-in;
-            }
-        }
-    }
+	font-family: $header-font-family;
+	font-weight: $topbar-font-weight;
+	margin: 0;
+	@include foundation-menu;
+	@include foundation-title-bar;
+	@include top-bar-container;
+	.top-bar {
+		width: 100%;
+		line-height: 1rem;
+		#site-nav {
+			background-color: $topbar-background-color;
+			font-size: 1.25rem;
+			transition:
+				box-shadow $topbar-transition-duration ease-out,
+				background-color $topbar-transition-duration ease-out;
+			ul > li > a {
+				color: $white;
+				&.active {
+					color: $black;
+				}
+			}
+			@include breakpoint(medium) {
+				border-top: 4px solid $blue;
+			};
+		}
+		.title-bar {
+			text-align: right;
+			transition: box-shadow $topbar-transition-duration ease-in;
+			a[data-toggle] {
+				color: $titlebar-toggle-menu-button-color;
+				margin-left: .5rem;
+				font-size: 1.25rem;
+				line-height: 1rem;
+			}
+		}
+		&.is-stuck {
+			#site-nav {
+				@include shadow(
+					$vertical: $topbar-shadow-spread-radius,
+					$blur-radius: $topbar-shadow-blur-radius,
+					$spread-radius: $topbar-shadow-spread-radius/8,
+					$color: $topbar-shadow-color
+				);
+			}
+			.title-bar {
+				@include shadow(
+					$blur-radius: $topbar-shadow-blur-radius,
+					$spread-radius: $topbar-shadow-spread-radius,
+					$color: $topbar-shadow-color
+				);
+			}
+			#site-nav, .title-bar {
+				background-color: transparentize($topbar-background-color, .05);
+				transition:
+					box-shadow $topbar-transition-duration ease-in,
+					background-color $topbar-transition-duration ease-in;
+			}
+		}
+	}
 }

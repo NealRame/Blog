@@ -11,7 +11,7 @@
 		@include glow($primary-color, 6px);
 	}
 	@each $name, $color in $foundation-palette {
-    	@if $button-fill != hollow {
+		@if $button-fill != hollow {
 			&.#{$name}:hover {
 				@include glow($color, 6px);
 				background-color: lighten($color, 5);

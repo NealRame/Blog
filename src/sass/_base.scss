@@ -10,41 +10,41 @@
 @include foundation-typography;
 
 html {
-    font-size: 16px;
-    @include breakpoint(medium) {
-        font-size: 24px;
-    };
+	font-size: 16px;
+	@include breakpoint(medium) {
+		font-size: 24px;
+	};
 }
 body {
-    font-weight: $body-font-weight;
+	font-weight: $body-font-weight;
 }
 h1 {
-    margin: 3rem 0 1.5rem;
+	margin: 3rem 0 1.5rem;
 }
 h2 {
-    margin: 2rem 0 1rem;
+	margin: 2rem 0 1rem;
 }
 section {
-    padding: 3rem 0;
-    header {
-        h1 {
-            margin: 0 0 3rem;
-            text-align: center;
-        }
-    }
-    p {
-        text-indent: 1rem;
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+	padding: 3rem 0;
+	header {
+		h1 {
+			margin: 0 0 3rem;
+			text-align: center;
+		}
+	}
+	p {
+		text-indent: 1rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 .centered {
-    display: block;
-    margin: 0 auto;
+	display: block;
+	margin: 0 auto;
 }
 .circle {
-    border-radius: 50%;
+	border-radius: 50%;
 }
 @import "button";
 @import "callout";

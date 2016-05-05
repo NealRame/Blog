@@ -18,11 +18,11 @@ $red: #dc3522;
 $orange: #eecb7b;
 
 $foundation-palette: (
-    primary: $blue,
-    secondary: $light-gray,
-    success: $green,
-    warning: $orange,
-    alert: $red,
+	primary: $blue,
+	secondary: $light-gray,
+	success: $green,
+	warning: $orange,
+	alert: $red,
 );
 
 $primary-color: $blue;
@@ -98,9 +98,9 @@ $callout-margin: 0 0 2rem 0;
 $header-font-family: 'Oswald', sans-serif;
 $header-color: $blue;
 $header-sizes: (
-    'small':  ('h1': 2rem, 'h2': 1.5rem, 'h3': 1rem),
-    'medium': ('h1': 2rem, 'h2': 1.5rem, 'h3': 1rem),
-    'large':  ('h1': 2rem, 'h2': 1.5rem, 'h3': 1rem)
+	'small':  ('h1': 2rem, 'h2': 1.5rem, 'h3': 1rem),
+	'medium': ('h1': 2rem, 'h2': 1.5rem, 'h3': 1rem),
+	'large':  ('h1': 2rem, 'h2': 1.5rem, 'h3': 1rem)
 );
 $header-font-weight: 700;
 
