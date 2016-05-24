@@ -213,6 +213,16 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        connect: {
+            server: {
+                options: {
+                    port: 8080,
+                    base: {
+                        path: '<%= dest_dir %>'
+                    }
+                }
+            }
+        },
         watch: {
             content: {
                 files: [
@@ -263,6 +273,7 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-metalsmith');
@@ -273,4 +284,14 @@ module.exports = function(grunt) {
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
     grunt.registerTask('default', ['clean', 'metalsmith', 'sass', 'autoprefixer', 'browserify', 'imagemin']);
+    grunt.registerTask('serve', [
+        'clean',
+        'metalsmith',
+        'sass',
+        'autoprefixer',
+        'browserify',
+        'imagemin',
+        'connect:server',
+        'watch'
+    ]);
 };
