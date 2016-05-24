@@ -2,6 +2,9 @@
 #about {
 	background-color: $section-about-background-color;
 	color: $section-about-foreground-color;
+	a {
+		color: $section-about-link-color;
+	}
 	#portrait {
 		text-align: center;
 		img {
