@@ -9,10 +9,6 @@ description: Curriculum vitæ
 job: Développeur
 education:
     -
-        year: 2002
-        school: Université des Sciences et Technologies de Lille
-        grade: License d'informatique
-    -
         year: 2005
         school: Université des Sciences et Technologies de Lille
         grade: Master en informatique
