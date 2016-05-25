@@ -25,11 +25,8 @@ $foundation-palette: (
 	alert: $red,
 );
 
-$primary-color: $blue;
-$secondary-color: $light-gray;
-$success-color: $green;
-$warning-color: $orange;
-$alert-color: $red;
+$anchor-color: $medium-gray;
+$anchor-color-hover: $red;
 
 $global-margin: 1.25rem;
 
@@ -38,6 +35,7 @@ $global-margin: 1.25rem;
 $section-about-background-color: $gray;
 $section-about-foreground-color: $blue;
 $section-about-link-color: $red;
+$section-about-link-color-hover: $medium-gray;
 
 $section-contact-background-color: $black;
 $section-contact-foreground-color: inherit;

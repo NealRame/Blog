@@ -4,6 +4,9 @@
 	color: $section-about-foreground-color;
 	a {
 		color: $section-about-link-color;
+		&:hover {
+			color: $section-about-link-color-hover;
+		}
 	}
 	#portrait {
 		text-align: center;
