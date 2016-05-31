@@ -194,10 +194,36 @@ $contact-form-input-line-height: 1.8rem;
 
 ///////////////////////////////////////////////////////////////////////////////
 // CV variables
+
+$cv-font-size: .75em;
+$cv-link-color: $body-font-color;
+$cv-link-hover-color: $red;
+
+$cv-section-margin: 2em;
+
+$cv-section-header-font-size: 1.5em;
+$cv-section-header-margin: 1em 0;
+
+$cv-section-subheader-font-size: 1em;
+$cv-section-subheader-margin: 1em 0 .25em;
+
 $cv-section-border-color: $black;
 $cv-section-header-border-color: $red;
 $cv-section-header-border-thickness: 2px;
-$cv-personal-picture-border-color: $blue;
-$cv-personal-picture-border-thickness: 4px;
+
+$cv-personal-details-header-font-size: 2em;
+
+$cv-personal-details-picture-border-thickness: 4px;
+$cv-personal-details-picture-border-color: $blue;
+
+$cv-personal-details-icon-color: $red;
+$cv-personal-details-icon-right-margin: .5em;
+
 $cv-print-body-font-color: black;
 $cv-print-personal-picture-border-color: #ddd;
+
+$cv-item-color: $blue;
+$cv-item-margin-bottom: 1em;
+$cv-item-header-font-size: smaller;
+$cv-item-header-font-weight: bold;
+$cv-item-body-margin-left: .5em;

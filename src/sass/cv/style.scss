@@ -1,39 +1,41 @@
 @import "settings";
 
 section {
-	border: solid 1px $cv_section-border-color;
-	border-radius: 8px;
-	padding: .5em;
-	margin-bottom: 1em;
+	font-size: $cv-font-size;
+	margin-bottom: $cv-section-margin;
+	padding: 0;
 	a {
-		color: $body-font-color;
+		color: $cv-link-color;
 		text-decoration: none;
 		&:hover {
-			color: $red;
+			color: $cv-link-hover-color;
 		}
 	}
 	ul {
 		margin: 0;
 	}
 	h1 {
-		font-size: 1.25em;
+		font-size: $cv-section-header-font-size;
+		margin: $cv-section-header-margin;
+	}
+	h2 {
+		font-size: $cv-section-subheader-font-size;
+		margin: $cv-section-subheader-margin;
 	}
 	&:not(#personal-details) {
 		h1 {
-			border-bottom: solid $cv_section-header-border-thickness $cv_section-header-border-color;
-			margin-bottom: 1em;
+			border-bottom: solid $cv-section-header-border-thickness $cv-section-header-border-color;
 		}
 	}
 	&#personal-details {
 		border: none;
 		padding: 0;
 		h1 {
-			font-size: 2em;
-			margin-bottom: 2em;
+			font-size: $cv-personal-details-header-font-size;
 			text-align: center;
 		}
 		img {
-			border: solid $cv_personal-picture-border-thickness $cv_personal-picture-border-color;
+			border: solid $cv-personal-details-picture-border-thickness $cv-personal-details-picture-border-color;
 			display: block;
 			margin: 0 auto;
 			vertical-align: top;
@@ -43,65 +45,50 @@ section {
 			padding: 0;
 			margin: 0;
 			li {
-				margin-bottom: .5em;
 				@include breakpoint(medium) {
 					font-size: smaller;
 				}
 				i {
-					color: $red;
+					color: $cv-personal-details-icon-color;
 					margin: 0;
-					margin-right: 1em;
+					margin-right: $cv-personal-details-icon-right-margin;
 				}
 			}
 		}
 	}
-	&#education {
+	&#education, &#employments {
 		ul {
 			list-style-type: none;
-			padding: 0;
 			li {
-				margin-bottom: 1em;
-				.year {
-					float: left;
+				margin-bottom: $cv-item-margin-bottom;
+				.item-header {
+					color: $cv-item-color;
+					font-size: $cv-item-header-font-size;
+					font-weight: $cv-item-header-font-weight;
+					.left {
+						float: left;
+					}
+					.right {
+						float: right;
+					}
 				}
-				.school {
-					padding: .25em;
+				.item-body {
 					clear: both;
-					font-size: smaller;
-				}
-				.grade {
-					float: right;
-				}
-			}
-		}
-	}
-	&#employments {
-		ul {
-			list-style-type: none;
-			padding: 0;
-			li {
-				margin-bottom: 1em;
-				.period {
-					float: left;
-				}
-				.resume {
-					padding: .5em;
-					clear: both;
-					font-size: smaller;
-				}
-				.employer {
-					float: right;
+					margin-left: $cv-item-body-margin-left;
 				}
 			}
 		}
 	}
 	&#interests {
-		ul li {
-			&:not(:last-of-type):after {
-				content: ',';
-			}
-			&:last-of-type:after {
-				content: '.';
+		ul {
+			list-style-position: inside;
+			li {
+				&:not(:last-of-type):after {
+					content: ',';
+				}
+				&:last-of-type:after {
+					content: '.';
+				}
 			}
 		}
 	}
@@ -109,6 +96,7 @@ section {
 		ul {
 			list-style-type: none;
 			padding: 0;
+			margin-left: $cv-item-body-margin-left;
 			.skill {
 				display: inline;
 				&:not(:last-of-type):after {
@@ -121,53 +109,34 @@ section {
 		}
 	}
 }
-.left, .right {
-	position: absolute;
-	width: 50%;
-	section {
-		margin: 1em;
-		&:last_child {
-			margin-bottom: 0;
-		}
-	}
-}
-.left {
-	left: 0;
-	width: 60%;
-	margin-bottom: 1em;
-	section {
-		margin-right: .5em;
-	}
-}
-.right {
-	left: 60%;
-	width: 40%;
-	section {
-		margin-left: .5em;
-	}
-}
-
 @media print {
 	html {
 		font-size: 10pt;
 	}
 	body {
-		color: $cv_print-body-font-color;
+		color: $cv-print-body-font-color;
 		font-family: sans-serif;
+		& > #site-menu-wrapper {
+			display: none;
+		}
+		& > footer {
+			display: none;
+		}
 	}
 	a {
-		color: $cv_print-body-font-color;
+		color: $cv-print-body-font-color;
 		&:hover {
-			color: $cv_print-body-font-color;
+			color: $cv-print-body-font-color;
 		}
 	}
 	section {
+		border: none;
 		h2 {
 			margin-bottom: 0.33em;
 		}
 		&#personal-details {
 			img {
-				border: solid 1pt $cv_print-personal-picture-border-color;
+				border: solid 1pt $cv-print-personal-picture-border-color;
 				height: 96px;
 				padding: 3px;
 				width: 96px;
