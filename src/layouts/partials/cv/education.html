@@ -3,9 +3,11 @@
     <ul>
         {{#each education}}
         <li>
-            <div class="year">{{year}}</div>
-            <div class="grade">{{grade}}</div>
-            <div class="school">{{school}}</div>
+            <div class="item-header">
+                <div class="left">{{year}}</div>
+                <div class="right">{{grade}}</div>
+            </div>
+            <div class="item-body">{{school}}</div>
         </li>
         {{/each}}
     </ul>

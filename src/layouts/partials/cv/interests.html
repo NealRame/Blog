@@ -1,4 +1,8 @@
+{{#if visibilityClass}}
+<section id="interests" class="{{visibilityClass}}">
+{{else}}
 <section id="interests">
+{{/if}}
     <h1><i class="fa fa-fw fa-heart"></i>&nbsp;Intérêts</h1>
     <ul>
         {{#each hobbies}}

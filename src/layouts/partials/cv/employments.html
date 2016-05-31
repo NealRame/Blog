@@ -3,11 +3,13 @@
     <ul>
         {{#each employments}}
         <li>
-            <div class="period">
-                <span class="from">{{from_year}}</span> - <span class="to">{{to_year}}</span>
+            <div class="item-header">
+                <div class="left">
+                    <span class="from">{{from_year}}</span> - <span class="to">{{to_year}}</span>
+                </div>
+                <div class="right">{{employer}}</div>
             </div>
-            <div class="employer">{{employer}}</div>
-            <div class="resume">{{resume}}</div>
+            <div class="item-body">{{resume}}</div>
         </li>
         {{/each}}
     </ul>
