@@ -6,161 +6,161 @@ const get_simple_form_API_token = '7489a07ba6b67c76099174e8b28a2d55';
 const callout_template = _.template(
 `
 <div class="callout <%= level %>" data-closable>
-    <p><%= message %></p>
-    <button class="close-button" aria-label="Dismiss <%= level %>" type="button" data-close>
-    </button>
+	<p><%= message %></p>
+	<button class="close-button" aria-label="Dismiss <%= level %>" type="button" data-close>
+	</button>
 </div>
 `
 );
 
 function ValidationError(reason, msg) {
-    this.stack = (new Error).stack;
-    this.message = msg;
-    this.reason = reason || {};
+	this.stack = (new Error).stack;
+	this.message = msg;
+	this.reason = reason || {};
 }
 ValidationError.prototype = Object.create(Error.prototype);
 ValidationError.prototype.name = 'ValidationError';
 
 const validate_data = dispatch(
-    ({attr, value}) => {
-        if (attr === 'email') {
-            return (check_mail_address(value)
-                ? {attr, value}
-                : {attr, error: 'Your email address is not valid.'}
-            );
-        }
-    },
-    ({attr, value}) => {
-        if (attr === 'name') {
-            return (value.length > 0
-                ? {attr, value}
-                : {attr, error: 'Your name is required.'}
-            );
-        }
-    },
-    ({attr, value}) => {
-        if (attr === 'message') {
-            return (value.length > 0
-                ? {attr, value}
-                : {attr, error: 'Your message is empty.'}
-            );
-        }
-    }
+	({attr, value}) => {
+		if (attr === 'email') {
+			return (check_mail_address(value)
+				? {attr, value}
+				: {attr, error: 'Your email address is not valid.'}
+			);
+		}
+	},
+	({attr, value}) => {
+		if (attr === 'name') {
+			return (value.length > 0
+				? {attr, value}
+				: {attr, error: 'Your name is required.'}
+			);
+		}
+	},
+	({attr, value}) => {
+		if (attr === 'message') {
+			return (value.length > 0
+				? {attr, value}
+				: {attr, error: 'Your message is empty.'}
+			);
+		}
+	}
 );
 
 function validate_form_data(form_data) {
-    return new Promise(function(resolve, reject) {
-        const [errors, values] = form_data
-            .map(validate_data)
-            .filter(existy)
-            .reduce(([errors, values], {attr, error, value}) => {
-                return (existy(error)
-                    ? [Object.assign(errors || {}, _.object([[attr, error]])), values]
-                    : [errors, Object.assign(values || {}, _.object([[attr, value]]))]
-                );
-            }, []);
-        if (existy(errors)) {
-            return reject(new ValidationError(errors, 'Validation error'));
-        }
-        resolve(values);
-    });
+	return new Promise(function(resolve, reject) {
+		const [errors, values] = form_data
+			.map(validate_data)
+			.filter(existy)
+			.reduce(([errors, values], {attr, error, value}) => {
+				return (existy(error)
+					? [Object.assign(errors || {}, _.object([[attr, error]])), values]
+					: [errors, Object.assign(values || {}, _.object([[attr, value]]))]
+				);
+			}, []);
+		if (existy(errors)) {
+			return reject(new ValidationError(errors, 'Validation error'));
+		}
+		resolve(values);
+	});
 }
 
 function get_form_data($form) {
-    return Promise.resolve($('.input', $form).map((index, elt) => {
-        return {
-            attr: elt.id,
-            value: $('input, textarea', $(elt)).val()
-        };
-    }).get());
+	return Promise.resolve($('.input', $form).map((index, elt) => {
+		return {
+			attr: elt.id,
+			value: $('input, textarea', $(elt)).val()
+		};
+	}).get());
 }
 
 function send_form_data(values) {
-    return new Promise(function(resolve, reject) {
-        $.ajax({
-            dataType: 'jsonp',
-            type: 'POST',
-            url: `https://getsimpleform.com/messages/ajax?form_api_token=${get_simple_form_API_token}`,
-            data: values
-        })
-        .done(resolve)
-        .fail((jq_XHR, texts_status, error) => reject(error));
-    });
+	return new Promise(function(resolve, reject) {
+		$.ajax({
+			dataType: 'jsonp',
+			type: 'POST',
+			url: `https://getsimpleform.com/messages/ajax?form_api_token=${get_simple_form_API_token}`,
+			data: values
+		})
+		.done(resolve)
+		.fail((jq_XHR, texts_status, error) => reject(error));
+	});
 }
 
 function begin_form_animation($form) {
-    $('button > i', $form)
-        .removeClass('fa-paper-plane')
-        .addClass('fa-spinner fa-pulse');
+	$('button > i', $form)
+		.removeClass('fa-paper-plane')
+		.addClass('fa-spinner fa-pulse');
 }
 
 function stop_form_animation($form) {
-    $('button > i', $form)
-        .removeClass('fa-spinner fa-pulse')
-        .addClass('fa-paper-plane');
+	$('button > i', $form)
+		.removeClass('fa-spinner fa-pulse')
+		.addClass('fa-paper-plane');
 }
 
 function handle_form_data_success() {
-    stop_form_animation(this);
-    $('.input', this).find('input, textarea').val('');
-    $('#form-message-wrapper', this)
-        .html(callout_template({
-            level: 'success',
-            message: 'Your message has been sent. Thank you.'
-        }))
-        .delay(5000)
-        .fadeOut();
+	stop_form_animation(this);
+	$('.input', this).find('input, textarea').val('');
+	$('#form-message-wrapper', this)
+		.html(callout_template({
+			level: 'success',
+			message: 'Your message has been sent. Thank you.'
+		}))
+		.delay(5000)
+		.fadeOut();
 }
 
 function handle_form_data_errors(err) {
-    if (err instanceof ValidationError) {
-        for (let attr of Object.keys(err.reason)) {
-            $(`#${attr}`, this)
-                .addClass('error')
-                .append(`<span>${err.reason[attr]}</span>`);
-        }
-    }
-    stop_form_animation(this);
-    $('#form-message-wrapper', this).html(callout_template({
-        level: 'alert',
-        message: err.message
-    }));
+	if (err instanceof ValidationError) {
+		for (let attr of Object.keys(err.reason)) {
+			$(`#${attr}`, this)
+				.addClass('error')
+				.append(`<span>${err.reason[attr]}</span>`);
+		}
+	}
+	stop_form_animation(this);
+	$('#form-message-wrapper', this).html(callout_template({
+		level: 'alert',
+		message: err.message
+	}));
 }
 
 function input_focus_in() {
-    $(this).parent().addClass('focus');
+	$(this).parent().addClass('focus');
 }
 
 function input_focus_out() {
-    $(this).parent().removeClass('focus');
+	$(this).parent().removeClass('focus');
 }
 
 function clear_form($form) {
-    $('.input', $form).removeClass('error');
-    $('span', $form).remove();
-    $('#form-message-wrapper', $form).empty();
-    return Promise.resolve($form);
+	$('.input', $form).removeClass('error');
+	$('span', $form).remove();
+	$('#form-message-wrapper', $form).empty();
+	return Promise.resolve($form);
 }
 
 function submit_form() {
-    clear_form(this)
-        .then(begin_form_animation)
-        .then(get_form_data)
-        .then(validate_form_data)
-        .then(send_form_data)
-        .then(handle_form_data_success.bind(this))
-        .catch(handle_form_data_errors.bind(this));
+	clear_form(this)
+		.then(begin_form_animation)
+		.then(get_form_data)
+		.then(validate_form_data)
+		.then(send_form_data)
+		.then(handle_form_data_success.bind(this))
+		.catch(handle_form_data_errors.bind(this));
 }
 
 global.applets = (global.applets || []).concat({
-    name: 'contact',
-    start() {
-        const $form = $('form');
-        $('.input', $form)
-            .find('input, textarea')
-            .on('focus', input_focus_in)
-            .on('blur', input_focus_out);
-        $('#submit', $form)
-            .on('click', () => submit_form.call($form));
-    }
+	name: 'contact',
+	start() {
+		const $form = $('form');
+		$('.input', $form)
+			.find('input, textarea')
+			.on('focus', input_focus_in)
+			.on('blur', input_focus_out);
+		$('#submit', $form)
+			.on('click', () => submit_form.call($form));
+	}
 });

@@ -1,24 +1,24 @@
 {{> begin-page}}
-    <section>
-        <div class="row columns">
-            {{#each pagination.files}}{{> blog/post}}{{/each}}
-            <ul class="pagination text-center" role="navigation" aria-label="Pagination">
-                {{#if pagination.previous}}
-                    <li class="pagination-previous">
-                        <a href="{{{pagination-link pagination.previous}}}">Prev</a>
-                    </li>
-                {{else}}
-                    <li class="pagination-previous disabled">Prev</li>
-                {{/if}}
-                {{{paginate this}}}
-                {{#if pagination.next}}
-                    <li class="pagination-next">
-                        <a href="{{{pagination-link pagination.next}}}">Next</a>
-                    </li>
-                {{else}}
-                    <li class="pagination-next disabled">Next</li>
-                {{/if}}
-            </ul>
-        </div>
-    </section>
+	<section>
+		<div class="row columns">
+			{{#each pagination.files}}{{> blog/post}}{{/each}}
+			<ul class="pagination text-center" role="navigation" aria-label="Pagination">
+				{{#if pagination.previous}}
+					<li class="pagination-previous">
+						<a href="{{{pagination-link pagination.previous}}}">Prev</a>
+					</li>
+				{{else}}
+					<li class="pagination-previous disabled">Prev</li>
+				{{/if}}
+				{{{paginate this}}}
+				{{#if pagination.next}}
+					<li class="pagination-next">
+						<a href="{{{pagination-link pagination.next}}}">Next</a>
+					</li>
+				{{else}}
+					<li class="pagination-next disabled">Next</li>
+				{{/if}}
+			</ul>
+		</div>
+	</section>
 {{> end-page}}

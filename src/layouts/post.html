@@ -1,17 +1,17 @@
 {{> begin-page}}
-    <section>
-        <div class="row columns">
-            <header><h1>{{title}}</h1></header>
-            {{#if resume}}
-            <p><em>{{resume}}</em></p>
-            {{/if}}
+	<section>
+		<div class="row columns">
+			<header><h1>{{title}}</h1></header>
+			{{#if resume}}
+			<p><em>{{resume}}</em></p>
+			{{/if}}
 			{{{contents}}}
 			<footer class="">
 				Posted on {{date this}}, by {{this.author}}
 			</footer>
-        </div>
+		</div>
 		{{#if disqus}}
 		<div id="disqus_thread" class="row columns"></div>
-	    {{/if}}
-    </section>
+		{{/if}}
+	</section>
 {{> end-page}}
