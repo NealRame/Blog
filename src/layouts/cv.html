@@ -1,7 +1,10 @@
 {{> begin-page}}
+	<header>
+		<h1>{{personal.name}}<br>{{job}}</h1>
+	</header>
 	{{> cv/personal-details}}
 	<div class="row">
-		<div class="columns small-12 medium-6">
+		<div class="print-wrapper columns small-12 medium-6">
 			<div class="row columns">
 				{{> cv/education}}
 			</div>
@@ -12,7 +15,7 @@
 				{{> cv/interests visibilityClass="show-for-medium"}}
 			</div>
 		</div>
-		<div class="columns small-12 medium-6">
+		<div class="highlighted print-wrapper columns small-12 medium-6">
 			{{> cv/skills}}
 		</div>
 		<div class="columns small-12">

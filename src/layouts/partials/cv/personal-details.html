@@ -1,36 +1,47 @@
 <section id="personal-details">
-	<h1>{{personal.name}}<br>{{job}}</h1>
 	<div class="row">
 		{{#if personal.picture}}
-		<div class="columns small-5 medium-6">
+		<div class="print-wrapper columns small-5 medium-6">
 			<img src="{{personal.picture}}"></img>
 		</div>
 		{{/if}}
-		<div class="columns small-7 medium-6">
+		<div class="print-wrapper columns small-7 medium-6">
 			<ul>
 				{{#if personal.birth}}
-				<li><i class="fa fa-birthday-cake fa-fw"></i>{{personal.birth}}</li>
+					<li>
+						<i class="fa fa-birthday-cake fa-fw"></i>
+						{{personal.birth}}
+					</li>
 				{{/if}}
 				{{#if personal.address}}
-				<li><i class="fa fa-map-marker fa-fw"></i>{{personal.address}}</li>
+					<li>
+						<i class="fa fa-map-marker fa-fw"></i>
+						{{personal.address}}
+					</li>
 				{{/if}}
 				{{#if personal.phone}}
-				<li><i class="fa fa-mobile fa-fw"></i>{{personal.phone}}</li>
+					<li>
+						<i class="fa fa-mobile fa-fw"></i>
+						{{personal.phone}}
+					</li>
 				{{/if}}
 				{{#if personal.email}}
-				<li><i class="fa fa-envelope-o fa-fw"></i>{{personal.email}}</li>
+					<li>
+						<i class="fa fa-envelope-o fa-fw"></i>
+						{{personal.email}}
+					</li>
 				{{/if}}
 				{{#if personal.social-networks.github}}
-				<li>
-					<i class="fa fa-github fa-fw"></i>
-					<a href="{{personal.social-networks.github}}">{{personal.social-networks.github}}</a>
-				</li>
+					<li>
+						<i class="fa fa-github fa-fw"></i>
+						<a href="{{personal.social-networks.github}}">{{personal.social-networks.github}}</a>
+					</li>
 				{{/if}}
 				{{#if personal.social-networks.twitter}}
-				<li>
-					<i class="fa fa-twitter fa-fw"></i>
-					<a href="{{personal.social-networks.twitter}}">{{personal.social-networks.twitter}}</a>
-				</li>
+					<li>
+						<i class="fa fa-twitter fa-fw"></i>
+						<a href="{{personal.social-networks.twitter}}">{{personal.social-networks.twitter}}</a>
+					</li>
 				{{/if}}
 			</ul>
 		</div>
