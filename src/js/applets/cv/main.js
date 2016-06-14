@@ -15,6 +15,9 @@ function equalize() {
 
 function before_print() {
 	equalize_picture();
+	$('.print-wrapper')
+		.removeClass('small-5 small-7 small-12 medium-6')
+		.addClass('small-6');
 }
 
 global.applets = (global.applets || []).concat({
