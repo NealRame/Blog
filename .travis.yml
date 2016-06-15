@@ -7,7 +7,7 @@ language: node_js
 node_js:
   - "5"
 
-script: scripts/deploy.sh
+script: scripts/build.sh
 
 deploy:
   provider: script
