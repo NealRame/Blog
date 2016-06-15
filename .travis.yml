@@ -7,7 +7,7 @@ language: node_js
 node_js:
   - "5"
 
-script: grunt
+script: scripts/deploy.sh
 
 deploy:
   provider: script
