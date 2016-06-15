@@ -1,4 +1,16 @@
-script: bash ./deploy.sh
+env:
+  global:
+    - DEST_DIR="build"
+    - NODE_ENV="production"
+
 language: node_js
 node_js:
   - "5"
+
+script: grunt
+
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
