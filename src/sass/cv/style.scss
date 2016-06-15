@@ -1,5 +1,10 @@
 @import "settings";
-
+.highlighted {
+	background-color: $cv-highlighted-bg-color;
+}
+body > header {
+	margin-top: 3rem;
+}
 section {
 	font-size: $cv-font-size;
 	margin-bottom: $cv-section-margin;
@@ -29,6 +34,7 @@ section {
 	}
 	&#personal-details {
 		border: none;
+		margin-bottom: $cv-personal-details-bottom-margin;
 		padding: 0;
 		h1 {
 			font-size: $cv-personal-details-header-font-size;
@@ -93,6 +99,7 @@ section {
 		}
 	}
 	&#skills {
+		background-color: inherit;
 		ul {
 			list-style-type: none;
 			padding: 0;
@@ -111,13 +118,17 @@ section {
 }
 @media print {
 	html {
-		font-size: 10pt;
+		font-size: $cv-print-body-font-size;
 	}
 	body {
 		color: $cv-print-body-font-color;
 		font-family: sans-serif;
+		padding: $cv-print-body-padding;
 		& > #site-menu-wrapper {
 			display: none;
+		}
+		& > header {
+			margin-top: 0;
 		}
 		& > footer {
 			display: none;
@@ -125,21 +136,26 @@ section {
 	}
 	a {
 		color: $cv-print-body-font-color;
-		&:hover {
-			color: $cv-print-body-font-color;
+		&::after {
+			display: none;
 		}
+	}
+	.highlighted {
+		background-color: $cv-print-highlighted-bg-color !important;
 	}
 	section {
 		border: none;
-		h2 {
-			margin-bottom: 0.33em;
+		&:not(#personal-details) {
+			h1 {
+				border-bottom: solid $cv-print-section-header-border-thickness $cv-print-section-header-border-color;
+			}
 		}
 		&#personal-details {
 			img {
-				border: solid 1pt $cv-print-personal-picture-border-color;
+				border: solid $cv-print-personal-picture-border-thickness $cv-print-personal-picture-border-color;
 				height: 96px;
-				padding: 3px;
 				width: 96px;
+				padding: 3px;
 			}
 			ul {
 				li {

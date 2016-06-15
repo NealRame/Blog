@@ -75,7 +75,7 @@ skills:
     Langues:
         - Anglais intermédiaire
 hobbies:
-    - Les longues ballades en fôret avec mon chien Hawaï
+    - Les longues ballades en fôret avec mon chien
     - coder
     - grimper
     - les mathématiques
