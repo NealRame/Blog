@@ -4,4 +4,7 @@
 set -e
 
 npm install -g grunt-cli
+
+ls -R $PWD/node_modules/.bin
+
 $PWD/node_modules/.bin/grunt
