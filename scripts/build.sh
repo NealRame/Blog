@@ -3,4 +3,5 @@
 # exit with non-zero exit code if anything fails
 set -e
 
-grunt
+npm install -g grunt-cli
+$PWD/node_modules/.bin/grunt
