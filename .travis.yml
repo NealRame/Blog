@@ -2,11 +2,6 @@ language: node_js
 node_js:
   - "6"
 
-env:
-  global:
-    - DEST_DIR="build"
-    - NODE_ENV="production"
-
 before_install: npm install -g grunt-cli
 script: grunt
 
