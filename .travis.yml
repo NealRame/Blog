@@ -7,12 +7,7 @@ language: node_js
 node_js:
   - "6"
 
-<<<<<<< HEAD
 before-install: npm install -g grunt-cli
-=======
-before_install: npm install grunt-cli
-install: npm install
->>>>>>> 2ee845a898a0aa91474916879c6bff4e62e63d64
 script: scripts/build.sh
 
 deploy:
