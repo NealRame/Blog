@@ -4,8 +4,8 @@ node_js:
 
 before_install: npm install -g grunt-cli
 script: grunt
-
 deploy:
+  skip_cleanup: true
   provider: script
   script: scripts/deploy.sh
   on:
