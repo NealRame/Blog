@@ -3,17 +3,12 @@
 # exit with non-zero exit code if anything fails
 set -e
 
-export DEST_DIR="build"
-export NODE_ENV="production"
-
 USER_NAME="Travis CI"
 USER_EMAIL="julien@graziano.fr"
 
 GH_REF="${GH_REF:-NealRame/NealRame.github.io.git}"
 DATE=$(date +"%m.%d.%y")
 SHA=$(git rev-parse HEAD)
-
-grunt
 
 pushd "$DEST_DIR"
 	echo "nealrame.com" > CNAME

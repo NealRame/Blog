@@ -1,4 +1,12 @@
-script: bash ./deploy.sh
 language: node_js
 node_js:
-  - "5"
+  - "6"
+
+before_install: npm install -g grunt-cli
+script: grunt
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
