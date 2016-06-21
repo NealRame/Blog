@@ -11,11 +11,13 @@ const sources_dir = 'src';
 const content_dir = path.join(sources_dir, 'content');
 const pages_dir = path.join(content_dir, 'pages');
 const layouts_dir = path.join(sources_dir, 'layouts');
-const helpers_dir = path.join(sources_dir, 'helpers');
+const helpers_dir = path.join(layouts_dir, 'helpers');
+
 const partials_dir = path.join(layouts_dir, 'partials');
 const sass_sources_dir = path.join(sources_dir, 'sass');
 const pictures_sources_dir = path.join(sources_dir, 'pictures');
 const js_sources_dir = path.join(sources_dir, 'js');
+
 const applets_sources_dir = path.join(js_sources_dir, 'applets');
 
 // destinations variables
