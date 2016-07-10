@@ -1,0 +1,11 @@
+{
+    "env": {
+        "es6": true,
+        "mocha": true,
+        "node": true
+    },
+    "rules": {
+        "key-spacing": 0,
+        "no-multi-spaces": 0
+    }
+}
