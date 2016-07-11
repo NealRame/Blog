@@ -17,10 +17,10 @@
     "name": "Julien Graziano",
     "phone": "+33 6 75 12 29 57",
     "picture": "/assets/pictures/me.jpg",
-  	"social-networks": {
+    "social-networks": {
       "github": "https://github.com/NealRame",
       "facebook": "https://www.facebook.com/NealRame",
       "twitter": "https://twitter.com/NealRame"
-  	}
+    }
   }
 }
