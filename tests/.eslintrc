@@ -4,6 +4,9 @@
         "mocha": true,
         "node": true
     },
+    "parserOptions": {
+      "sourceType": "module"
+    },
     "rules": {
         "key-spacing": 0,
         "no-multi-spaces": 0
