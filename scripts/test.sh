@@ -4,5 +4,7 @@
 set -e
 
 MOCHA="$PWD/node_modules/.bin/mocha"
+export NODE_PATH="$PWD/src/js"
 
 "$MOCHA" tests/handlebars-helpers.js
+"$MOCHA" --compilers js:babel-core/register tests/common.js
